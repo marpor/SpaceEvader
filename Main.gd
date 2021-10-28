@@ -3,9 +3,9 @@ extends Node2D
 var enemies = [
 	[ 50, preload("res://enemies/Enemy1.tscn")],
 	[ 25, preload("res://enemies/Enemy2.tscn")],
-	[  5, preload("res://enemies/Enemy3.tscn")],
-	[  2, preload("res://enemies/Boss1.tscn")],
-	[  1, preload("res://enemies/Boss2.tscn")],
+	[ 15, preload("res://enemies/Enemy3.tscn")],
+	[ 10, preload("res://enemies/Boss1.tscn")],
+	[  5, preload("res://enemies/Boss2.tscn")],
 ]
 
 var meteors = [
