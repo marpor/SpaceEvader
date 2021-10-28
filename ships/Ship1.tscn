@@ -52,19 +52,25 @@ texture = ExtResource( 5 )
 position = Vector2( -32, 27 )
 texture = ExtResource( 1 )
 
+[node name="ShieldArea" type="Area2D" parent="."]
+position = Vector2( 0, -100 )
+scale = Vector2( 4, 4 )
+
+[node name="ShieldCollision" type="CollisionPolygon2D" parent="ShieldArea"]
+visible = false
+polygon = PoolVector2Array( 61, 46, -61, 46, 0, -45 )
+disabled = true
+
 [node name="Shields" type="Node2D" parent="."]
 
 [node name="Ship1Shield1" type="Sprite" parent="Shields"]
-visible = false
-position = Vector2( 0, -4 )
+position = Vector2( 0, -18 )
 texture = ExtResource( 8 )
 
 [node name="Ship1Shield3" type="Sprite" parent="Shields"]
-visible = false
-position = Vector2( 0, -16 )
+position = Vector2( 0, -36 )
 texture = ExtResource( 8 )
 
 [node name="Ship1Shield4" type="Sprite" parent="Shields"]
-visible = false
-position = Vector2( 0, -28 )
+position = Vector2( 0, -54 )
 texture = ExtResource( 8 )

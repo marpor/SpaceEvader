@@ -35,22 +35,17 @@ func _ready():
 
 		life += 1
 
-func shot(_body):
-	life -= 1
-	if (life == 0):
-		Global.score += 25
-		removeMe()
-
-	var source = _body
-	if not source:
-		return
-
+func shot(source):
 	# loose a part
 	if not parts.empty():
 		var part = parts.pop_back()
 		$Parts.remove_child(part)
-
 		call_deferred("loosePart", part, source)
+
+	life -= 1
+	if (life == 0):
+		Global.score += 25
+		removeMe()
 
 func _process(delta):
 	if not Global.alive:

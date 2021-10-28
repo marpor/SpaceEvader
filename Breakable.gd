@@ -22,8 +22,12 @@ func loosePart(part, source):
 	parent.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
 
 	s.speed *= rand_range(0.5, 0.9)
-	s.dir = source.dir
+	if "dir" in source:
+		s.dir = source.dir
+	else:
+		s.dir = Vector2.RIGHT
 	s.position = source.position
+
 	s.rotate(deg2rad(ang))
 	s.dir = s.dir.rotated(deg2rad(ang))
 	s.angular_velocity = rand_range(-4, 4)
