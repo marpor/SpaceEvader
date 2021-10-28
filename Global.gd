@@ -24,6 +24,6 @@ func randStartPos(deg = 55):
 
 func speedScale():
 	# Add inital speed every 3 minutes
-	return 1 + 3*Global.t/60
+	return 1 + Global.t/(3*60)
 	#return 1.0
 	#return 1 + log(5+Global.t*10) - log(5)
