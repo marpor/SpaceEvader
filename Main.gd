@@ -312,13 +312,6 @@ func _process(delta):
 	ship.position = Global.player_pos
 #	ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
-	if protectedTime > 0.0:
-		protectedTime -= delta
-		# blink ship
-		ship.visible = fmod(protectedTime, .2*protectedTime) > .1*protectedTime
-	else:
-		ship.visible = true
-
 	Global.speedOverride -= delta*5
 	if Global.speedOverride < 0.0:
 		Global.speedOverride = 0.0
@@ -327,6 +320,13 @@ func _process(delta):
 		return
 
 	delta *= Global.speedOverride
+
+	if protectedTime > 0.0:
+		protectedTime -= delta
+		# blink ship
+		ship.visible = fmod(protectedTime, .2*protectedTime) > .1*protectedTime
+	else:
+		ship.visible = true
 
 	Global.t += delta
 	mapT += delta
