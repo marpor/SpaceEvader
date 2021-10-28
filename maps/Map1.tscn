@@ -29,6 +29,18 @@ centered = false
 [node name="Life" parent="Map" instance=ExtResource( 1 )]
 position = Vector2( 1904, 208 )
 
+[node name="Life2" parent="Map" instance=ExtResource( 1 )]
+position = Vector2( 432, 312 )
+
+[node name="Life3" parent="Map" instance=ExtResource( 1 )]
+position = Vector2( 952, 344 )
+
+[node name="Life4" parent="Map" instance=ExtResource( 1 )]
+position = Vector2( 728, 168 )
+
+[node name="Life5" parent="Map" instance=ExtResource( 1 )]
+position = Vector2( 1248, 352 )
+
 [node name="Goal" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3328, 0 )
 
@@ -39,5 +51,5 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 153.663, 198.803 )
-rotation = -0.0487798
+rotation = -0.0273931
 scale = Vector2( 0.222599, 0.159157 )

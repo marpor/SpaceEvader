@@ -125,12 +125,21 @@ func menu():
 
 	updateHighScore()
 
+func health_changed(health):
+	healthBar.update_life(health)
+
+	var shields = health-1
+	for shield in ship.get_node("Shields").get_children():
+		shield.visible = shields > 0
+		shields -= 1
+
 func die():
 	if not Global.alive:
 		return true
 
 	health -= 1
-	healthBar.update_life(health)
+	health_changed(health)
+
 	if health > 0:
 		return false # not dead yet!
 
@@ -172,7 +181,7 @@ func start():
 	Global.t = 0
 	Global.score = 0
 	health = 1
-	healthBar.update_life(health)
+	health_changed(health)
 
 	mapNo = -1
 	nextMap()
@@ -309,6 +318,7 @@ func _on_Ship_body_entered(_body):
 	# Meteors use bodies
 	die()
 
+var protected = false
 func _on_Ship_area_entered(area):
 	area.get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	if area.get_collision_layer_bit(8): # Layer: Goal
@@ -317,15 +327,26 @@ func _on_Ship_area_entered(area):
 	elif area.get_collision_layer_bit(7): # Layer: Life
 		if health < 3:
 			health += 1
-		healthBar.update_life(health)
+		health_changed(health)
 		area.queue_free()
 	else:
 		# Enememy or meteor
-		if not die():
+		if protected or not die():
 			# What doesn't kill you -- disappears!?
 			# If really dead, we want to keep enemy around so the player can see
 			# what happened on the game over screen...
-			area.queue_free()
+
+			protected = true
+			$ProtectTimer.start()
+
+			if area.has_method("shot"):
+				while area.life > 0:
+					area.shot(area)
+#			area.queue_free()
+
+func _on_ProtectTimer_timeout():
+	protected = false
+
 
 
 func _on_FullscreenButton_pressed():
@@ -333,3 +354,5 @@ func _on_FullscreenButton_pressed():
 
 func _on_CreditLink_pressed():
 	OS.shell_open("https://esahubble.org/images/heic2007a/")
+
+

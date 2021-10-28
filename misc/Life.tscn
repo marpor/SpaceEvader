@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://artwork/HeartFill.png" type="Texture" id=1]
+[ext_resource path="res://artwork/Shield.png" type="Texture" id=1]
 
 [node name="Life" type="Area2D" groups=[
 "life",
@@ -9,7 +9,7 @@ input_pickable = false
 collision_layer = 128
 collision_mask = 512
 
-[node name="HeartFill" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 

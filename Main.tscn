@@ -40,6 +40,7 @@ __meta__ = {
 }
 
 [node name="HealthBar" parent="UI/HUD" instance=ExtResource( 2 )]
+visible = false
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 128.0
@@ -207,7 +208,7 @@ margin_right = 532.0
 margin_bottom = 14.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "Version 0.9 - Copyright 2021 marpor"
+text = "Version 0.10 - Copyright 2021 marpor"
 underline = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -302,6 +303,10 @@ wait_time = 0.3
 
 [node name="EnemyTimer" type="Timer" parent="."]
 
+[node name="ProtectTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="LifeTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="Ship" to="." method="_on_Ship_area_entered"]
@@ -313,4 +318,5 @@ wait_time = 0.3
 [connection signal="pressed" from="UI/GameOver/BackButton" to="." method="menu"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_MeteorTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
+[connection signal="timeout" from="ProtectTimer" to="." method="_on_ProtectTimer_timeout"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]

@@ -50,16 +50,11 @@ func _ready():
 func _on_VisibilityNotifier2D_screen_exited():
 	removeMe()
 
-func shot(_body):
-	var source = _body
-	if not source:
-		return
-
+func shot(source):
 	# loose ALL parts
 	while not parts.empty():
 		var part = parts.pop_back()
 		$Parts.remove_child(part)
-
 		call_deferred("loosePart", part, source)
 
 	life -= 1
