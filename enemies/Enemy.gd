@@ -60,8 +60,7 @@ func shot(_body):
 		var part = parts.pop_back()
 		$Parts.remove_child(part)
 
-		var spreadAngle = 35
-		var ang = rand_range(-spreadAngle, spreadAngle)
+		var ang = Global.randSpread(35)
 
 		var s = fragment.instance()
 		var sprite = s.get_node("Sprite")

@@ -38,8 +38,10 @@ func _ready():
 	for part in parts:
 		fragmentTextures.append(part.texture)
 
+	var ang = Global.randSpread(5)
+
 	position = Global.randStartPos()
-	var dir = -Global.DIR.rotated(rand_range(deg2rad(-5), deg2rad(5)))
+	var dir = -Global.DIR.rotated(deg2rad(ang))
 
 	var speed = SPEED * rand_range(0.7, 1.3) * Global.speedScale()
 	linear_velocity = dir * speed

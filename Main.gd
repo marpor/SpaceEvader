@@ -236,7 +236,7 @@ func _unhandled_input(event):
 		if event.pressed:
 			shoot()
 
-func addShot(source, target, ang = 0):
+func addShot(source, target):
 	if Global.instanceCount > 100:
 		# Don't add more instances to avoid hitting exponential slowdown
 		return
@@ -245,8 +245,7 @@ func addShot(source, target, ang = 0):
 		return
 
 	for tex in target.fragmentTextures:
-		var spreadAngle = 35
-		ang = rand_range(-spreadAngle, spreadAngle)
+		var ang = Global.randSpread(35)
 
 		var s = fragment.instance()
 		s.get_node("Sprite").texture = tex
@@ -265,7 +264,7 @@ func addShot(source, target, ang = 0):
 		s.connect("shot", self, "_on_shot")
 
 func _on_shot(source, target):
-	addShot(source, target, 15)
+	addShot(source, target)
 
 func shoot():
 	if not Global.alive:

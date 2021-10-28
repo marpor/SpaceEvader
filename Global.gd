@@ -14,9 +14,16 @@ var player_pos = Vector2()
 
 var instanceCount = 0
 
+var rng = RandomNumberGenerator.new()
+
+func randSpread(spread = 35):
+	# Use standard deviation of 2.0 to get ~95% of results inside spread
+	return rng.randfn(0.0, 1/2.0) * spread
+
 func randStartPos(deg = 55):
+	deg /= 2
 	var dir = -Global.DIR
-	dir = dir.rotated(rand_range(deg2rad(-deg), deg2rad(deg)))
+	dir = dir.rotated(deg2rad(randSpread(deg)))
 	return CENTER + RADIUS * -dir
 
 #func randStartPosTop():
