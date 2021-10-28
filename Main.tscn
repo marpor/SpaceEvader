@@ -21,6 +21,7 @@ font_data = ExtResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Ship" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 131, 200 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )

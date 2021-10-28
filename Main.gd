@@ -215,6 +215,19 @@ func _on_touch_event(event, state):
 			if event.pressed:
 				shoot()
 
+var touchingIndex = 0 # Index of first finger touching screen 
+func _input(event):
+	if event is InputEventScreenTouch:
+		# At least one finger is already touching the screen
+		if touchingIndex > 0:
+			if not event.pressed:
+				# Initial finger released again -> block initial shoot
+				if touchingIndex == event.index:
+					touchingIndex = 0
+		else:
+			touchingIndex = event.index
+			get_tree().set_input_as_handled()
+
 func _unhandled_input(event):
 	if event.is_action_released("toggle_fullscreen"):
 		_on_FullscreenButton_pressed()
@@ -223,21 +236,32 @@ func _unhandled_input(event):
 		get_tree().quit()
 
 	elif event is InputEventMouseMotion:
-		Global.player_pos += event.relative * 1.5
+		Global.player_pos += event.relative
 		Global.speedOverride += .2
 		if Global.speedOverride > 1.0:
 			Global.speedOverride = 1.0
 
 	elif event is InputEventMouseButton:
+		if touchingIndex > 0:
+			return # skip when touching
 		if event.pressed:
 			shoot()
 
 	elif event.is_action_pressed("shoot"):
 		shoot()
 
+	elif event is InputEventScreenDrag:
+		# touch movement
+		Global.player_pos += event.relative * 1.5
+		Global.speedOverride += .2
+		if Global.speedOverride > 1.0:
+			Global.speedOverride = 1.0
+
 	elif event is InputEventScreenTouch:
-		if event.pressed:
-			shoot()
+		# At least one finger is already touching the screen
+		if touchingIndex > 0:
+			if event.pressed:
+				shoot()
 
 func shoot():
 	if not Global.alive:
