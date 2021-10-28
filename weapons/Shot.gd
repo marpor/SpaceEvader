@@ -9,7 +9,8 @@ signal shot(source, target)
 
 func _ready():
 	Global.instanceCount+=1
-	dir = Global.DIR
+	#dir = Global.DIR
+	dir = Vector2.RIGHT
 	rotate(dir.angle() - Vector2.UP.angle())
 	var ship_tip = Global.player_pos + 30 * dir
 	position = ship_tip

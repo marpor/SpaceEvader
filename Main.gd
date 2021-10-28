@@ -309,7 +309,7 @@ func _process(delta):
 	Global.player_pos.y = clamp(Global.player_pos.y, 0, Global.H)
 
 	$Ship.position = Global.player_pos
-	$Ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
+#	$Ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
 	if not Global.moving:
 		return
