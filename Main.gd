@@ -8,6 +8,14 @@ var enemies = [
 	[  1, preload("res://enemies/Boss2.tscn")],
 ]
 
+var meteors = [
+	[ 30, preload("res://enemies/Meteor1.tscn")],
+	[ 30, preload("res://enemies/Meteor2.tscn")],
+	[ 20, preload("res://enemies/Meteor3.tscn")],
+	[ 20, preload("res://enemies/Meteor4.tscn")],
+	[ 10, preload("res://enemies/Meteor5.tscn")],
+]
+
 func pickWeighted(arr):
 	var total_weights = 0
 	for v in arr:
@@ -31,37 +39,6 @@ var shot = preload("res://weapons/Shot.tscn")
 
 var streak = preload("res://misc/Streak.tscn")
 var streaks = []
-
-var meteors = [
-	[preload("res://enemies/Meteor1.tscn"),[
-		preload("res://artwork/Rock1.png"),
-		preload("res://artwork/Rock2.png"),
-	]],
-	[preload("res://enemies/Meteor2.tscn"),[
-		preload("res://artwork/Rock1.png"),
-		preload("res://artwork/Rock2.png"),
-		preload("res://artwork/Rock3.png"),
-	]],
-	[preload("res://enemies/Meteor3.tscn"),[
-		preload("res://artwork/Rock1.png"),
-		preload("res://artwork/Rock2.png"),
-		preload("res://artwork/Rock3.png"),
-		preload("res://artwork/Rock4.png"),
-		preload("res://artwork/Rock5.png"),
-	]],
-#	[preload("res://enemies/Meteor4.tscn"),[
-#		preload("res://artwork/Fragment1.png"),
-#		preload("res://artwork/Fragment2.png"),
-#		preload("res://artwork/Fragment3.png"),
-#	]],
-#	[preload("res://enemies/Meteor5.tscn"),[
-#		preload("res://artwork/Rock1.png"),
-#		preload("res://artwork/Rock2.png"),
-#		preload("res://artwork/Rock3.png"),
-#		preload("res://artwork/Rock4.png"),
-#		preload("res://artwork/Rock5.png"),
-#	]],
-]
 
 var fragment = preload("res://enemies/Fragment.tscn")
 
@@ -303,20 +280,15 @@ func shoot():
 func _on_MeteorTimer_timeout():
 	if not Global.moving:
 		return
-	var metNo = randi() % meteors.size()
-	var meteor = meteors[metNo][0]
-	var met = meteor.instance()
-	met.fragmentTextures = meteors[metNo][1]
+
+	var met = pickWeighted(meteors).instance()
 	self.add_child(met)
 
 func _on_EnemyTimer_timeout():
 	if not Global.moving:
 		return
 
-#	var n = randi() % enemies.size()
-#	var e = enemies[n].instance()
 	var e = pickWeighted(enemies).instance()
-#	e.fragmentTextures = enemyFragmentTextures
 	self.add_child(e)
 
 func _on_LifeTimer_timeout():

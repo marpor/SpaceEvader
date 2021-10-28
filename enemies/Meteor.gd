@@ -32,9 +32,13 @@ var palette = [
 	Color("F6FFF8"),
 ]
 
-func _ready():
-	position = Global.randStartPos()
+onready var parts = $Parts.get_children()
 
+func _ready():
+	for part in parts:
+		fragmentTextures.append(part.texture)
+
+	position = Global.randStartPos()
 	var dir = -Global.DIR.rotated(rand_range(deg2rad(-5), deg2rad(5)))
 
 	var speed = SPEED * rand_range(0.7, 1.3) * Global.speedScale()
