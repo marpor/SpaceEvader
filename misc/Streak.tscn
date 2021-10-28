@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://misc/streak.png" type="Texture" id=1]
+[ext_resource path="res://misc/Streak.gd" type="Script" id=2]
+
+[node name="Streak" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.0654907, -9.77345 )
+rect = Rect2( 0, 0, 800, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

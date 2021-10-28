@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemies/die.tres" type="Animation" id=1]
+[ext_resource path="res://enemies/Meteor.gd" type="Script" id=2]
+[ext_resource path="res://artwork/Meteor3.png" type="Texture" id=3]
+
+[node name="MeteorC" type="Area2D" groups=[
+"meteors",
+]]
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
+collision_layer = 32
+collision_mask = 512
+script = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 47.5751, -12.2663, 42.8183, 1.70688, 46.3859, 10.6259, 34.4938, 27.8694, 24.9802, 29.9505, 24.6829, 37.6804, 0.601425, 48.0859, -10.9933, 41.248, -20.507, 48.9779, -40.7235, 43.0318, -54.994, -0.968842, -43.1019, -12.8609, -43.9938, -27.4287, -24.9665, -47.6452, -7.72302, -46.1587, -2.6689, -49.429, 17.5476, -42.8884, 24.3856, -31.8882, 34.4938, -28.0233, 34.1965, -21.78 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/die = ExtResource( 1 )
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Parts"]
+position = Vector2( 0.203454, -0.62219 )
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Meteor_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

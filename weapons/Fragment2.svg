@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-99,-146)">
+        <g id="Fill">
+        </g>
+        <g id="Outline">
+        </g>
+        <g id="Filled" transform="matrix(1,0,0,1,72,0)">
+            <g id="Fill1" serif:id="Fill">
+            </g>
+            <g transform="matrix(0.884615,0,0,0.903226,-75.0385,7.19355)">
+                <path d="M125.522,181.911L145.261,175.821L143,166.411L125.522,181.911Z" style="fill:white;"/>
+            </g>
+            <g transform="matrix(0.884615,0,0,0.903226,-78.5769,1.69355)">
+                <path d="M147,172.5L125,172.5L129.522,188L147,172.5Z" style="fill:rgb(163,163,163);"/>
+            </g>
+        </g>
+    </g>
+</svg>

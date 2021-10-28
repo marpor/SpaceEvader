@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemies/die.tres" type="Animation" id=1]
+[ext_resource path="res://enemies/Meteor.gd" type="Script" id=2]
+[ext_resource path="res://SimpleSpace/Retina/meteor_squareDetailedSmall.png" type="Texture" id=3]
+
+[node name="MeteorD" type="Area2D" groups=[
+"meteors",
+]]
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
+collision_layer = 32
+collision_mask = 512
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.333, 0.333 )
+polygon = PoolVector2Array( 48.7277, -25.0106, 48.8701, -0.812881, 24.3372, 47.3001, -0.0992432, 47.0132, -47.3997, 22.9096, -47.3537, -1.38451, -23.2961, -49.6881, 3.13995, -49.2106 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/die = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Meteor_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

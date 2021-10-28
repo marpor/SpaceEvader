@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://misc/Life.tscn" type="PackedScene" id=1]
+[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=4]
+
+[sub_resource type="Curve2D" id=1]
+bake_interval = 1.0
+_data = {
+"points": PoolVector2Array( -32.4256, -0.994496, 32.4256, 0.994496, 150.485, 210.71, -111.071, -31.6856, 111.071, 31.6856, 407.196, 153.48, -96.8921, 1.30215, 96.8921, -1.30215, 589.549, 209.409, -32.0846, 0.120558, 32.0846, -0.120558, 759.509, 171.69 )
+}
+
+[node name="Map2" type="Node2D" groups=[
+"maps",
+]]
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Life" parent="Map" instance=ExtResource( 1 )]
+position = Vector2( 1944, 2256 )
+
+[node name="Goal" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 3400, 2080 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -136, 1024 )
+scale = Vector2( 4.51871, 6.15063 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 150.485, 210.71 )
+rotation = -0.065824
+scale = Vector2( 0.222599, 0.159157 )
