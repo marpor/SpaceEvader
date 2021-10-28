@@ -1,11 +1,7 @@
-extends Area2D
-
-var fragment = preload("res://enemies/Fragment.tscn")
+extends "res://Breakable.gd"
 
 var life = 1
 var SPEED = 100
-
-var fragmentTextures = []
 
 var palette1 = [
 	Color("ee6055"),
@@ -36,7 +32,6 @@ func _ready():
 	life = 0
 	for part in parts:
 		part.modulate = color
-#		fragmentTextures.append(part.texture)
 
 		life += 1
 
@@ -44,12 +39,7 @@ func shot(_body):
 	life -= 1
 	if (life == 0):
 		Global.score += 25
-		$CollisionPolygon2D.set_deferred("disabled", true)
-		visible = false
-#		call_deferred("queue_free")
-		yield(get_tree().create_timer(0.1), "timeout")
-		queue_free()
-
+		removeMe()
 
 	var source = _body
 	if not source:
@@ -60,30 +50,7 @@ func shot(_body):
 		var part = parts.pop_back()
 		$Parts.remove_child(part)
 
-		var ang = Global.randSpread(35)
-
-		var s = fragment.instance()
-		var sprite = s.get_node("Sprite")
-		sprite.texture = part.texture
-		sprite.modulate = part.modulate
-		sprite.scale = part.scale
-		part.queue_free()
-
-		s.scale = self.scale
-
-		var parent = get_node("/root/Main")
-		parent.add_child(s)
-
-		s.speed *= rand_range(0.5, 0.9)
-		s.dir = source.dir
-		s.position = source.position
-		s.rotate(deg2rad(ang))
-		s.dir = s.dir.rotated(deg2rad(ang))
-		s.angular_velocity = rand_range(-4, 4)
-		s.visible = true
-
-		s.sourceObject = self
-
+		call_deferred("loosePart", part, source)
 
 func _process(delta):
 	if not Global.alive:
@@ -100,4 +67,4 @@ func _process(delta):
 	position += dir * delta * speed
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	removeMe()

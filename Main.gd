@@ -29,18 +29,10 @@ func pickWeighted(arr):
 			return v[1]
 	assert(0) # shouldn't get here!
 
-var enemyFragmentTextures = [
-	preload("res://artwork/Enemy1A.png"),
-	preload("res://artwork/Enemy1B.png"),
-	preload("res://artwork/Enemy1C.png"),
-	preload("res://artwork/Enemy1D.png"),
-]
 var shot = preload("res://weapons/Shot.tscn")
 
 var streak = preload("res://misc/Streak.tscn")
 var streaks = []
-
-var fragment = preload("res://enemies/Fragment.tscn")
 
 var life = preload("res://misc/Life.tscn")
 
@@ -237,36 +229,6 @@ func _unhandled_input(event):
 		if event.pressed:
 			shoot()
 
-func addShot(source, target):
-	if Global.instanceCount > 100:
-		# Don't add more instances to avoid hitting exponential slowdown
-		return
-
-	if not target:
-		return
-
-	for tex in target.fragmentTextures:
-		var ang = Global.randSpread(35)
-
-		var s = fragment.instance()
-		s.get_node("Sprite").texture = tex
-		self.add_child(s)
-
-		s.speed *= rand_range(0.5, 0.9)
-		s.dir = source.dir
-		s.position = source.position
-		s.rotate(deg2rad(ang))
-		s.dir = s.dir.rotated(deg2rad(ang))
-		s.angular_velocity = rand_range(-4, 4)
-		s.modulate = target.modulate
-#		s.scale = target.get_node("CollisionPolygon2D").scale
-		s.scale = target.scale
-
-		s.connect("shot", self, "_on_shot")
-
-func _on_shot(source, target):
-	addShot(source, target)
-
 func shoot():
 	if not Global.alive:
 		return
@@ -275,7 +237,6 @@ func shoot():
 
 	var s = shot.instance()
 	self.add_child(s)
-	s.connect("shot", self, "_on_shot")
 
 func _on_MeteorTimer_timeout():
 	if not Global.moving:

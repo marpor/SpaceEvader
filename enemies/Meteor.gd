@@ -1,12 +1,10 @@
-extends Area2D
+extends "res://Breakable.gd"
 
 var life = 1
 var linear_velocity = Vector2.LEFT
 var angular_velocity = 0
 
 var SPEED = 150
-
-var fragmentTextures = []
 
 var palette1 = [
 	Color("D8C9BE"), # lt brownish
@@ -35,9 +33,6 @@ var palette = [
 onready var parts = $Parts.get_children()
 
 func _ready():
-	for part in parts:
-		fragmentTextures.append(part.texture)
-
 	var ang = Global.randSpread(5)
 
 	position = Global.randStartPos()
@@ -52,20 +47,25 @@ func _ready():
 	# Random color tint
 	modulate = palette[randi()%palette.size()]
 
-
 func _on_VisibilityNotifier2D_screen_exited():
-#	Global.score += 1
-	queue_free()
+	removeMe()
 
 func shot(_body):
+	var source = _body
+	if not source:
+		return
+
+	# loose ALL parts
+	while not parts.empty():
+		var part = parts.pop_back()
+		$Parts.remove_child(part)
+
+		call_deferred("loosePart", part, source)
+
 	life -= 1
 	if (life == 0):
 		Global.score += 1
-		$CollisionPolygon2D.set_deferred("disabled", true)
-#		queue_free()
-#		$AnimationPlayer.play("die")
-		yield(get_tree().create_timer(0.1), "timeout")
-		queue_free()
+		removeMe()
 
 func _process(delta):
 	if not Global.alive:
@@ -77,4 +77,4 @@ func _process(delta):
 func _physics_process(_delta):
 	if (Global.CENTER - position).length() > Global.RADIUS*2:
 		# VisibilityNotifier doesn't always fire
-		_on_VisibilityNotifier2D_screen_exited()
+		removeMe()
