@@ -56,7 +56,6 @@ var MAP_TIME = 30
 var mapT = 0.0
 var health = 1
 
-onready var healthBar = $UI/HUD/HealthBar
 onready var ship = $Ship
 
 # Called when the node enters the scene tree for the first time.
@@ -126,8 +125,6 @@ func menu():
 	updateHighScore()
 
 func health_changed(health):
-	healthBar.update_life(health)
-
 	var shields = health-1
 	for shield in ship.get_node("Shields").get_children():
 		shield.visible = shields > 0

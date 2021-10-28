@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://misc/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/zorque.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Zorque_26px.theme" type="Theme" id=4]
 [ext_resource path="res://Main.gd" type="Script" id=5]
@@ -38,15 +37,6 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
-
-[node name="HealthBar" parent="UI/HUD" instance=ExtResource( 2 )]
-visible = false
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 128.0
-margin_bottom = 48.0
-rect_scale = Vector2( 0.5, 0.5 )
-size_flags_horizontal = 3
 
 [node name="ScoreLabel" type="Label" parent="UI/HUD"]
 anchor_left = 0.5
