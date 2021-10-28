@@ -16,6 +16,8 @@ var meteors = [
 	[ 10, preload("res://enemies/Meteor5.tscn")],
 ]
 
+# Helper function that picks from an array of [weight, item] distributed
+# according to weight.
 func pickWeighted(arr):
 	var total_weights = 0
 	for v in arr:
@@ -27,7 +29,7 @@ func pickWeighted(arr):
 		wAccumulated += v[0]
 		if wAccumulated > wTarget:
 			return v[1]
-	assert(0) # shouldn't get here!
+	assert(false) # shouldn't get here!
 
 var shot = preload("res://weapons/Shot.tscn")
 
@@ -51,10 +53,11 @@ var maps = [
 
 var mapNo = -1 # -1 ensures nextMap() loads map 0
 var map
-#var MAP_TIME = 1.5 * 60
 var MAP_TIME = 30
 var mapT = 0.0
+
 var health = 1
+var MAX_HEALTH = 3
 
 onready var ship = $Ship
 
@@ -288,7 +291,6 @@ func _process(delta):
 	var path = map.get_node("Path2D/PathFollow2D")
 	var dt = delta * 1.0/MAP_TIME
 	if Global.alive and path.unit_offset >= 1.0 - dt*2:
-#		path.unit_offset = 1.0
 		Global.moving = false
 	else:
 		path.unit_offset = smoothstep(0, MAP_TIME, mapT)
@@ -318,38 +320,34 @@ func _on_Ship_body_entered(_body):
 var protected = false
 func _on_Ship_area_entered(area):
 	area.get_node("CollisionPolygon2D").set_deferred("disabled", true)
-	if area.get_collision_layer_bit(8): # Layer: Goal
-#		area.queue_free()
+	if area.get_collision_layer_bit(8):
+		# Layer: Goal
 		call_deferred("nextMap")
-	elif area.get_collision_layer_bit(7): # Layer: Life
-		if health < 3:
+	elif area.get_collision_layer_bit(7):
+		# Layer: Life
+		if health < MAX_HEALTH:
 			health += 1
 		health_changed(health)
 		area.queue_free()
 	else:
-		# Enememy or meteor
+		# We hit something else - an enemy or meteor
+		# See if it kills us, or if we have a shield?
 		if protected or not die():
-			# What doesn't kill you -- disappears!?
-			# If really dead, we want to keep enemy around so the player can see
-			# what happened on the game over screen...
-
+			# Protect against further damage for a short time
+			# (and effectively use the shield as a weapon)
 			protected = true
 			$ProtectTimer.start()
 
+			# Kill stuff!
 			if area.has_method("shot"):
 				while area.life > 0:
 					area.shot(area)
-#			area.queue_free()
 
 func _on_ProtectTimer_timeout():
 	protected = false
-
-
 
 func _on_FullscreenButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 
 func _on_CreditLink_pressed():
 	OS.shell_open("https://esahubble.org/images/heic2007a/")
-
-

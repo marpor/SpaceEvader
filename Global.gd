@@ -26,9 +26,6 @@ func randStartPos(deg = 55):
 	dir = dir.rotated(deg2rad(randSpread(deg)))
 	return CENTER + RADIUS * -dir
 
-#func randStartPosTop():
-
-
 func speedScale():
 	# Add inital speed every 3 minutes
 	return 1 + Global.t/(3*60)
