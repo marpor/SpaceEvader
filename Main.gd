@@ -339,7 +339,7 @@ func _on_Ship_body_entered(_body):
 	# Meteors use bodies
 	die()
 
-var protected = false
+var protectedTime = 0.0
 func _on_Ship_area_entered(area):
 	area.get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	if area.get_collision_layer_bit(8):
@@ -354,19 +354,15 @@ func _on_Ship_area_entered(area):
 	else:
 		# We hit something else - an enemy or meteor
 		# See if it kills us, or if we have a shield?
-		if protected or not die():
+		if protectedTime > 0.0 or not die():
 			# Protect against further damage for a short time
 			# (and effectively use the shield as a weapon)
-			protected = true
-			$ProtectTimer.start()
+			protectedTime = .5
 
 			# Kill stuff!
 			if area.has_method("shot"):
 				while area.life > 0:
 					area.shot(area)
-
-func _on_ProtectTimer_timeout():
-	protected = false
 
 func _on_FullscreenButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
