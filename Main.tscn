@@ -199,7 +199,7 @@ margin_right = 532.0
 margin_bottom = 14.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "Version 0.10 - Copyright 2021 marpor"
+text = "Version 0.11 - Copyright 2021 marpor"
 underline = 2
 __meta__ = {
 "_edit_use_anchors_": false
