@@ -65,6 +65,7 @@ var mapT = 0.0
 var health = 1
 
 onready var healthBar = $UI/HUD/HealthBar
+onready var ship = $Ship
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -107,7 +108,7 @@ func nextMap():
 	clear()
 
 func menu():
-	$Ship.hide()
+	ship.hide()
 
 	$UI/HUD.hide()
 	$UI/StartMenu.show()
@@ -160,7 +161,7 @@ func die():
 	return true
 
 func start():
-	$Ship.show()
+	ship.show()
 
 	$UI/HUD.show()
 	$UI/StartMenu.hide()
@@ -307,8 +308,8 @@ func _process(delta):
 	Global.player_pos.x = clamp(Global.player_pos.x, 0, Global.W)
 	Global.player_pos.y = clamp(Global.player_pos.y, 0, Global.H)
 
-	$Ship.position = Global.player_pos
-#	$Ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
+	ship.position = Global.player_pos
+#	ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
 	if not Global.moving:
 		return
