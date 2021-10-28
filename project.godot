@@ -19,7 +19,6 @@ config/windows_native_icon="res://artwork/Icon.ico"
 [autoload]
 
 Global="*res://Global.gd"
-TouchHelper="*res://TouchHelper.gd"
 
 [display]
 

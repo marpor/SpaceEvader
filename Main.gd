@@ -63,8 +63,6 @@ onready var ship = $Ship
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	TouchHelper.connect("TouchStateEvent", self, "_on_touch_event")
-
 	onResize()
 
 	for n in 32:
