@@ -16,6 +16,8 @@ var instanceCount = 0
 
 var rng = RandomNumberGenerator.new()
 
+var speedOverride = 0.0
+
 func randSpread(spread = 35):
 	# Use standard deviation of 2.0 to get ~95% of results inside spread
 	return rng.randfn(0.0, 1/2.0) * spread

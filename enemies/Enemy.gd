@@ -51,6 +51,8 @@ func _process(delta):
 	if not Global.alive:
 		return
 
+	delta *= Global.speedOverride
+
 	var p0 = position
 	var p1 = Global.player_pos
 	var d = p1-p0

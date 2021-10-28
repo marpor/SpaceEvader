@@ -66,6 +66,8 @@ func _process(delta):
 	if not Global.alive:
 		return
 
+	delta *= Global.speedOverride
+
 	rotation += delta * angular_velocity
 	position += delta * linear_velocity
 

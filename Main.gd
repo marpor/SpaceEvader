@@ -226,6 +226,9 @@ func _unhandled_input(event):
 
 	elif event is InputEventMouseMotion:
 		Global.player_pos += event.relative * 1.5
+		Global.speedOverride += .2
+		if Global.speedOverride > 1.0:
+			Global.speedOverride = 1.0
 
 	elif event is InputEventMouseButton:
 		if event.pressed:
@@ -250,12 +253,16 @@ func shoot():
 func _on_MeteorTimer_timeout():
 	if not Global.moving:
 		return
+	if Global.speedOverride <= 0.0:
+		return
 
 	var met = pickWeighted(meteors).instance()
 	self.add_child(met)
 
 func _on_EnemyTimer_timeout():
 	if not Global.moving:
+		return
+	if Global.speedOverride <= 0.0:
 		return
 
 	var e = pickWeighted(enemies).instance()
@@ -264,6 +271,8 @@ func _on_EnemyTimer_timeout():
 func _on_LifeTimer_timeout():
 	return # not used - fixed in maps instead
 	if not Global.moving:
+		return
+	if Global.speedOverride <= 0.0:
 		return
 
 	var background = map.get_node("Map")
@@ -281,8 +290,21 @@ func _process(delta):
 	ship.position = Global.player_pos
 #	ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
+	if protectedTime > 0.0:
+		protectedTime -= delta
+		# blink ship
+		ship.visible = fmod(protectedTime, .2*protectedTime) > .1*protectedTime
+	else:
+		ship.visible = true
+
+	Global.speedOverride -= delta*5
+	if Global.speedOverride < 0.0:
+		Global.speedOverride = 0.0
+
 	if not Global.moving:
 		return
+
+	delta *= Global.speedOverride
 
 	Global.t += delta
 	mapT += delta

@@ -20,6 +20,9 @@ func _exit_tree():
 func _process(delta):
 	if not Global.alive:
 		return
+
+	delta *= Global.speedOverride
+
 	position += dir * speed * delta
 	rotation += delta * angular_velocity
 
