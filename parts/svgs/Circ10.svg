@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Circ10">
+        <g>
+            <path d="M0,96L0,0C70,0 128,56 128,128L32,128L31.999,127.793C31.889,110.296 17.704,96.111 0.207,96.001L0,96Z" style="fill:#fefffe;"/>
+        </g>
+        <path d="M0,32L-0,0C72,0 128,56 127.997,127.173L128,128L96,128C96,75.016 52.984,32 0,32Z" style="fill:#d8d8d8;"/>
+    </g>
+</svg>
