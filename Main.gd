@@ -4,8 +4,12 @@ var enemies = [
 	[ 50, preload("res://enemies/Enemy1.tscn")],
 	[ 25, preload("res://enemies/Enemy2.tscn")],
 	[ 15, preload("res://enemies/Enemy3.tscn")],
-	[ 10, preload("res://enemies/Boss1.tscn")],
+	[  2, preload("res://enemies/Boss1.tscn")],
 	[  5, preload("res://enemies/Boss2.tscn")],
+	[  2, preload("res://enemies/Boss3.tscn")],
+	[  2, preload("res://enemies/Boss4.tscn")],
+	[  2, preload("res://enemies/Boss5.tscn")],
+	[  6, preload("res://enemies/Boss6.tscn")],
 ]
 
 var meteors = [
@@ -253,8 +257,9 @@ func _unhandled_input(event):
 		get_tree().quit()
 
 	elif event is InputEventMouseMotion:
-		Global.player_pos += event.relative
-		Global.speedOverride = inc_clamp(Global.speedOverride, .2, SPEED_MAX)
+		var rel = event.relative * 1.5
+		Global.player_pos += rel
+		Global.speedOverride = inc_clamp(Global.speedOverride, .1, SPEED_MAX)
 
 	elif event is InputEventMouseButton:
 		if touchingIndex > 0:
@@ -267,8 +272,9 @@ func _unhandled_input(event):
 
 	elif event is InputEventScreenDrag:
 		# touch movement
-		Global.player_pos += event.relative * 1.5
-		Global.speedOverride = inc_clamp(Global.speedOverride, .2, SPEED_MAX)
+		var rel = event.relative * 1.5
+		Global.player_pos += rel
+		Global.speedOverride = inc_clamp(Global.speedOverride, .1, SPEED_MAX)
 
 	elif event is InputEventScreenTouch:
 		# At least one finger is already touching the screen
@@ -325,7 +331,7 @@ func _process(delta):
 	ship.position = Global.player_pos
 #	ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
-	Global.speedOverride = dec_clamp(Global.speedOverride, delta*5, SPEED_MIN)
+	Global.speedOverride = dec_clamp(Global.speedOverride, delta*3, SPEED_MIN)
 
 	if not Global.moving:
 		return
