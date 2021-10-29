@@ -31,6 +31,18 @@ func pickWeighted(arr):
 			return v[1]
 	assert(false) # shouldn't get here!
 
+func inc_clamp(var val, var increment, var maxVal):
+	val += increment
+	if val >= maxVal:
+		return maxVal
+	return val
+
+func dec_clamp(var val, var increment, var minVal):
+	val -= increment
+	if val <= minVal:
+		return minVal
+	return val
+
 var shot = preload("res://weapons/Shot.tscn")
 
 var streak = preload("res://misc/Streak.tscn")
@@ -58,6 +70,9 @@ var mapT = 0.0
 
 var health = 1
 var MAX_HEALTH = 3
+
+var SPEED_MIN = 0.00
+var SPEED_MAX = 1.00
 
 onready var ship = $Ship
 
@@ -237,9 +252,7 @@ func _unhandled_input(event):
 
 	elif event is InputEventMouseMotion:
 		Global.player_pos += event.relative
-		Global.speedOverride += .2
-		if Global.speedOverride > 1.0:
-			Global.speedOverride = 1.0
+		Global.speedOverride = inc_clamp(Global.speedOverride, .2, SPEED_MAX)
 
 	elif event is InputEventMouseButton:
 		if touchingIndex > 0:
@@ -253,9 +266,7 @@ func _unhandled_input(event):
 	elif event is InputEventScreenDrag:
 		# touch movement
 		Global.player_pos += event.relative * 1.5
-		Global.speedOverride += .2
-		if Global.speedOverride > 1.0:
-			Global.speedOverride = 1.0
+		Global.speedOverride = inc_clamp(Global.speedOverride, .2, SPEED_MAX)
 
 	elif event is InputEventScreenTouch:
 		# At least one finger is already touching the screen
@@ -312,9 +323,7 @@ func _process(delta):
 	ship.position = Global.player_pos
 #	ship.rotation = Global.DIR.angle() - Vector2.UP.angle()
 
-	Global.speedOverride -= delta*5
-	if Global.speedOverride < 0.0:
-		Global.speedOverride = 0.0
+	Global.speedOverride = dec_clamp(Global.speedOverride, delta*5, SPEED_MIN)
 
 	if not Global.moving:
 		return
