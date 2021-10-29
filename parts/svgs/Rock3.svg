@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Rock3">
+        <path d="M34.909,-0L2.182,24L0,67.636L32.727,96L69.818,89.455L96,52.364L76.364,15.273L34.909,-0Z" style="fill:#cdcdcd;"/>
+        <path d="M28.395,18.895L76.364,15.273L34.909,0L28.395,18.895ZM20.331,10.691L0,67.636L2.182,24L20.331,10.691ZM68.898,76.375L51.459,52.364L30.761,52.527L26.85,81.536L68.898,76.375Z" style="fill-opacity:0.15;"/>
+    </g>
+</svg>

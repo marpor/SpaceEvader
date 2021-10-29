@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://enemies/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://parts/Wing21.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Wing03.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Skel51.tscn" type="PackedScene" id=4]
+[ext_resource path="res://parts/Eye1B.tscn" type="PackedScene" id=5]
+[ext_resource path="res://parts/Wing12.tscn" type="PackedScene" id=6]
+[ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=7]
+[ext_resource path="res://parts/Claw02.tscn" type="PackedScene" id=8]
+[ext_resource path="res://parts/Feat30.tscn" type="PackedScene" id=9]
+[ext_resource path="res://parts/Wing11.tscn" type="PackedScene" id=10]
+[ext_resource path="res://parts/Feat20.tscn" type="PackedScene" id=11]
+
+[node name="Boss4" type="Area2D" groups=[
+"enemies",
+]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( -32, -32, -16, -16, -10, -13, 0, -23, 10, -13, 16, -16, 32, -32, 48, -24, 24, 0, 32, 10, 28, 22, 24, 10, 18, 6, 16, 8, 0, 16, -16, 8, -18, 6, -24, 10, -28, 22, -32, 10, -24, 0, -48, -24 )
+
+[node name="Skel50" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -40 )
+rotation = -3.14159
+
+[node name="Skel51" parent="." instance=ExtResource( 4 )]
+
+[node name="Claw02" parent="." instance=ExtResource( 8 )]
+position = Vector2( 90, 40 )
+
+[node name="Claw03" parent="." instance=ExtResource( 8 )]
+position = Vector2( -94, 40 )
+FlipH = true
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="Wing15" parent="Parts" instance=ExtResource( 10 )]
+position = Vector2( -32, 47 )
+collision_layer = 64
+collision_mask = 512
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Wing12" parent="Parts" instance=ExtResource( 6 )]
+position = Vector2( 32, -32 )
+Colored = true
+
+[node name="Wing11" parent="Parts" instance=ExtResource( 10 )]
+position = Vector2( 32, 47 )
+Colored = true
+Darkened = true
+
+[node name="Wing14" parent="Parts" instance=ExtResource( 6 )]
+position = Vector2( -32, -32 )
+Colored = true
+FlipH = true
+
+[node name="Feat20" parent="Parts" instance=ExtResource( 11 )]
+position = Vector2( 0, 16 )
+
+[node name="Wing06" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( -96, -48 )
+Colored = true
+FlipH = true
+
+[node name="Wing21" parent="Parts" instance=ExtResource( 2 )]
+position = Vector2( 96, -0.999985 )
+Colored = true
+Darkened = true
+
+[node name="Wing05" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( 96, -48 )
+Colored = true
+
+[node name="Feat30" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( 136, -80 )
+rotation = -1.309
+FlipH = true
+
+[node name="Eye1B2" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 83, -48 )
+
+[node name="Wing24" parent="Parts" instance=ExtResource( 2 )]
+position = Vector2( -96, -0.999985 )
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Feat31" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( -128, -80 )
+rotation = 1.309
+
+[node name="Eye1B" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( -88, -48 )

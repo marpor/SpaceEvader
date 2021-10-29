@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://parts/Claw01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://parts/Feat31.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Feat21.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Eye1B.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/Enemy.gd" type="Script" id=8]
+[ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=11]
+
+[node name="Boss6" type="Area2D" groups=[
+"enemies",
+]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( -32, -32, -16, -16, -10, -13, 0, -23, 10, -13, 16, -16, 32, -32, 48, -24, 24, 0, 32, 10, 28, 22, 24, 10, 18, 6, 16, 8, 0, 16, -16, 8, -18, 6, -24, 10, -28, 22, -32, 10, -24, 0, -48, -24 )
+
+[node name="Skel50" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 16 )
+
+[node name="Skel51" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, -48 )
+rotation = -3.14159
+
+[node name="Claw01" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 64.0001 )
+
+[node name="Claw07" parent="." instance=ExtResource( 1 )]
+position = Vector2( 84, 16.0001 )
+rotation = -0.523598
+
+[node name="Claw09" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, -16 )
+rotation = -1.0472
+
+[node name="Claw04" parent="." instance=ExtResource( 1 )]
+position = Vector2( -64, 64.0001 )
+FlipH = true
+
+[node name="Claw05" parent="." instance=ExtResource( 1 )]
+position = Vector2( -96, -15.9999 )
+rotation = 1.0472
+FlipH = true
+
+[node name="Claw06" parent="." instance=ExtResource( 1 )]
+position = Vector2( -84, 16 )
+rotation = 0.523598
+FlipH = true
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2( 0, 6.10352e-05 )
+
+[node name="Feat21" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( -32, -52 )
+Colored = true
+
+[node name="Feat22" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( 32, -52 )
+Colored = true
+
+[node name="Eye1B2" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 44, 12 )
+rotation = -2.87979
+
+[node name="Eye1B" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( -48, 12 )
+rotation = -3.40339
+
+[node name="Feat32" parent="Parts" instance=ExtResource( 2 )]
+position = Vector2( 0, -36 )

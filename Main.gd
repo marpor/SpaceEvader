@@ -230,7 +230,7 @@ func _on_touch_event(event, state):
 			if event.pressed:
 				shoot()
 
-var touchingIndex = 0 # Index of first finger touching screen 
+var touchingIndex = 0 # Index of first finger touching screen
 func _input(event):
 	if event is InputEventScreenTouch:
 		# At least one finger is already touching the screen
@@ -238,10 +238,12 @@ func _input(event):
 			if not event.pressed:
 				# Initial finger released again -> block initial shoot
 				if touchingIndex == event.index:
+					# slight delay here to avoid having the emulated mouse click fire
+#					yield(get_tree().create_timer(0.1), "timeout")
 					touchingIndex = 0
-		else:
-			touchingIndex = event.index
-			get_tree().set_input_as_handled()
+#		else:
+#			touchingIndex = event.index
+#			get_tree().set_input_as_handled()
 
 func _unhandled_input(event):
 	if event.is_action_released("toggle_fullscreen"):
@@ -257,7 +259,7 @@ func _unhandled_input(event):
 	elif event is InputEventMouseButton:
 		if touchingIndex > 0:
 			return # skip when touching
-		if event.pressed:
+		if not event.pressed:
 			shoot()
 
 	elif event.is_action_pressed("shoot"):
