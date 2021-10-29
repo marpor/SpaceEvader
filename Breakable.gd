@@ -12,6 +12,8 @@ func loosePart(part, source):
 
 	# Replace sprite with that from part
 	var sprite = s.get_node("Sprite")
+	if not "texture" in part:
+		part = part.get_node("sprite")
 	sprite.texture = part.texture
 	sprite.modulate = part.modulate
 	sprite.scale = part.scale

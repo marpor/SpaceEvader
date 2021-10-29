@@ -27,11 +27,12 @@ func _ready():
 #	modulate = Color.from_hsv(rand_range(0,1), .5, .75)
 	var color = palette[randi()%palette.size()]
 
-	scale = Vector2(0.75, 0.75)
+	scale *= Vector2(0.75, 0.75)
 
 	life = 0
 	for part in parts:
-		part.modulate = color
+		if "texture" in part:
+			part.modulate = color
 
 		life += 1
 
