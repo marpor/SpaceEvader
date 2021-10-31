@@ -17,7 +17,7 @@ def doFile(fname):
   w = x1-x0
   h = y1-y0
   
-  polstr = ",".join([str(c) for c in [x0,y0, x1,y0, x1,y1, x0,y1]])
+  polstr = ", ".join([str(c) for c in [x0,y0, x1,y0, x1,y1, x0,y1]])
   posstr = "%d, %d" %(-w/2, -h/2)
   print(name, polstr)
 
