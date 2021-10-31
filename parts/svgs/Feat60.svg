@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 64 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Feat60">
+        <path d="M16,0L0,22.857L32,80L64,22.857L48,0" style="fill:#cecece;"/>
+        <path d="M12,6.857L40,11.429L50,25.143L46,54.857L64,22.857L50,0L16,0" style="fill-opacity:0.1;"/>
+        <path d="M32,80L24,41.143L2,20.571L0,22.857L32,80Z" style="fill:#fff;fill-opacity:0.4;"/>
+    </g>
+</svg>
