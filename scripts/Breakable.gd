@@ -1,12 +1,14 @@
+# Base class for Enemy and Meteor
+# Can break into fragments acting as shots
 extends Area2D
 
-var fragment = preload("res://weapons/Shot.tscn")
+var fragment = preload("res://misc/Shot.tscn")
 
 func _ready():
 	pass
 
 func loosePart(part, source):
-	var ang = Global.randSpread(35)
+	var ang = Helpers.randSpread(35)
 
 	var s = fragment.instance()
 
@@ -20,7 +22,7 @@ func loosePart(part, source):
 
 	s.scale = self.scale
 
-	var parent = get_node("/root/Main")
+	var parent = get_node("/root")
 	parent.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
 
 	s.speed *= rand_range(0.5, 0.9)

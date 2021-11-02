@@ -1,6 +1,8 @@
 tool
 extends Area2D
 
+var color = Color.white
+
 export(bool) var Colored = false setget set_colored
 func set_colored(val):
 	Colored = val
@@ -12,9 +14,10 @@ func set_darkened(val):
 	updateModulate()
 
 func updateModulate():
-	var mod = Color.white
+	var mod = color
 	if Colored:
-		mod = Color.from_hsv(.3, .5, 1.0)
+		if mod == Color.white:
+			mod = Color.from_hsv(.3, .5, 1.0)
 	if Darkened:
 		mod.v *= 0.85
 	$sprite.modulate = mod

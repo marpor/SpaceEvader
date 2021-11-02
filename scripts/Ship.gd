@@ -1,0 +1,175 @@
+extends Area2D
+
+var protectedTime = 0.0
+
+var health = 1
+var MAX_HEALTH = 3
+
+var can_move = true
+var can_shoot = true
+
+var SENSITIVITY_TOUCH = 1.0
+var SENSITIVITY_MOUSE = 1.0
+
+var SPEED_MIN = 0.00
+var SPEED_MAX = 1.00
+
+func _ready():
+	pass
+
+func _enter_tree():
+	Global.ship = self
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _exit_tree():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Global.ship = null
+
+var touchingIndex = 0 # Index of first finger touching screen
+var using_touch = false # Used ot skip mouse events when using touch
+var distanceTouched = 0.0 # Used to check if initial touch was intended as a shot
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		# At least one finger is already touching the screen
+		if touchingIndex > 0:
+			if not event.pressed:
+				# Initial finger released again -> block initial shoot
+				if touchingIndex == event.index:
+					touchingIndex = 0
+
+		# Starting new touch move
+		else:
+			if can_move:
+				distanceTouched = 0.0
+				touchingIndex = event.index
+				get_tree().set_input_as_handled()
+
+func _unhandled_input(event):
+	# Capture/un-capture mouse
+	if event.is_action_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			get_tree().quit()
+	elif event.is_action_pressed("click"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			using_touch = false # clear - in case user switched from touch to mouse
+			get_tree().set_input_as_handled()
+
+	# Only move player when mouse is captured and NOT using touch
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !using_touch:
+		if can_move and event is InputEventMouseMotion:
+			var rel = event.relative * SENSITIVITY_MOUSE
+			move(rel)
+
+		elif event is InputEventMouseButton:
+			if event.pressed:
+				shoot()
+
+		elif event.is_action_pressed("click"):
+			shoot()
+
+	if event is InputEventScreenDrag:
+		# touch movement
+		using_touch = true
+		if can_move and touchingIndex == event.index:
+			var rel = event.relative * SENSITIVITY_TOUCH
+			distanceTouched += rel.length()
+			move(rel)
+
+	elif event is InputEventScreenTouch:
+		print(event.as_text())
+		# At least one finger is already touching the screen
+		if touchingIndex > 0:
+			if event.pressed:
+				shoot()
+		# ... or first finger not used to actually move
+		elif distanceTouched < 10.0:
+			shoot()
+
+func _process(delta):
+	if not is_alive():
+		return
+
+	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, delta*2, SPEED_MIN)
+
+	position.x = clamp(position.x, 0, Global.W)
+	position.y = clamp(position.y, 0, Global.H)
+
+	position = position
+#	rotation = Global.DIR.angle() - Vector2.UP.angle()
+
+	if protectedTime > 0.0:
+		protectedTime -= delta * Global.speedOverride
+		# blink ship
+		$Parts.visible = fmod(protectedTime, .2*protectedTime) > .1*protectedTime
+	else:
+		$Parts.visible = true
+
+func _on_Ship_area_entered(area):
+	area.get_node("CollisionPolygon2D").set_deferred("disabled", true)
+	if area.get_collision_layer_bit(8):
+		# Layer: Goal
+		Game.call_deferred("nextMap")
+	elif area.get_collision_layer_bit(7):
+		# Layer: Life
+		if health < MAX_HEALTH:
+			health += 1
+		health_changed(health)
+		area.queue_free()
+	else:
+		# We hit something else - an enemy or meteor
+		# See if it kills us, or if we have a shield?
+		if protectedTime > 0.0 or not die():
+			# Protect against further damage for a short time
+			# (and effectively use the shield as a weapon)
+			protectedTime = .5
+
+			# Kill stuff!
+			if area.has_method("shot"):
+				while area.life > 0:
+					area.shot(area)
+
+func move(relative):
+	if not is_alive():
+		return
+	position += relative
+	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, .1, SPEED_MAX)
+
+func is_alive():
+	return health > 0
+
+func die():
+	if not is_alive():
+		return true
+
+	health -= 1
+	health_changed(health)
+
+	if health > 0:
+		return false # not dead yet!
+
+	Game.call_deferred("game_over")
+	return true
+
+var ShotScene = preload("res://misc/Shot.tscn")
+func shoot():
+	if not can_shoot:
+		return
+	if not is_alive():
+		return
+	if not Maps.currentMap:
+		return
+
+	Global.score -= 10
+
+	var s = ShotScene.instance()
+	Maps.currentMap.add_child(s)
+
+func health_changed(health):
+	var shields = health-1
+	for shield in get_node("Shields").get_children():
+		shield.visible = shields > 0
+		shields -= 1

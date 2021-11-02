@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=2]
+[ext_resource path="res://scripts/MenuMap.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "leave"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Map:modulate:r")
@@ -60,18 +61,19 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 bake_interval = 1.0
 _data = {
 "points": PoolVector2Array( -60.3664, 114.834, 60.3664, -114.834, 203.616, 195.067, -12.9937, -265.946, 12.9937, 265.946, 762.055, 318.144, 107.834, -55.5888, -107.834, 55.5888, 447.979, 349.129, 114.906, 25.0079, -114.906, -25.0079, 252.206, 466.809, -40.6188, 75.8985, 40.6188, -75.8985, 203.469, 195.179 )
 }
 
-[node name="menu" type="Node2D" groups=[
+[node name="MenuMap" type="Node2D" groups=[
 "maps",
 ]]
+script = ExtResource( 3 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 1 )]
-anims/leave = SubResource( 2 )
+anims/leave = SubResource( 1 )
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -86,7 +88,7 @@ __meta__ = {
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -176, -297.467 )
 scale = Vector2( 4.54365, 5.53776 )
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 203.616, 195.067 )

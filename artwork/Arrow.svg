@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 384 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1024,-640)">
+        <g id="HeartFill">
+        </g>
+        <g id="HeartOutline">
+        </g>
+        <g id="Heart">
+        </g>
+        <g id="Joystick">
+        </g>
+        <g id="Portal">
+        </g>
+        <g id="Palette">
+        </g>
+        <g id="Rocks">
+        </g>
+        <g id="Meteor1">
+        </g>
+        <g id="Meteor2">
+        </g>
+        <g id="Meteor3">
+        </g>
+        <g id="Enemy1">
+        </g>
+        <g id="Enemy2">
+        </g>
+        <g id="Boss2">
+        </g>
+        <g id="Enemy3">
+        </g>
+        <g id="Boss1">
+        </g>
+        <g id="Icon">
+        </g>
+        <g id="Ship">
+        </g>
+        <g id="Ship1" transform="matrix(1,0,0,1,575,692.095)">
+            <g transform="matrix(1,0,0,1,-575,-692.095)">
+                <g id="Guides">
+                    <path d="M896,675.156L793.594,828.765L896,796.763C896,796.763 998.406,828.765 998.406,828.765L896,675.156Z" style="fill:none;stroke:rgb(179,125,108);stroke-opacity:0.33;stroke-width:0.17px;"/>
+                </g>
+            </g>
+            <g id="Ship1A">
+            </g>
+            <g id="Ship1B">
+            </g>
+            <g id="Ship1C">
+            </g>
+            <g id="Ship1D">
+            </g>
+            <g id="Ship1E">
+            </g>
+            <g id="Ship1F">
+            </g>
+            <g id="Ship1Shield1">
+            </g>
+            <g id="Ship1Shield11" serif:id="Ship1Shield1">
+            </g>
+            <g id="Ship1Shield12" serif:id="Ship1Shield1">
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-128,256)">
+            <g id="Layer1">
+                <path d="M1216,576L1344,416L1472,576L1408,576L1408,736L1280,736L1280,576" style="fill:white;"/>
+            </g>
+        </g>
+        <g id="Shield">
+        </g>
+        <g id="Shot">
+        </g>
+    </g>
+</svg>

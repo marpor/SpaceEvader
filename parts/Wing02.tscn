@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://parts/svgs/Wing02.svg" type="Texture" id=1]
-[ext_resource path="res://parts/Part.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Part.gd" type="Script" id=2]
 
 [node name="Wing02" type="Area2D"]
 script = ExtResource( 2 )
@@ -13,3 +13,4 @@ texture = ExtResource( 1 )
 visible = false
 position = Vector2( -16, -32 )
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 64, 0, 64 )
+disabled = false

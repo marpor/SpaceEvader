@@ -1,4 +1,4 @@
-extends "res://Breakable.gd"
+extends "res://scripts/Breakable.gd"
 
 var life = 1
 var linear_velocity = Vector2.LEFT
@@ -33,7 +33,7 @@ var palette = [
 onready var parts = $Parts.get_children()
 
 func _ready():
-	var ang = Global.randSpread(5)
+	var ang = Helpers.randSpread(5)
 
 	position = Global.randStartPos()
 	var dir = -Global.DIR.rotated(deg2rad(ang))
@@ -63,7 +63,7 @@ func shot(source):
 		removeMe()
 
 func _process(delta):
-	if not Global.alive:
+	if not Global.is_alive():
 		return
 
 	delta *= Global.speedOverride

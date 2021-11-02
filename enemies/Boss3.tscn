@@ -8,7 +8,7 @@
 [ext_resource path="res://parts/Claw03.tscn" type="PackedScene" id=6]
 [ext_resource path="res://parts/Wing12.tscn" type="PackedScene" id=7]
 [ext_resource path="res://parts/Wing30.tscn" type="PackedScene" id=8]
-[ext_resource path="res://enemies/Enemy.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=9]
 
 [node name="Boss3" type="Area2D" groups=[
 "enemies",

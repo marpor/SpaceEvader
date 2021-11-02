@@ -4,7 +4,7 @@
 [ext_resource path="res://parts/Feat31.tscn" type="PackedScene" id=2]
 [ext_resource path="res://parts/Feat21.tscn" type="PackedScene" id=3]
 [ext_resource path="res://parts/Eye1B.tscn" type="PackedScene" id=5]
-[ext_resource path="res://enemies/Enemy.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=8]
 [ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=11]
 
 [node name="Boss6" type="Area2D" groups=[

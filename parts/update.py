@@ -22,11 +22,14 @@ def doFile(fname):
   print(name, polstr)
 
   of = open(name + ".tscn", "w")
-  of.write("""\
+
+  useArea2D = True # testing if Area2D/Node2D makes a performance difference. Doesn't look significant.
+  if useArea2D:
+    of.write("""\
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://parts/svgs/{name}.svg" type="Texture" id=1]
-[ext_resource path="res://parts/Part.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Part.gd" type="Script" id=2]
 
 [node name="{name}" type="Area2D"]
 script = ExtResource( 2 )
@@ -38,7 +41,22 @@ texture = ExtResource( 1 )
 visible = false
 position = Vector2( {posstr} )
 polygon = PoolVector2Array( {polstr} )
+disabled = false
 """.format(**locals()))
+  else:
+    of.write("""\
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://parts/svgs/{name}.svg" type="Texture" id=1]
+[ext_resource path="res://scripts/Part.gd" type="Script" id=2]
+
+[node name="{name}" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+""".format(**locals()))
+
 
 if 0:
   doFile("svgs/Feat32.svg")

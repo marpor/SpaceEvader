@@ -10,7 +10,7 @@ func _ready():
 	#dir = Global.DIR
 	dir = Vector2.RIGHT
 	rotate(dir.angle() - Vector2.UP.angle())
-	var ship_tip = Global.player_pos + 30 * dir
+	var ship_tip = Global.get_player_position() + 30 * dir
 	position = ship_tip
 	z_index = 5
 
@@ -18,7 +18,7 @@ func _exit_tree():
 	Global.instanceCount-=1
 
 func _process(delta):
-	if not Global.alive:
+	if not Global.is_alive():
 		return
 
 	delta *= Global.speedOverride

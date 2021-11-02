@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1408,-384)">
+        <g id="HeartFill">
+        </g>
+        <g id="HeartOutline">
+        </g>
+        <g id="Heart">
+        </g>
+        <g id="Joystick">
+        </g>
+        <g id="Portal">
+        </g>
+        <g id="Palette">
+        </g>
+        <g id="Rocks">
+        </g>
+        <g id="Meteor1">
+        </g>
+        <g id="Meteor2">
+        </g>
+        <g id="Meteor3">
+        </g>
+        <g id="Enemy1">
+        </g>
+        <g id="Enemy2">
+        </g>
+        <g id="Boss2">
+        </g>
+        <g id="Enemy3">
+        </g>
+        <g id="Boss1">
+        </g>
+        <g id="Icon">
+        </g>
+        <g id="Ship">
+        </g>
+        <g id="Ship1">
+        </g>
+        <g id="Layer1">
+            <g transform="matrix(1,0,0,0.71875,16,144)">
+                <path d="M1504,513L1576,436.87L1576,480L1616,480L1616,544L1576,544L1576,587.13L1504,513Z" style="fill:white;"/>
+            </g>
+            <path d="M1568,566L1568,608C1568,608 1436.77,607.725 1440,608C1443.23,608.275 1440,416 1440,416L1568,416L1568,458L1544,475.52L1544,440L1464,440L1464,584L1544,584L1544,549.02L1568,566Z" style="fill:white;"/>
+        </g>
+        <g id="Shield">
+        </g>
+        <g id="Shot">
+        </g>
+    </g>
+</svg>
