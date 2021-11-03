@@ -38,13 +38,6 @@ script = ExtResource( 4 )
 [node name="Ship" parent="." instance=ExtResource( 1 )]
 position = Vector2( 61, 289 )
 
-[node name="MeteorTimer" type="Timer" parent="."]
-wait_time = 0.3
-autostart = true
-
-[node name="EnemyTimer" type="Timer" parent="."]
-autostart = true
-
 [node name="Streaks" parent="." instance=ExtResource( 5 )]
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -325,8 +318,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="timeout" from="MeteorTimer" to="." method="_on_MeteorTimer_timeout"]
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
 [connection signal="pressed" from="UI/FreezeMenu/PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="UI/FreezeMenu/Hints/CloseHints" to="." method="_on_CloseHints_pressed"]
 [connection signal="pressed" from="UI/Options/RetryButton" to="." method="_on_RetryButton_pressed"]

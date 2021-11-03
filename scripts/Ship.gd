@@ -20,6 +20,7 @@ func _ready():
 func _enter_tree():
 	Global.ship = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	health_changed(health)
 
 func _exit_tree():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

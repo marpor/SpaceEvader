@@ -12,32 +12,6 @@ func _physics_process(_delta):
 		onResize()
 		updateScore()
 
-func _on_MeteorTimer_timeout():
-	if Global.speedOverride <= 0.0:
-		return
-	if not Maps.currentMap:
-		return
-	if not Global.is_alive():
-		return
-
-	var met = Meteors.makeInstance()
-	Maps.currentMap.add_child(met)
-
-func _on_EnemyTimer_timeout():
-	if not Maps.currentMap.moving:
-		return
-	if Global.speedOverride <= 0.0:
-		return
-	if not Maps.currentMap:
-		return
-	if not Global.is_alive():
-		return
-
-	var e = Enemies.makeInstance()
-	e.position = Global.randStartPos(35)
-
-	Maps.currentMap.add_child(e)
-
 func onResize():
 	Global.W = get_viewport_rect().size.x
 	Global.H = get_viewport_rect().size.y
