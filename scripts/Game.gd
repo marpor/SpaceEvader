@@ -2,15 +2,21 @@
 extends Node2D
 
 var mainMenu = null
+onready var monitor = $Monitor
 
 func _ready():
 	randomize()
+#	monitor.os_time_per_frame()
 
 func _physics_process(_delta):
 	if Engine.get_physics_frames() % 30 == 0:
 		# Every 30th frame ~ 2 times per second
 		onResize()
 		updateScore()
+
+#	if Engine.get_physics_frames() % 120 == 0:
+#		print("Orphans:")
+#		print_stray_nodes()
 
 func onResize():
 	Global.W = get_viewport_rect().size.x

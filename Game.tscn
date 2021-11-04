@@ -318,6 +318,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Monitor" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
 [connection signal="pressed" from="UI/FreezeMenu/PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="UI/FreezeMenu/Hints/CloseHints" to="." method="_on_CloseHints_pressed"]
 [connection signal="pressed" from="UI/Options/RetryButton" to="." method="_on_RetryButton_pressed"]
