@@ -3,41 +3,82 @@
 extends Area2D
 
 var fragment = preload("res://misc/Shot.tscn")
+onready var parent = get_node("/root")
 
 func _ready():
 	pass
 
-func loosePart(part, source):
-	var ang = Helpers.randSpread(35)
-
-	var s = fragment.instance()
-
-	# Replace sprite with that from part
-	var sprite = s.get_node("Sprite")
-	if not "texture" in part:
-		part = part.get_node("sprite")
-	sprite.texture = part.texture
-	sprite.modulate = part.modulate
-	sprite.scale = part.scale
-
+func looseIt(s, source):
 	s.scale = self.scale
-
-	var parent = get_node("/root")
-	parent.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
 
 	s.speed *= rand_range(0.5, 0.9)
 	if "dir" in source:
 		s.dir = source.dir
 	else:
 		s.dir = Vector2.RIGHT
-	s.position = source.position
 
+	var ang = Helpers.randSpread(35)
 	s.rotate(deg2rad(ang))
 	s.dir = s.dir.rotated(deg2rad(ang))
 	s.angular_velocity = rand_range(-4, 4)
 	s.visible = true
 
 	s.sourceObject = self
+
+func looseSpritePart(sprite, source):
+	# For enemies built with sprites
+	var s = fragment.instance()
+
+	# Replace sprite with that from part
+	var newSprite = s.get_node("Sprite")
+	newSprite.texture = sprite.texture
+	newSprite.modulate = sprite.modulate
+	newSprite.scale = sprite.scale
+
+	# Remove old part
+	var old_parent = sprite.get_parent()
+	old_parent.remove_child(sprite)
+	sprite.free()
+
+	parent.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
+	s.position = source.position
+	looseIt(s, source)
+
+func loosePart(part, source):
+	var s = part
+
+	if s is Sprite:
+		looseSpritePart(part, source)
+		return
+
+	# For enemies built with parts (Area2D)
+
+#	part.free()
+	var old_parent = part.get_parent()
+	var pos = part.global_position
+	var rot = part.global_rotation
+#	part.owner = parent
+	old_parent.remove_child(part)
+#	parent.add_child(part)
+	#part.free()
+
+	s.arm()
+#	s.script = preload("res://scripts/Shot.gd")
+
+	Maps.currentMap.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
+
+	s.position = pos
+	s.rotation = rot
+	looseIt(s, source)
+
+func shot(source):
+	# Override in derived classes
+	pass
+
+func collided_with_ship(source):
+	# Explode when colliding with ship (that didn't die from the collision)
+	while self.life > 0:
+		self.shot(source)
 
 func removeMe():
 	$CollisionPolygon2D.set_deferred("disabled", true)

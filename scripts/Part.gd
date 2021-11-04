@@ -1,5 +1,6 @@
 tool
-extends Area2D
+#extends Area2D
+extends "res://scripts/Shot.gd"
 
 var color = Color.white
 
@@ -36,3 +37,6 @@ export(int) var ScaleFactor = 4 setget set_scale
 func set_scale(val):
 	ScaleFactor = val
 	$sprite.scale = Vector2(1.0/val, 1.0/val)
+
+func _init():
+	self.attached = true

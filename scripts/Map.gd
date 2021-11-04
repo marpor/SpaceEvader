@@ -1,6 +1,5 @@
 extends Node2D
 
-var MAP_TIME = 30
 var mapT = 0.0
 
 var map = self
@@ -12,6 +11,10 @@ var enemy_timeout = ENEMY_DELAY
 
 export var METEOR_DELAY = 0.300
 var meteor_timeout = METEOR_DELAY
+
+export(int) var MAP_TIME = 30 # 0 for infinite map
+
+var ROTATION_SPEED = -3
 
 func _enter_tree():
 	Maps.currentMap = map
@@ -26,21 +29,28 @@ func _process(delta):
 	delta *= Global.speedOverride
 
 	Global.t += delta
-	mapT += delta * Global.speedScale()
 
-	# Move PathFollow in map
-	var path = map.get_node("Path2D/PathFollow2D")
-	var dt = delta * 1.0/MAP_TIME
-	if Global.is_alive() and path.unit_offset >= 1.0 - dt*2:
-		moving = false
+	if MAP_TIME == 0:
+		# Infinite map
+		background.rotation_degrees += ROTATION_SPEED * delta
+		Global.DIR = Vector2.RIGHT
 	else:
-		path.unit_offset = smoothstep(0, MAP_TIME, mapT)
+		# Map with goal
+		mapT += delta * Global.speedScale()
 
-	# Move background along path
-	background.position = -path.global_position + Global.CENTER
+		# Move PathFollow in map
+		var path = map.get_node("Path2D/PathFollow2D")
+		var dt = delta * 1.0/MAP_TIME
+		if Global.is_alive() and path.unit_offset >= 1.0 - dt*2:
+			moving = false
+		else:
+			path.unit_offset = smoothstep(0, MAP_TIME, mapT)
 
-	# Rotate DIR along path tangent
-	Global.DIR = Vector2.RIGHT.rotated(path.global_rotation)
+		# Move background along path
+		background.position = -path.global_position + Global.CENTER
+
+		# Rotate DIR along path tangent
+		Global.DIR = Vector2.RIGHT.rotated(path.global_rotation)
 
 func _physics_process(delta):
 	if not Global.is_alive():

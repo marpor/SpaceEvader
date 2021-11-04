@@ -5,20 +5,20 @@ var menuMap = preload("res://maps/MenuMap.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Game.mainMenu = self
+	if OS.window_fullscreen:
+		# If fullscreen at start it means we're on a device that only does fullscreen
+		$UI/StartMenu/CenterContainer/HBoxContainer/FullscreenButton.hide()
+
+	Game.load_highscore()
 	menu()
 
 func menu():
 	$UI/StartMenu.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	Game.changeMap(menuMap.instance())
 	Game.hideHUD()
 	Global.ship.visible = false
 
-	updateHighScore()
-
-func died():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	updateHighScore()
 
 func start():

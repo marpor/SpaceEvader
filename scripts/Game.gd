@@ -32,7 +32,6 @@ func hideHUD():
 
 func start():
 	clear()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$UI/HUD.show()
 	$UI/GameOver.hide()
 
@@ -45,9 +44,12 @@ func start():
 	Maps.mapNo = -1
 	Game.nextMap()
 
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func game_over():
 	if Global.score > Global.HIGHSCORE:
 		Global.HIGHSCORE = Global.score
+		save_highscore()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	hideHUD()
@@ -65,6 +67,8 @@ func changeMap(scene):
 			Maps.currentMap.get_node("AnimationPlayer").play("leave")
 		else:
 			Maps.currentMap.queue_free()
+
+	Global.ship.reset_position()
 
 	Maps.currentMap = scene
 	$Map.add_child(scene)
@@ -98,3 +102,18 @@ func _on_PauseButton_pressed():
 
 func _on_CloseHints_pressed():
 	$UI/FreezeMenu/Hints.queue_free()
+
+func save_highscore():
+	var config = ConfigFile.new()
+
+	config.set_value("normal", "highscore", Global.HIGHSCORE)
+
+	config.save("user://highscores.cfg")
+
+func load_highscore():
+	var config = ConfigFile.new()
+	var err = config.load("user://highscores.cfg")
+	if err != OK:
+		return
+
+	Global.HIGHSCORE = int(config.get_value("normal", "highscore"))

@@ -54,8 +54,8 @@ func shot(source):
 	# loose ALL parts
 	while not parts.empty():
 		var part = parts.pop_back()
-		$Parts.remove_child(part)
-		call_deferred("loosePart", part, source)
+#		call_deferred("looseSprite", part, source)
+		looseSpritePart(part, source)
 
 	life -= 1
 	if (life == 0):

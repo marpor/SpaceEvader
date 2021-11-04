@@ -8,7 +8,10 @@ var MAX_HEALTH = 3
 var can_move = true
 var can_shoot = true
 
-var SENSITIVITY_TOUCH = 1.0
+# Time of last move
+var last_move_ticks = 0.0
+
+var SENSITIVITY_TOUCH = 1.5
 var SENSITIVITY_MOUSE = 1.0
 
 var SPEED_MIN = 0.00
@@ -19,25 +22,23 @@ func _ready():
 
 func _enter_tree():
 	Global.ship = self
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	health_changed(health)
 
 func _exit_tree():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Global.ship = null
 
-var touchingIndex = 0 # Index of first finger touching screen
+var touchingIndex = -1 # Index of first finger touching screen
 var using_touch = false # Used ot skip mouse events when using touch
 var distanceTouched = 0.0 # Used to check if initial touch was intended as a shot
 
 func _input(event):
 	if event is InputEventScreenTouch:
 		# At least one finger is already touching the screen
-		if touchingIndex > 0:
+		if touchingIndex >= 0:
 			if not event.pressed:
 				# Initial finger released again -> block initial shoot
 				if touchingIndex == event.index:
-					touchingIndex = 0
+					touchingIndex = -1
 
 		# Starting new touch move
 		else:
@@ -79,16 +80,18 @@ func _unhandled_input(event):
 			var rel = event.relative * SENSITIVITY_TOUCH
 			distanceTouched += rel.length()
 			move(rel)
+	elif event is InputEventPanGesture:
+		pass
 
 	elif event is InputEventScreenTouch:
-		print(event.as_text())
 		# At least one finger is already touching the screen
-		if touchingIndex > 0:
+		if touchingIndex >= 0:
 			if event.pressed:
 				shoot()
 		# ... or first finger not used to actually move
 		elif distanceTouched < 10.0:
 			shoot()
+
 
 func _process(delta):
 	if not is_alive():
@@ -128,12 +131,10 @@ func _on_Ship_area_entered(area):
 			# (and effectively use the shield as a weapon)
 			protectedTime = .5
 
-			# Kill stuff!
-			if area.has_method("shot"):
-				while area.life > 0:
-					area.shot(area)
+			area.call_deferred("collided_with_ship", self)
 
 func move(relative):
+	last_move_ticks = OS.get_ticks_msec()
 	if not is_alive():
 		return
 	position += relative
@@ -154,6 +155,9 @@ func die():
 
 	Game.call_deferred("game_over")
 	return true
+
+func reset_position():
+	position = Vector2(Global.W/3, Global.H/2)
 
 var ShotScene = preload("res://misc/Shot.tscn")
 func shoot():

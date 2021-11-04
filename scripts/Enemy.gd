@@ -52,8 +52,8 @@ func shot(source):
 	# loose a part
 	if not parts.empty():
 		var part = parts.pop_back()
-		$Parts.remove_child(part)
-		call_deferred("loosePart", part, source)
+#		call_deferred("loosePart", part, source)
+		loosePart(part, source)
 
 	life -= 1
 	if (life == 0):

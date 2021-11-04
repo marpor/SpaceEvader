@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=4]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=5]
+
+[node name="Map1" type="Node2D" groups=[
+"maps",
+]]
+script = ExtResource( 5 )
+MAP_TIME = 0
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2( 512, 2368 )
+scale = Vector2( 0.921263, 0.921263 )
+
+[node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+scale = Vector2( 1.47654, 1.96872 )
+texture = ExtResource( 4 )
