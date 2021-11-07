@@ -34,6 +34,8 @@ onready var parts = $Parts.get_children()
 
 func _ready():
 	var ang = Helpers.randSpread(5)
+	
+	scale *= .5
 
 	position = Global.randStartPos()
 	var dir = -Global.DIR.rotated(deg2rad(ang))
@@ -45,7 +47,9 @@ func _ready():
 	angular_velocity = rand_range(-2, 2)
 
 	# Random color tint
-	modulate = palette[randi()%palette.size()]
+	var color = palette[randi()%palette.size()]
+	for part in parts:
+		part.modulate = color
 
 func _on_VisibilityNotifier2D_screen_exited():
 	removeMe()
@@ -54,8 +58,8 @@ func shot(source):
 	# loose ALL parts
 	while not parts.empty():
 		var part = parts.pop_back()
-#		call_deferred("looseSprite", part, source)
-		looseSpritePart(part, source)
+#		call_deferred("loosePart", part, source)
+		loosePart(part, source)
 
 	life -= 1
 	if (life == 0):

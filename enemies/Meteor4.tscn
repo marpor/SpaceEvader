@@ -1,52 +1,42 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://enemies/die.tres" type="Animation" id=1]
+[ext_resource path="res://parts/Rock4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Meteor.gd" type="Script" id=2]
-[ext_resource path="res://artwork/Rock5.png" type="Texture" id=3]
-[ext_resource path="res://artwork/Rock4.png" type="Texture" id=4]
-[ext_resource path="res://artwork/Rock3.png" type="Texture" id=5]
-[ext_resource path="res://artwork/Rock2.png" type="Texture" id=7]
+[ext_resource path="res://parts/Rock3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Rock1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://parts/Rock2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://parts/Rock5.tscn" type="PackedScene" id=6]
 
-[node name="MeteorC" type="Area2D" groups=[
-"meteors",
-]]
+[node name="MeteorC" type="Area2D" groups=["meteors"]]
 scale = Vector2( 0.5, 0.5 )
+collision_layer = 32
+collision_mask = 512
 input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
-collision_layer = 32
-collision_mask = 512
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 50, -20, 36, 14, 16, 8, 4, 24, -6, 26, -8, 44, -36, 46, -46, 28, -42, 18, -52, 8, -48, -12, -24, -22, -16, -42, 8, -44, 18, -32, 30, -30 )
+polygon = PoolVector2Array( 100, -36, 72, 34, 30, 26, 18, 42, -4, 48, -2, 80, -42, 108, -88, 104, -96, 44, -76, 26, -90, 2, -74, -42, -38, -46, -32, -62, 16, -90, 48, -58, 54, -60 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/die = ExtResource( 1 )
-
-[node name="Rock2" type="Sprite" parent="."]
-position = Vector2( 28.8451, -11.077 )
-texture = ExtResource( 7 )
+[node name="Rock3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4, 2 )
 
 [node name="Parts" type="Node2D" parent="."]
 
-[node name="Rock5" type="Sprite" parent="Parts"]
-position = Vector2( -26.7504, 25.4911 )
-texture = ExtResource( 3 )
+[node name="Rock1" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -42, 0 )
 
-[node name="Rock8" type="Sprite" parent="Parts"]
-position = Vector2( -11.4193, 9.16367 )
-texture = ExtResource( 5 )
+[node name="Rock2" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( -50, 60 )
 
-[node name="Rock9" type="Sprite" parent="Parts"]
-position = Vector2( -30.6474, -2.12589 )
-texture = ExtResource( 4 )
+[node name="Rock4" parent="Parts" instance=ExtResource( 1 )]
+position = Vector2( 52, -14 )
 
-[node name="Rock10" type="Sprite" parent="Parts"]
-position = Vector2( -2.47623, -26.1592 )
-texture = ExtResource( 3 )
+[node name="Rock6" parent="Parts" instance=ExtResource( 6 )]
+position = Vector2( 6, -44 )
 
 [connection signal="body_entered" from="." to="." method="_on_Meteor_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
