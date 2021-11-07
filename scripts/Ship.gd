@@ -46,6 +46,7 @@ func _input(event):
 				distanceTouched = 0.0
 				touchingIndex = event.index
 				get_tree().set_input_as_handled()
+	
 
 func _unhandled_input(event):
 	# Capture/un-capture mouse
@@ -59,6 +60,9 @@ func _unhandled_input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			using_touch = false # clear - in case user switched from touch to mouse
 			get_tree().set_input_as_handled()
+
+	if event.is_action_pressed("shoot"):
+		shoot()
 
 	# Only move player when mouse is captured and NOT using touch
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !using_touch:
