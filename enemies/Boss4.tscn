@@ -9,9 +9,7 @@
 [ext_resource path="res://parts/Wing22.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=8]
 
-[node name="Boss4" type="Area2D" groups=[
-"enemies",
-]]
+[node name="Boss4" type="Area2D" groups=["enemies"]]
 scale = Vector2( 0.6, 0.6 )
 collision_layer = 64
 collision_mask = 512

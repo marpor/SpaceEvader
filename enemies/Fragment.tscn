@@ -3,14 +3,12 @@
 [ext_resource path="res://artwork/Rock1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Shot.gd" type="Script" id=2]
 
-[node name="Fragment" type="Area2D" groups=[
-"shots",
-]]
+[node name="Fragment" type="Area2D" groups=["shots"]]
+collision_layer = 16
+collision_mask = 96
 input_pickable = false
 linear_damp = 0.0
 angular_damp = 0.0
-collision_layer = 16
-collision_mask = 96
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

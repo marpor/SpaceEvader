@@ -11,9 +11,7 @@
 [ext_resource path="res://parts/Wing21.tscn" type="PackedScene" id=11]
 [ext_resource path="res://parts/Claw03.tscn" type="PackedScene" id=12]
 
-[node name="Boss6" type="Area2D" groups=[
-"enemies",
-]]
+[node name="Boss6" type="Area2D" groups=["enemies"]]
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 64
 collision_mask = 512

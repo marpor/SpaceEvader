@@ -12,9 +12,7 @@
 [ext_resource path="res://parts/Wing11.tscn" type="PackedScene" id=10]
 [ext_resource path="res://parts/Feat20.tscn" type="PackedScene" id=11]
 
-[node name="Boss4" type="Area2D" groups=[
-"enemies",
-]]
+[node name="Boss4" type="Area2D" groups=["enemies"]]
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 64
 collision_mask = 512

@@ -7,9 +7,7 @@
 [ext_resource path="res://parts/Skel33.tscn" type="PackedScene" id=5]
 [ext_resource path="res://parts/Skel12.tscn" type="PackedScene" id=6]
 
-[node name="Boss8" type="Area2D" groups=[
-"enemies",
-]]
+[node name="Boss8" type="Area2D" groups=["enemies"]]
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 64
 collision_mask = 512

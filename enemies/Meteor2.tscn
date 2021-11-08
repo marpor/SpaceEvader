@@ -19,6 +19,7 @@ script = ExtResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 scale = Vector2( 1.1345, 1.1345 )
 polygon = PoolVector2Array( 44.0723, -56.4125, 68.7528, 0, 44.0723, 63.4641, -17.6289, 61.7012, -54.6496, 56.4125, -65.227, -3.52578, -59.9383, -45.8352, -15.866, -70.5156, 7.05156, -70.5156 )
 
