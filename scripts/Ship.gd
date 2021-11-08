@@ -2,6 +2,7 @@ extends Area2D
 
 var protectedTime = 0.0
 
+#export var health = 1 setget health_changed
 var health = 1
 var MAX_HEALTH = 3
 
@@ -175,6 +176,14 @@ func shoot():
 	Global.score -= 10
 
 	var s = ShotScene.instance()
+
+	s.attached = false
+	#s.dir = Global.DIR
+	s.dir = Vector2.RIGHT
+	s.rotate(s.dir.angle() - Vector2.UP.angle())
+	var ship_tip = Global.get_player_position() + 30 * s.dir
+	s.position = ship_tip
+
 	Maps.currentMap.add_child(s)
 
 func health_changed(health):

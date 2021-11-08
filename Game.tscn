@@ -92,6 +92,7 @@ script = ExtResource( 4 )
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 61, 289 )
 
 [node name="Streaks" parent="." instance=ExtResource( 5 )]
@@ -101,6 +102,7 @@ layer = 2
 follow_viewport_enable = true
 
 [node name="HUD" type="Control" parent="UI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -245,8 +247,8 @@ margin_left = -352.0
 margin_top = 80.0
 margin_right = 354.0
 margin_bottom = 146.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.74902, 0.364706, 0.364706, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "GAME OVER!"
 align = 1
 __meta__ = {
@@ -318,8 +320,8 @@ margin_left = -352.0
 margin_top = 80.0
 margin_right = 354.0
 margin_bottom = 146.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.74902, 0.364706, 0.364706, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "GAME OVER!"
 align = 1
 __meta__ = {

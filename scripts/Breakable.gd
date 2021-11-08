@@ -42,6 +42,7 @@ func looseSpritePart(sprite, source):
 
 	parent.add_child(s) # gives error when called during on_area_entered or similar - need call_deferred
 	s.position = source.position
+	s.attached = false
 	looseIt(s, source)
 
 func loosePart(part, source):

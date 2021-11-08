@@ -1,21 +1,16 @@
 extends Area2D
 
 var speed = 500
-var dir
+var dir = Vector2.RIGHT
 var angular_velocity = 0
 var sourceObject = null
-var attached = false
+var attached = true
 
 func _ready():
 	if attached:
 		return
 
 	Global.instanceCount+=1
-	#dir = Global.DIR
-	dir = Vector2.RIGHT
-	rotate(dir.angle() - Vector2.UP.angle())
-	var ship_tip = Global.get_player_position() + 30 * dir
-	position = ship_tip
 	z_index = 5
 
 func _exit_tree():

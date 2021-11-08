@@ -74,6 +74,10 @@ func _physics_process(delta):
 
 func spawn_meteor():
 	var met = Meteors.makeInstance()
+
+	met.scale *= .5
+	met.position = Global.randStartPos()
+
 	Maps.currentMap.add_child(met)
 
 func spawn_enemy():

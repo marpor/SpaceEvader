@@ -35,9 +35,6 @@ onready var parts = $Parts.get_children()
 func _ready():
 	var ang = Helpers.randSpread(5)
 
-	scale *= .5
-
-	position = Global.randStartPos()
 	var dir = -Global.DIR.rotated(deg2rad(ang))
 
 	var speed = SPEED * rand_range(0.7, 1.3) * Global.speedScale()
