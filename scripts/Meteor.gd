@@ -34,7 +34,7 @@ onready var parts = $Parts.get_children()
 
 func _ready():
 	var ang = Helpers.randSpread(5)
-	
+
 	scale *= .5
 
 	position = Global.randStartPos()

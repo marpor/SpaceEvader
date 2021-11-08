@@ -46,7 +46,7 @@ func _input(event):
 				distanceTouched = 0.0
 				touchingIndex = event.index
 				get_tree().set_input_as_handled()
-	
+
 
 func _unhandled_input(event):
 	# Capture/un-capture mouse
