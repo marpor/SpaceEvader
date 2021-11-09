@@ -10,10 +10,22 @@ func _ready():
 
 	Maps.currentMap = self
 
+	$Heic2007a.visible = false
+
 	# Square
 	set_size(120,120)
 	yield(VisualServer, "frame_post_draw")
 	screenshot("res://export/Icon120x120.png",120,120)
+
+	set_size(76,76)
+	yield(VisualServer, "frame_post_draw")
+	screenshot("res://export/Icon76x76.png",76,76)
+
+	set_size(1024,1024)
+	yield(VisualServer, "frame_post_draw")
+	screenshot("res://export/Icon1024x1024.png",1024,1024)
+
+	$Heic2007a.visible = true
 
 	# Landscape
 	set_size(2436,1125)
@@ -27,6 +39,10 @@ func _ready():
 	set_size(2436,1125)
 	yield(VisualServer, "frame_post_draw")
 	screenshot("res://export/iphone_2436x1125.png",2436,1125)
+
+	set_size(1024, 768)
+	yield(VisualServer, "frame_post_draw")
+	screenshot("res://export/ipad_1024x768.png",1024, 768)
 
 	set_size(2048,1536)
 	yield(VisualServer, "frame_post_draw")
@@ -85,5 +101,6 @@ func screenshot(filename, w=0, h=0):
 
 	# Flip it on the y-axis (because it's flipped).
 	img.flip_y()
+	img.crop(w,h)
 
 	img.save_png(filename)
