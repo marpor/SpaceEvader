@@ -67,10 +67,11 @@ _data = {
 "points": PoolVector2Array( -60.3664, 114.834, 60.3664, -114.834, 203.616, 195.067, -12.9937, -265.946, 12.9937, 265.946, 762.055, 318.144, 107.834, -55.5888, -107.834, 55.5888, 447.979, 349.129, 114.906, 25.0079, -114.906, -25.0079, 252.206, 466.809, -40.6188, 75.8985, 40.6188, -75.8985, 203.469, 195.179 )
 }
 
-[node name="MenuMap" type="Node2D" groups=[
-"maps",
-]]
+[node name="MenuMap" type="Node2D" groups=["maps"]]
 script = ExtResource( 3 )
+BackgroundName = "Tapestry of Blazing Starbirth"
+BackgroundCredit = "NASA, ESA, and STScI"
+BackgroundURL = "https://esahubble.org/images/heic2007a/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 1 )]
 anims/leave = SubResource( 1 )

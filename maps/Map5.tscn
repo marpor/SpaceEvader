@@ -12,10 +12,11 @@ _data = {
 "points": PoolVector2Array( -78.0355, -1.61578, 78.0355, 1.61578, 396.21, 405.529, -503.702, 4.37268, 503.702, -4.37268, 1058.19, 494.444, -411.47, 212.292, 411.47, -212.292, 2614.67, 730.089, -169.286, 0.488159, 169.286, -0.488159, 3685.66, 886.479 )
 }
 
-[node name="Map5" type="Node2D" groups=[
-"maps",
-]]
+[node name="Map5" type="Node2D" groups=["maps"]]
 script = ExtResource( 5 )
+BackgroundName = "Hubble mosaic of the majestic Sombrero Galaxy"
+BackgroundCredit = "NASA/ESA and The Hubble Heritage Team (STScI/AURA)"
+BackgroundURL = "https://esahubble.org/images/opo0328a/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 

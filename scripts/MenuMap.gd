@@ -8,6 +8,10 @@ onready var background = $Map
 
 var moving = true
 
+export(String) var BackgroundName = ""
+export(String) var BackgroundCredit = ""
+export(String) var BackgroundURL = ""
+
 func _enter_tree():
 	Maps.currentMap = map
 
