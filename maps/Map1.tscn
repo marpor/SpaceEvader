@@ -22,6 +22,8 @@ _data = {
 script = ExtResource( 6 )
 Enemy1 = ExtResource( 9 )
 Enemy3 = ExtResource( 11 )
+Enemy3Count = 0
+EnemyColor = Color( 0.368627, 0.517647, 0.658824, 1 )
 BackgroundName = "Tapestry of Blazing Starbirth"
 BackgroundCredit = "NASA, ESA, and STScI"
 BackgroundURL = "https://esahubble.org/images/heic2007a/"
@@ -33,7 +35,7 @@ position = Vector2( 0, 3 )
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( 4451, 1882 )
+position = Vector2( 4180, 1775 )
 rotation = 2.9407
 texture = ExtResource( 4 )
 centered = false
@@ -55,7 +57,6 @@ position = Vector2( 1776, 69.0001 )
 rotation = -0.750758
 SPEED = 30
 HUNTS = false
-COLOR = Color( 0.368627, 0.517647, 0.658824, 1 )
 
 [node name="Boss8" parent="Map" instance=ExtResource( 10 )]
 position = Vector2( 912, 85 )
@@ -69,7 +70,6 @@ rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
-COLOR = Color( 0.375, 0.75, 0.39375, 1 )
 
 [node name="Enemy6" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 775, 957 )
@@ -77,7 +77,6 @@ rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
-COLOR = Color( 0.375, 0.75, 0.39375, 1 )
 
 [node name="Enemy7" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 917, 1020 )
@@ -85,7 +84,6 @@ rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
-COLOR = Color( 0.375, 0.75, 0.39375, 1 )
 
 [node name="Enemy8" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 638, 903 )
@@ -93,10 +91,9 @@ rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
-COLOR = Color( 0.375, 0.75, 0.39375, 1 )
 
 [node name="Boss6" parent="Map" instance=ExtResource( 8 )]
-position = Vector2( 1520, 485 )
+position = Vector2( 1520, 528 )
 rotation = 1.76148
 scale = Vector2( 0.3, 0.3 )
 

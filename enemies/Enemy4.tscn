@@ -10,7 +10,7 @@
 [ext_resource path="res://parts/Wing30.tscn" type="PackedScene" id=8]
 
 [node name="Boss6" type="Area2D" groups=["enemies"]]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.4, 0.4 )
 collision_layer = 64
 collision_mask = 512
 script = ExtResource( 7 )

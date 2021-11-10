@@ -1,7 +1,8 @@
 extends "res://scripts/Breakable.gd"
 
-export var SPEED = 100
-export var HUNTS = true
+export(int) var POINTS = 25
+export(int) var SPEED = 100
+export(bool) var HUNTS = true
 export(Color) var COLOR = Color.white
 export(float) var DIRECTION = 0
 export(float) var ANGULAR_VELOCITY = 0
@@ -25,8 +26,12 @@ var palette = [
 	Color("E9FF70"),
 ]
 
+# Color("B34A36") # Orange
+# Color("5E84A8") # Blue
+# Color("A53333") # Red
+
 onready var parts = $Parts.get_children()
-onready var speed = SPEED * rand_range(0.7, 1.3)
+onready var speed = SPEED
 onready var dir = Vector2.DOWN.rotated(rotation + deg2rad(DIRECTION))
 
 func _ready():
@@ -34,6 +39,8 @@ func _ready():
 
 	# Random color tint
 #	modulate = Color.from_hsv(rand_range(0,1), .5, .75)
+	if COLOR == Color.white:
+		COLOR = get_parent().get_parent().get("EnemyColor")
 	if COLOR == Color.white:
 		COLOR = palette[randi()%palette.size()]
 

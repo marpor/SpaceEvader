@@ -47,7 +47,8 @@ Colored = true
 FlipH = true
 
 [node name="Eye3B" parent="Parts" instance=ExtResource( 2 )]
-position = Vector2( 0, 24 )
+position = Vector2( 0, 19 )
+scale = Vector2( 1.5, 1.5 )
 ScaleFactor = 2
 
 [node name="Wing22" parent="Parts" instance=ExtResource( 7 )]

@@ -23,6 +23,8 @@ export(int) var Enemy2Count = 5
 export(PackedScene) var Enemy3 = null
 export(int) var Enemy3Count = 1
 
+export(Color, RGB) var EnemyColor = Color.white
+
 var ROTATION_SPEED = -3
 
 export(String) var BackgroundName = ""
@@ -45,6 +47,8 @@ func _ready():
 		ENEMY_DELAY = float(MAP_TIME) / enemy_count
 	else:
 		ENEMY_DELAY = 0
+	
+	METEOR_DELAY = float(MAP_TIME) / MeteorCount
 
 func _enter_tree():
 	Maps.currentMap = map
@@ -89,10 +93,11 @@ func _physics_process(delta):
 
 	delta *= Global.speedOverride * Global.speedScale()
 
-	meteor_timeout -= delta
-	if meteor_timeout <= 0.0:
-		self.call_deferred("spawn_meteor")
-		meteor_timeout = METEOR_DELAY
+	if METEOR_DELAY > 0:
+		meteor_timeout -= delta
+		if meteor_timeout <= 0.0:
+			self.call_deferred("spawn_meteor")
+			meteor_timeout = METEOR_DELAY
 
 	if not moving:
 		# Stop spawning enemies when we've reached the end of the map
@@ -113,8 +118,12 @@ func spawn_meteor():
 	Maps.currentMap.add_child(met)
 
 func spawn_enemy():
-#	var e = Enemies.makeInstance()
 	var e = Helpers.pickWeighted(enemies).instance()
+
+	# Override color with Map's EnemyColor (from property)
+	# If we don't set this, Enemy gets a random color from the palette
+	if EnemyColor != Color.white:
+		e.COLOR = EnemyColor
 
 	Maps.currentMap.add_child(e)
 
