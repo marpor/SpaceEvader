@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://parts/Feat60.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Feat42.tscn" type="PackedScene" id=4]
+[ext_resource path="res://parts/Feat41.tscn" type="PackedScene" id=5]
+
+[node name="Enemy9" type="Area2D" groups=["enemies"]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -16 )
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( -1, -13, 17.5, -6, 0, 21.5, -17, -6.5 )
+
+[node name="Skel50" parent="." instance=ExtResource( 3 )]
+rotation = 3.14159
+
+[node name="Feat60" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 30 )
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2( 0, 6.10352e-05 )
+
+[node name="Feat43" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 46, -24.0001 )
+rotation = 0.261799
+Colored = true
+Darkened = true
+
+[node name="Feat44" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -46, -24.0001 )
+rotation = -0.261799
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Feat41" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 32, -70.0001 )
+Colored = true
+
+[node name="Feat42" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( -32, -70.0001 )
+Colored = true
+FlipH = true

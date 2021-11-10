@@ -14,9 +14,9 @@ collision_mask = 512
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
+position = Vector2( 0, -6 )
 scale = Vector2( 4, 4 )
-polygon = PoolVector2Array( -2.5, -26, 0, -35, 2.5, -25.5, 22, 1.5, 9, 23.5, 0.5, 12, -9, 23, -22, 1.5 )
+polygon = PoolVector2Array( 8, -13.5, 15.5, -6.5, 22, 19, 18.5, 39.5, 0.5, 12, -18, 38.5, -21.5, 19, -15.5, -7, -8, -14 )
 
 [node name="Claw01" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 78 )

@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=4]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=5]
+[ext_resource path="res://enemies/Enemy8.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/Enemy7.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/Enemy9.tscn" type="PackedScene" id=8]
+[ext_resource path="res://enemies/Boss9.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
@@ -14,6 +18,11 @@ _data = {
 
 [node name="Map3" type="Node2D" groups=["maps"]]
 script = ExtResource( 5 )
+Enemy1 = ExtResource( 7 )
+Enemy1Count = 20
+Enemy2 = ExtResource( 6 )
+Enemy2Count = 10
+Enemy3 = ExtResource( 8 )
 BackgroundName = "Tapestry of Blazing Starbirth"
 BackgroundCredit = "NASA, ESA, and STScI"
 BackgroundURL = "https://esahubble.org/images/heic2007a/"
@@ -24,6 +33,7 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.4, 0.4, 0.4, 1 )
+z_index = -1
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
@@ -38,6 +48,31 @@ position = Vector2( 2704, 1216 )
 
 [node name="Goal" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3712, 888 )
+
+[node name="Enemy9" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 921, 590 )
+rotation = -2.61799
+SPEED = 130
+HUNTS = false
+
+[node name="Enemy7" parent="Map" instance=ExtResource( 7 )]
+position = Vector2( 795, 257 )
+rotation = -0.523598
+HUNTS = false
+
+[node name="Enemy8" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 854, 136 )
+rotation = -0.523598
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy10" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 1662, 336 )
+SPEED = 50
+
+[node name="Enemy11" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 2895, 1228 )
+SPEED = 65
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -134.359, -586 )

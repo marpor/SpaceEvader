@@ -40,7 +40,9 @@ func _ready():
 	# Random color tint
 #	modulate = Color.from_hsv(rand_range(0,1), .5, .75)
 	if COLOR == Color.white:
-		COLOR = get_parent().get_parent().get("EnemyColor")
+		if get_parent() and get_parent().get_parent() and \
+				get_parent().get_parent().get("EnemyColor"):
+			COLOR = get_parent().get_parent().get("EnemyColor")
 	if COLOR == Color.white:
 		COLOR = palette[randi()%palette.size()]
 

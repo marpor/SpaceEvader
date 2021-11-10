@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Feat42.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Feat60.tscn" type="PackedScene" id=4]
+
+[node name="Enemy7" type="Area2D" groups=["enemies"]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( 0, -35, 16, -6, 0, 22, -16, -5.5 )
+
+[node name="Skel50" parent="." instance=ExtResource( 2 )]
+
+[node name="Feat60" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 48 )
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2( 0, 6.10352e-05 )
+
+[node name="Feat42" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( 0, -56.0001 )
+Colored = true

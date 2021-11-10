@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 64 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-672,-400)">
+        <g transform="matrix(1,0,0,1,128,0)">
+            <g id="Enemy2A" transform="matrix(1,0,0,1,-128,240)">
+                <g transform="matrix(1,0,0,1,128,128)">
+                    <path d="M576,110L560.339,91L552.354,112L544,32L558,42.336L562,71L576,88L576,110Z" style="fill:rgb(174,174,174);"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,1280,128)">
+                    <path d="M576,110L560.339,91L552.354,112L544,32L558,42.336L562,71L576,88L576,110Z" style="fill:rgb(174,174,174);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
