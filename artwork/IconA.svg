@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-128)">
+        <g id="HeartFill">
+        </g>
+        <g id="HeartOutline">
+        </g>
+        <g id="Heart">
+        </g>
+        <g id="Joystick">
+        </g>
+        <g id="Portal">
+        </g>
+        <g id="Palette">
+        </g>
+        <g id="Rocks">
+        </g>
+        <g id="Meteor1">
+        </g>
+        <g id="Meteor2">
+        </g>
+        <g id="Meteor3">
+        </g>
+        <g id="Enemy1">
+        </g>
+        <g id="Enemy2">
+        </g>
+        <g id="Boss2">
+        </g>
+        <g id="Enemy3">
+        </g>
+        <g id="Icon" transform="matrix(-6.06016e-17,1.16667,-1.20619,-7.11181e-17,295.588,117.333)">
+            <g transform="matrix(-5.05382e-17,-0.82906,0.857143,-4.30649e-17,-100.571,245.06)">
+                <path d="M15.761,139.718C14.525,140.953 13.956,143.128 14.471,144.797C17,153 29.222,192 29.222,192C29.222,192 17,231 14.471,239.203C13.917,241 14.221,242.742 15.761,244.282C18.478,247 23.286,251.588 23.286,251.588C24.976,253.228 27.582,253.467 29.542,252.16L113.53,196.168C114.876,195.271 115.902,194 116,192C115.902,190 114.876,188.729 113.53,187.832L29.542,131.84C27.582,130.533 24.976,130.772 23.286,132.412C23.286,132.412 18.478,137 15.761,139.718Z"/>
+            </g>
+            <g>
+                <g transform="matrix(0.77638,-8.49891e-17,9.33158e-17,0.750943,-184.255,149.776)">
+                    <path d="M319.76,25L319.76,88.84L373.52,105.64L319.76,25Z" style="fill:rgb(205,205,205);"/>
+                </g>
+                <g transform="matrix(-0.77638,8.49891e-17,9.33158e-17,0.750943,312.255,149.776)">
+                    <path d="M319.76,25L319.76,88.84L373.52,105.64L319.76,25Z" style="fill:white;"/>
+                </g>
+                <g transform="matrix(0.652159,-7.13909e-17,7.83853e-17,0.630792,-520.334,-275.527)">
+                    <path d="M896,780L896,758L941.708,772.562L960,800L896,780Z" style="fill:rgb(167,167,167);"/>
+                </g>
+                <g transform="matrix(-0.652159,7.13909e-17,7.83853e-17,0.630792,648.334,-275.527)">
+                    <path d="M896,780L896,758L941.708,772.562L960,800L896,780Z" style="fill:rgb(202,202,202);"/>
+                </g>
+            </g>
+            <g id="Ship1Shield1" transform="matrix(0.652159,-7.13909e-17,7.83853e-17,0.630792,-145.343,150.265)">
+                <g transform="matrix(1,0,0,1,-575,-692.095)">
+                    <path d="M896,711.211L896.01,696.804L969.602,807.191L957.457,803.396L896,711.211Z" style="fill:rgb(189,157,51);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-575,-692.095)">
+                    <path d="M896,711.211L896.005,703.884L963.53,805.294L957.457,803.396L896,711.211Z" style="fill-opacity:0.15;"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,1217,-692.095)">
+                    <path d="M896,711.211L896.01,696.804L969.602,807.191L957.456,803.396L896,711.211Z" style="fill:rgb(223,201,130);"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,1217,-692.095)">
+                    <path d="M896,711.211L896.005,703.884L963.53,805.294L957.456,803.396L896,711.211Z" style="fill-opacity:0.16;"/>
+                </g>
+            </g>
+        </g>
+        <g id="Ship">
+        </g>
+        <g id="Ship1">
+        </g>
+        <g id="Layer1">
+        </g>
+        <g id="Shield">
+        </g>
+        <g id="Shot">
+        </g>
+    </g>
+</svg>

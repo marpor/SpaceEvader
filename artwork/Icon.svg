@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-128)">
+        <g id="HeartFill">
+        </g>
+        <g id="HeartOutline">
+        </g>
+        <g id="Heart">
+        </g>
+        <g id="Joystick">
+        </g>
+        <g id="Portal">
+        </g>
+        <g id="Palette">
+        </g>
+        <g id="Rocks">
+        </g>
+        <g id="Meteor1">
+        </g>
+        <g id="Meteor2">
+        </g>
+        <g id="Meteor3">
+        </g>
+        <g id="Enemy1">
+        </g>
+        <g id="Enemy2">
+        </g>
+        <g id="Boss2">
+        </g>
+        <g id="Enemy3">
+        </g>
+        <g id="Icon" transform="matrix(-6.06016e-17,1.16667,-1.20619,-7.11181e-17,295.588,117.333)">
+            <g transform="matrix(-5.05382e-17,-0.82906,0.857143,-4.30649e-17,-100.571,245.06)">
+                <path d="M128,160C128,142.339 113.661,128 96,128L32,128C14.339,128 0,142.339 0,160L0,224C0,241.661 14.339,256 32,256L96,256C113.661,256 128,241.661 128,224L128,160Z" style="fill:url(#_Linear1);"/>
+                <clipPath id="_clip2">
+                    <path d="M128,160C128,142.339 113.661,128 96,128L32,128C14.339,128 0,142.339 0,160L0,224C0,241.661 14.339,256 32,256L96,256C113.661,256 128,241.661 128,224L128,160Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <g transform="matrix(0.672032,0.382103,-0.385519,0.678041,102.461,23.8524)">
+                        <g id="Rock5" transform="matrix(0.58403,-0.892573,0.892573,0.58403,-452.486,363.148)">
+                            <g transform="matrix(1,0,0,1,-3,-2)">
+                                <path d="M463,361L483,358L492,334L474,312L451,326.422L447,348L463,361Z" style="fill:white;"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,371,-145)">
+                                <path d="M77,469.422L87.473,468.985L96,465L100,455L77,469.422Z" style="fill-opacity:0.15;"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,371,-145)">
+                                <path d="M100,472L98,483L105,492L109,478L100,472Z" style="fill-opacity:0.15;"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,371,-145)">
+                                <path d="M73,491L84,489L89,504L73,491Z" style="fill-opacity:0.15;"/>
+                            </g>
+                        </g>
+                        <g id="Rock3" transform="matrix(1.03289,-0.266289,0.266289,1.03289,-436.634,-94.7878)">
+                            <g transform="matrix(1,-4.16334e-16,4.16334e-16,1,-1,1)">
+                                <path d="M426,316L411,327L410,347L425,360L442,357L454,340L445,323L426,316Z" style="fill:rgb(205,205,205);"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,393,-139)">
+                                <path d="M29.014,464.66L51,463L32,456L29.014,464.66Z" style="fill-opacity:0.15;"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,393,-139)">
+                                <path d="M25.318,460.9L16,487L17,467L25.318,460.9Z" style="fill-opacity:0.15;"/>
+                            </g>
+                            <g transform="matrix(0.323686,0.946164,-0.946164,0.323686,869.738,154.457)">
+                                <path d="M48,470L35,474L32,483L44,489L48,470Z" style="fill-opacity:0.15;"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g>
+                <g transform="matrix(0.77638,-8.49891e-17,9.33158e-17,0.750943,-184.255,149.776)">
+                    <path d="M319.76,25L319.76,88.84L373.52,105.64L319.76,25Z" style="fill:rgb(205,205,205);"/>
+                </g>
+                <g transform="matrix(-0.77638,8.49891e-17,9.33158e-17,0.750943,312.255,149.776)">
+                    <path d="M319.76,25L319.76,88.84L373.52,105.64L319.76,25Z" style="fill:white;"/>
+                </g>
+                <g transform="matrix(0.652159,-7.13909e-17,7.83853e-17,0.630792,-520.334,-275.527)">
+                    <path d="M896,780L896,758L941.708,772.562L960,800L896,780Z" style="fill:rgb(167,167,167);"/>
+                </g>
+                <g transform="matrix(-0.652159,7.13909e-17,7.83853e-17,0.630792,648.334,-275.527)">
+                    <path d="M896,780L896,758L941.708,772.562L960,800L896,780Z" style="fill:rgb(202,202,202);"/>
+                </g>
+            </g>
+            <g id="Ship1Shield1" transform="matrix(0.652159,-7.13909e-17,7.83853e-17,0.630792,-145.343,150.265)">
+                <g transform="matrix(1,0,0,1,-575,-692.095)">
+                    <path d="M896,711.211L896.01,696.804L969.602,807.191L957.457,803.396L896,711.211Z" style="fill:rgb(189,157,51);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-575,-692.095)">
+                    <path d="M896,711.211L896.005,703.884L963.53,805.294L957.457,803.396L896,711.211Z" style="fill-opacity:0.15;"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,1217,-692.095)">
+                    <path d="M896,711.211L896.01,696.804L969.602,807.191L957.456,803.396L896,711.211Z" style="fill:rgb(223,201,130);"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,1217,-692.095)">
+                    <path d="M896,711.211L896.005,703.884L963.53,805.294L957.456,803.396L896,711.211Z" style="fill-opacity:0.16;"/>
+                </g>
+            </g>
+        </g>
+        <g id="Ship">
+        </g>
+        <g id="Ship1">
+        </g>
+        <g id="Layer1">
+        </g>
+        <g id="Shield">
+        </g>
+        <g id="Shot">
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-28,-179,179,-28,60,288)"><stop offset="0" style="stop-color:black;stop-opacity:1"/><stop offset="0.46" style="stop-color:rgb(6,37,51);stop-opacity:1"/><stop offset="0.61" style="stop-color:rgb(60,84,106);stop-opacity:1"/><stop offset="1" style="stop-color:black;stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
