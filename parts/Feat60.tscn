@@ -13,3 +13,4 @@ texture = ExtResource( 1 )
 visible = false
 position = Vector2( -32, -40 )
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 80, 0, 80 )
+disabled = true

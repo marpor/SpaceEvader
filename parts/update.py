@@ -41,7 +41,7 @@ texture = ExtResource( 1 )
 visible = false
 position = Vector2( {posstr} )
 polygon = PoolVector2Array( {polstr} )
-disabled = false
+disabled = true
 """.format(**locals()))
   else:
     of.write("""\
