@@ -9,9 +9,9 @@ func _ready():
 	pass
 
 func looseIt(s, source):
-	s.scale = self.scale
+	s.scale *= self.scale
 
-	s.speed *= rand_range(0.5, 0.9)
+	s.speed *= rand_range(0.5, 0.9) * Global.speedScale()
 	if "dir" in source:
 		s.dir = source.dir
 	else:

@@ -183,6 +183,7 @@ func shoot():
 	s.rotate(s.dir.angle() - Vector2.UP.angle())
 	var ship_tip = Global.get_player_position() + 30 * s.dir
 	s.position = ship_tip
+	s.speed *= Global.speedScale()
 
 	Maps.currentMap.add_child(s)
 
