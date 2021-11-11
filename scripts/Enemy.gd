@@ -77,7 +77,7 @@ func shot(source):
 
 	life -= 1
 	if (life == 0):
-		Global.score += 25
+		Global.score += POINTS
 		removeMe()
 
 func _process(delta):
