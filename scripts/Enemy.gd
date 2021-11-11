@@ -34,6 +34,21 @@ onready var parts = $Parts.get_children()
 onready var speed = SPEED
 onready var dir = Vector2.DOWN.rotated(rotation + deg2rad(DIRECTION))
 
+func setColorChildren(c, children):
+	if c != Color.white:
+		COLOR = c
+
+		for part in children:
+			if "color" in part:
+				if part.Colored:
+					part.color = COLOR
+					part.updateModulate()
+#			else:
+#				part.modulate = COLOR
+
+			# recurse
+			setColorChildren(c, part.get_children())
+
 func _ready():
 	scale *= Vector2(0.75, 0.75)
 
@@ -46,15 +61,11 @@ func _ready():
 	if COLOR == Color.white:
 		COLOR = palette[randi()%palette.size()]
 
+	setColorChildren(COLOR, parts)
+
+	# Add 1 life per part
 	life = 0
 	for part in parts:
-		if "color" in part:
-			if part.Colored:
-				part.color = COLOR
-				part.updateModulate()
-		else:
-			part.modulate = COLOR
-
 		life += 1
 
 func shot(source):
