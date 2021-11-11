@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Map.gd" type="Script" id=1]
+[ext_resource path="res://misc/Life.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://maps/heic1917a.jpg" type="Texture" id=5]
+
+[sub_resource type="Curve2D" id=1]
+bake_interval = 1.0
+_data = {
+"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 411.223, 476.731, -340.295, -23.3721, 340.295, 23.3721, 1014.66, 670.265, -158.425, -2.69403, 158.425, 2.69403, 1518.21, 812.53 )
+}
+
+[node name="Map4" type="Node2D" groups=["maps"]]
+script = ExtResource( 1 )
+BackgroundName = "Latest Saturn Portrait"
+BackgroundCredit = "NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley)"
+BackgroundURL = "https://esahubble.org/images/heic1917a/"
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 3 )]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.507935, 0.514757, 0.570313, 1 )
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Goal" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 2304, 896 )
+
+[node name="Life" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( 1104, 384 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -58.592, -342.881 )
+scale = Vector2( 1.38755, 1.52472 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 411.223, 476.731 )
+rotation = 0.00125399

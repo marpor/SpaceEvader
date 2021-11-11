@@ -23,6 +23,7 @@ Enemy1Count = 20
 Enemy2 = ExtResource( 6 )
 Enemy2Count = 10
 Enemy3 = ExtResource( 8 )
+Enemy3Count = 3
 BackgroundName = "Tapestry of Blazing Starbirth"
 BackgroundCredit = "NASA, ESA, and STScI"
 BackgroundURL = "https://esahubble.org/images/heic2007a/"
