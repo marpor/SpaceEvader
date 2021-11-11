@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://parts/Wing03.tscn" type="PackedScene" id=1]
 [ext_resource path="res://parts/Eye3B.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://parts/Wing12.tscn" type="PackedScene" id=6]
 [ext_resource path="res://parts/Wing22.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=8]
+[ext_resource path="res://parts/Feat30.tscn" type="PackedScene" id=9]
 
 [node name="Boss4" type="Area2D" groups=["enemies"]]
 scale = Vector2( 0.6, 0.6 )
@@ -35,6 +36,19 @@ position = Vector2( -86, 40 )
 FlipH = true
 
 [node name="Parts" type="Node2D" parent="."]
+
+[node name="Wing05" parent="Parts" instance=ExtResource( 1 )]
+position = Vector2( 31.6667, -106.667 )
+Colored = true
+
+[node name="Wing06" parent="Parts/Wing05" instance=ExtResource( 1 )]
+position = Vector2( -63.3333, -2.28882e-05 )
+Colored = true
+FlipH = true
+
+[node name="Feat30" parent="Parts/Wing05/Wing06" instance=ExtResource( 9 )]
+position = Vector2( 31.6667, 80 )
+FlipV = true
 
 [node name="Wing12" parent="Parts" instance=ExtResource( 6 )]
 position = Vector2( 32, 0 )

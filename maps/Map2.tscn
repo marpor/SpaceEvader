@@ -48,7 +48,7 @@ COLOR = Color( 0.647059, 0.2, 0.2, 1 )
 TURN_RATE = -20.0
 
 [node name="Boss6" parent="Map" instance=ExtResource( 6 )]
-position = Vector2( 2680, 2536 )
+position = Vector2( 2720, 2568 )
 rotation = 2.61799
 SPEED = 200
 HUNTS = false
@@ -56,7 +56,7 @@ COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 10.0
 
 [node name="Boss5" parent="Map" instance=ExtResource( 6 )]
-position = Vector2( 1792, 1656 )
+position = Vector2( 2056, 1696 )
 rotation = 0.523598
 SPEED = 250
 HUNTS = false
@@ -64,7 +64,7 @@ COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 35.0
 
 [node name="Boss7" parent="Map" instance=ExtResource( 6 )]
-position = Vector2( 3568, 1880 )
+position = Vector2( 3440, 1856 )
 rotation = 0.523598
 SPEED = 200
 HUNTS = false

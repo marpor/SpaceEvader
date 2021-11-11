@@ -70,24 +70,24 @@ FlipV = true
 [node name="Feat12" parent="Parts" instance=ExtResource( 8 )]
 position = Vector2( 0, 47.9999 )
 
-[node name="Eye1B" parent="Parts" instance=ExtResource( 3 )]
-position = Vector2( 0, 15.9999 )
+[node name="Eye1B" parent="Parts/Feat12" instance=ExtResource( 3 )]
+position = Vector2( 0, -32 )
 
 [node name="Wing21" parent="Parts" instance=ExtResource( 11 )]
 position = Vector2( -64, -48.0001 )
+
+[node name="Wing22" parent="Parts/Wing21" instance=ExtResource( 11 )]
+position = Vector2( -64, 0 )
+Darkened = true
+FlipV = true
 
 [node name="Wing24" parent="Parts" instance=ExtResource( 11 )]
 position = Vector2( 64, -48.0001 )
 Darkened = true
 FlipV = true
 
-[node name="Wing22" parent="Parts" instance=ExtResource( 11 )]
-position = Vector2( -128, -48.0001 )
-Darkened = true
-FlipV = true
-
-[node name="Wing25" parent="Parts" instance=ExtResource( 11 )]
-position = Vector2( 128, -48.0001 )
+[node name="Wing25" parent="Parts/Wing24" instance=ExtResource( 11 )]
+position = Vector2( 64, 0 )
 
 [node name="Feat32" parent="Parts" instance=ExtResource( 10 )]
 position = Vector2( -192, -32.0001 )

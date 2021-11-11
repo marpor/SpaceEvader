@@ -50,7 +50,6 @@ FlipH = true
 [node name="Feat34" parent="Parts" instance=ExtResource( 6 )]
 position = Vector2( -74, -64.0001 )
 rotation = 2.87979
-scale = Vector2( 1, 1 )
 Darkened = true
 FlipH = true
 

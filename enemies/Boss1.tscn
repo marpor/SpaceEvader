@@ -7,7 +7,6 @@
 [ext_resource path="res://parts/Boss1A.tscn" type="PackedScene" id=5]
 
 [node name="Boss1" type="Area2D" groups=["enemies"]]
-position = Vector2( 0, -133 )
 z_index = 1
 collision_layer = 64
 collision_mask = 512
@@ -17,48 +16,45 @@ angular_damp = 0.0
 script = ExtResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-visible = false
 rect = Rect2( -32, -32, 64, 64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( 63, 46, 35, 24, 0, 48, -35, 24, -61, 45, -46, 16, -98, -17, -98, -68, -81, -64, -75, -91, -67, -60, -15, -40, 0, -59, 16, -40, 65, -59, 73, -93, 81, -63, 98, -68, 97, -19, 47, 16 )
+polygon = PoolVector2Array( 44, 54, 28, 32, 0, 50, -28, 32, -44, 54, -37, 26, -95, -14, -96, -69, 0, -42, 96, -69, 96, -15, 38, 26 )
 
 [node name="Boss1A2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, 132 )
 
 [node name="Parts" type="Node2D" parent="."]
 
 [node name="Wing52" parent="Parts" instance=ExtResource( 2 )]
-position = Vector2( 24, 138 )
+position = Vector2( 24, 2 )
 scale = Vector2( 0.5, 0.5 )
 Colored = true
 Darkened = true
 
 [node name="Wing53" parent="Parts" instance=ExtResource( 2 )]
-position = Vector2( -24, 138 )
+position = Vector2( -24, 2 )
 scale = Vector2( 0.5, 0.5 )
 Colored = true
 FlipH = true
 
 [node name="Wing54" parent="Parts" instance=ExtResource( 4 )]
-position = Vector2( -72, 110 )
+position = Vector2( -72, -26 )
 scale = Vector2( 0.5, 0.5 )
 Colored = true
 Darkened = true
 FlipH = true
 
 [node name="Wing51" parent="Parts" instance=ExtResource( 4 )]
-position = Vector2( 72, 110 )
+position = Vector2( 72, -26 )
 scale = Vector2( 0.5, 0.5 )
 Colored = true
 
 [node name="Eye1A" parent="Parts" instance=ExtResource( 1 )]
-position = Vector2( -24, 146 )
+position = Vector2( -24, 10 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Eye1A2" parent="Parts" instance=ExtResource( 1 )]
-position = Vector2( 24, 146 )
+position = Vector2( 24, 10 )
 scale = Vector2( 0.75, 0.75 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
