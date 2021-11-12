@@ -103,6 +103,10 @@ func _on_PauseButton_pressed():
 func _on_CloseHints_pressed():
 	$UI/FreezeMenu/Hints.queue_free()
 
+func _unhandled_input(event):
+	if event.is_action_released("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+
 func save_highscore():
 	var config = ConfigFile.new()
 

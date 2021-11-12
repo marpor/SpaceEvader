@@ -28,13 +28,6 @@ func start():
 func updateHighScore():
 	$UI/StartMenu/CenterContainer2/HighScoreLabel.text = "HighScore: %d" % Global.HIGHSCORE
 
-func _unhandled_input(event):
-	if event.is_action_released("toggle_fullscreen"):
-		_on_FullscreenButton_pressed()
-
-#	elif event.is_action_released("quit"):
-#		get_tree().quit()
-
 func _on_FullscreenButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 
