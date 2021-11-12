@@ -11,7 +11,7 @@ func _ready():
 		return
 
 	Global.instanceCount+=1
-	z_index = 5
+	z_index += 5
 
 func _exit_tree():
 	if attached:

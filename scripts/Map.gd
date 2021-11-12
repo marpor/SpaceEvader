@@ -47,7 +47,7 @@ func _ready():
 		ENEMY_DELAY = float(MAP_TIME) / enemy_count
 	else:
 		ENEMY_DELAY = 0
-	
+
 	METEOR_DELAY = float(MAP_TIME) / MeteorCount
 
 func _enter_tree():

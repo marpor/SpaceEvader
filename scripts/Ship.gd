@@ -143,7 +143,9 @@ func move(relative):
 	if not is_alive():
 		return
 	position += relative
-	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, .1, SPEED_MAX)
+
+	var inc=.1*relative.length()
+	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, inc, SPEED_MAX)
 
 func is_alive():
 	return health > 0

@@ -78,7 +78,20 @@ func shot(source):
 	life -= 1
 	if (life == 0):
 		Global.score += POINTS
-		removeMe()
+
+		var fadeOut = false
+		if fadeOut:
+			$CollisionPolygon2D.disabled = true
+
+			var tween = Tween.new()
+			var start_color = Color(1.0, 1.0, 1.0, 1.0)
+			var end_color = Color(1.0, 1.0, 1.0, 0.0)
+			add_child(tween)
+			tween.interpolate_property(self, "modulate", start_color, end_color, .5)
+			tween.interpolate_deferred_callback(self, .5, "removeMe")
+			tween.start()
+		else:
+			removeMe()
 
 func _process(delta):
 	if not Global.is_alive():

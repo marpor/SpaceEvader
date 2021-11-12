@@ -46,6 +46,22 @@ func start():
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func restart():
+	clear()
+	$UI/HUD.show()
+	$UI/GameOver.hide()
+
+	Global.t = Global.t - Maps.currentMap.MAP_TIME
+	Global.score = 0
+	Global.ship.health = 1
+	Global.ship.health_changed(Global.ship.health)
+	Global.ship.visible = true
+
+	Maps.mapNo = Maps.mapNo-1
+	Game.nextMap()
+
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func game_over():
 	if Global.score > Global.HIGHSCORE:
 		Global.HIGHSCORE = Global.score
@@ -90,7 +106,7 @@ func clear():
 		e.free()
 
 func _on_RetryButton_pressed():
-	start()
+	restart()
 
 func _on_BackButton_pressed():
 	$UI/GameOver.hide()
