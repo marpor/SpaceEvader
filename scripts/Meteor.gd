@@ -4,7 +4,7 @@ var life = 1
 var linear_velocity = Vector2.LEFT
 var angular_velocity = 0
 
-var SPEED = 150
+export(int) var SPEED = 150
 
 var palette1 = [
 	Color("D8C9BE"), # lt brownish
@@ -73,6 +73,7 @@ func _process(delta):
 	position += delta * linear_velocity
 
 func _physics_process(_delta):
+	return
 	if (Global.CENTER - position).length() > Global.RADIUS*2:
 		# VisibilityNotifier doesn't always fire
 		removeMe()

@@ -1,12 +1,15 @@
 extends Node
 
 var maps = [
+	preload("res://maps/IntroMap.tscn"),
+
 	preload("res://maps/Map1.tscn"),
 	preload("res://maps/Map2.tscn"),
 	preload("res://maps/Map3.tscn"),
 	preload("res://maps/Map4.tscn"),
 	preload("res://maps/Map5.tscn"),
 	preload("res://maps/Map6.tscn"),
+
 #	preload("res://maps/heic1917a.tscn"),
 #	preload("res://maps/heic2007a.tscn"),
 #	preload("res://maps/opo0328a.tscn"),

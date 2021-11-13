@@ -48,7 +48,10 @@ func _ready():
 	else:
 		ENEMY_DELAY = 0
 
-	METEOR_DELAY = float(MAP_TIME) / MeteorCount
+	if MeteorCount > 0:
+		METEOR_DELAY = float(MAP_TIME) / MeteorCount
+	else:
+		METEOR_DELAY = 0
 
 func _enter_tree():
 	Maps.currentMap = map

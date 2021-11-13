@@ -1,0 +1,232 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://misc/Life.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/Meteor2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/Meteor5.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/Meteor1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=7]
+[ext_resource path="res://enemies/Meteor4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Curve2D" id=1]
+bake_interval = 1.0
+_data = {
+"points": PoolVector2Array( -49.0741, 0.451809, 49.0741, -0.451809, 153.663, 198.803, -95.5412, -11.3022, 95.5412, 11.3022, 359.031, 199.902, -47.8011, 0.0490009, 47.8011, -0.0490009, 717.984, 197.3 )
+}
+
+[node name="Map1" type="Node2D" groups=["maps"]]
+script = ExtResource( 10 )
+MeteorCount = 0
+Enemy3Count = 0
+EnemyColor = Color( 0.368627, 0.517647, 0.658824, 1 )
+BackgroundName = "Tapestry of Blazing Starbirth"
+BackgroundCredit = "NASA, ESA, and STScI"
+BackgroundURL = "https://esahubble.org/images/heic2007a/"
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2( 0, 3 )
+
+[node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.67, 0.67, 0.67, 1 )
+position = Vector2( 3867, 2406 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+centered = false
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Map"]
+margin_left = 1064.0
+margin_top = 412.0
+margin_right = 1653.0
+margin_bottom = 624.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 109, 72 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "This is a shield. 
+It will protect you for a short time.
+
+Fly over it to pick it up.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="Map"]
+margin_left = 1479.0
+margin_top = 303.0
+margin_right = 2196.0
+margin_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 109, 72 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Evade the meteors!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 1197, 359 )
+
+[node name="Goal" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3276, 303 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map"]
+margin_left = 166.0
+margin_top = 45.0
+margin_right = 586.0
+margin_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Home[/center]"
+text = "Home"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Map"]
+margin_left = 166.0
+margin_top = 203.0
+margin_right = 666.0
+margin_bottom = 619.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 192, 36 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Welcome, Trainee.
+
+Start moving: Mouse / Drag
+
+When you don't move, time stops!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Map"]
+margin_left = 1952.0
+margin_top = 287.0
+margin_right = 2452.0
+margin_bottom = 488.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 294, 34 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "... or just shoot them!
+
+Click / Spacebar / Tap to shoot."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Map"]
+margin_left = 2534.0
+margin_top = 303.0
+margin_right = 3072.0
+margin_bottom = 409.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 211, 38 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "A shot costs 10 points.
+So don't waste them!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="Map"]
+margin_left = 2944.0
+margin_top = 414.0
+margin_right = 3618.0
+margin_bottom = 579.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 211, 38 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]This is the portal to the next mission.…
+
+Fly in to it![/center]"
+text = "This is the portal to the next mission.…
+
+Fly in to it!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeteorB" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 1766, 195 )
+SPEED = 0
+
+[node name="MeteorB2" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 1784, 619 )
+SPEED = 0
+
+[node name="MeteorC" parent="Map" instance=ExtResource( 5 )]
+position = Vector2( 2270, 45 )
+SPEED = 0
+
+[node name="MeteorA" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1678, 535 )
+SPEED = 0
+
+[node name="MeteorA2" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1937, 132 )
+SPEED = 0
+
+[node name="MeteorC2" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 1845, 451 )
+SPEED = 0
+
+[node name="MeteorB3" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 2438, 122 )
+rotation = -0.523598
+SPEED = 0
+
+[node name="MeteorB4" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 2306, 474 )
+rotation = 0.785397
+SPEED = 0
+
+[node name="MeteorA3" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 2477, 622 )
+rotation = -2.35619
+SPEED = 0
+
+[node name="MeteorC3" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 2415, 330 )
+rotation = 1.57079
+SPEED = 0
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -182.359, -906.522 )
+scale = Vector2( 4.51871, 6.15063 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 153.663, 198.803 )
+rotation = -0.0140861
+scale = Vector2( 0.222599, 0.159157 )
