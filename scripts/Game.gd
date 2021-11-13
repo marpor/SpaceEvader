@@ -30,7 +30,7 @@ func updateScore():
 func hideHUD():
 	$UI/HUD.hide()
 
-func start():
+func start(var mapNo = 0):
 	clear()
 	$UI/HUD.show()
 	$UI/GameOver.hide()
@@ -41,7 +41,7 @@ func start():
 	Global.ship.health_changed(Global.ship.health)
 	Global.ship.visible = true
 
-	Maps.mapNo = -1
+	Maps.mapNo = mapNo-1
 	Game.nextMap()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

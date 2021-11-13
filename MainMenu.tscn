@@ -1,14 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Zorque_26px.theme" type="Theme" id=1]
-[ext_resource path="res://fonts/zorque.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/Main.tres" type="Theme" id=1]
+[ext_resource path="res://Logo.svg" type="Texture" id=2]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 53
-outline_size = 11
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[ext_resource path="res://artwork/Clear.svg" type="Texture" id=5]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 3 )
@@ -17,79 +12,128 @@ script = ExtResource( 3 )
 layer = 2
 follow_viewport_enable = true
 
-[node name="StartMenu" type="VBoxContainer" parent="UI"]
+[node name="StartMenu" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="TextureRect" type="TextureRect" parent="UI/StartMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -300.0
+margin_top = 40.0
+margin_right = 300.0
+margin_bottom = 268.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI/StartMenu"]
-margin_right = 691.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 120 )
-custom_fonts/font = SubResource( 1 )
-text = "Space Evader"
-align = 1
-valign = 1
+[node name="QuitTexButton" type="TextureButton" parent="UI/StartMenu"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -84.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 84.0
+texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="UI/StartMenu"]
-margin_top = 124.0
-margin_right = 691.0
-margin_bottom = 391.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -82.0
+margin_right = 300.0
+margin_bottom = 278.0
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UI/StartMenu/CenterContainer"]
-margin_left = 195.0
-margin_top = 73.0
-margin_right = 495.0
-margin_bottom = 193.0
+margin_left = 140.0
+margin_right = 460.0
+margin_bottom = 360.0
 custom_constants/separation = 10
 
-[node name="StartButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_right = 300.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 300, 70 )
+[node name="TutorialButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_right = 320.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 300, 50 )
 rect_pivot_offset = Vector2( 48.9292, 26.7 )
 theme = ExtResource( 1 )
-text = "Start"
+text = "Tutorial"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullscreenButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_top = 80.0
-margin_right = 300.0
-margin_bottom = 120.0
+[node name="MissionsButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 300, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 1 )
+text = "Missions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChallengesButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_top = 128.0
+margin_right = 320.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 300, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 1 )
+disabled = true
+text = "Challenges"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_top = 192.0
+margin_right = 320.0
+margin_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 300, 40 )
+rect_min_size = Vector2( 300, 50 )
 rect_pivot_offset = Vector2( 48.9292, 26.7 )
 theme = ExtResource( 1 )
-text = "FULLSCREEN (F)"
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer2" type="CenterContainer" parent="UI/StartMenu"]
-margin_top = 395.0
-margin_right = 691.0
-margin_bottom = 662.0
-rect_clip_content = true
-size_flags_vertical = 3
+[node name="QuitButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_top = 256.0
+margin_right = 320.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 300, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HighScoreLabel" type="Label" parent="UI/StartMenu/CenterContainer2"]
-margin_left = 166.0
-margin_top = 117.0
-margin_right = 525.0
-margin_bottom = 149.0
+[node name="HighScoreLabel" type="Label" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+margin_top = 320.0
+margin_right = 320.0
+margin_bottom = 360.0
 theme = ExtResource( 1 )
 text = "High Score: 1000000000"
 align = 1
@@ -98,68 +142,13 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/StartMenu/CenterContainer2"]
-visible = false
-margin_left = 166.0
-margin_top = 63.0
-margin_right = 525.0
-margin_bottom = 203.0
-
-[node name="HighScoreLabel2" type="Label" parent="UI/StartMenu/CenterContainer2/VBoxContainer"]
-margin_right = 359.0
-margin_bottom = 32.0
-theme = ExtResource( 1 )
-text = "High Score: 1000000000"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="HighScoreLabel3" type="Label" parent="UI/StartMenu/CenterContainer2/VBoxContainer"]
-margin_top = 36.0
-margin_right = 359.0
-margin_bottom = 68.0
-theme = ExtResource( 1 )
-text = "High Score: 1000000000"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="HighScoreLabel4" type="Label" parent="UI/StartMenu/CenterContainer2/VBoxContainer"]
-margin_top = 72.0
-margin_right = 359.0
-margin_bottom = 104.0
-theme = ExtResource( 1 )
-text = "High Score: 1000000000"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="HighScoreLabel5" type="Label" parent="UI/StartMenu/CenterContainer2/VBoxContainer"]
-margin_top = 108.0
-margin_right = 359.0
-margin_bottom = 140.0
-theme = ExtResource( 1 )
-text = "High Score: 1000000000"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/StartMenu"]
-margin_top = 666.0
-margin_right = 691.0
-margin_bottom = 680.0
-
-[node name="VersionLink" type="LinkButton" parent="UI/StartMenu/HBoxContainer"]
-margin_right = 239.0
-margin_bottom = 14.0
+[node name="VersionLink" type="LinkButton" parent="UI/StartMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -54.0
+margin_right = 624.0
+margin_bottom = -40.0
 focus_mode = 2
 size_flags_horizontal = 3
 text = "Version 0.12 - Copyright 2021 marpor"
@@ -168,17 +157,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CreditLink" type="LinkButton" parent="UI/StartMenu/HBoxContainer"]
-margin_left = 243.0
-margin_right = 691.0
-margin_bottom = 14.0
+[node name="CreditLink" type="LinkButton" parent="UI/StartMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -38.0
+margin_right = 624.0
+margin_bottom = -24.0
+rect_clip_content = true
 focus_mode = 2
-text = "Background: Tapestry of Blazing Starbirth. Credit: NASA, ESA, and STScI"
+text = "Background credit: NASA, ESA, and STScI"
 underline = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/StartButton" to="." method="start"]
-[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/FullscreenButton" to="." method="_on_FullscreenButton_pressed"]
-[connection signal="pressed" from="UI/StartMenu/HBoxContainer/CreditLink" to="." method="_on_CreditLink_pressed"]
+[node name="FullscreenButton" type="Button" parent="UI/StartMenu"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -281.0
+margin_top = -78.0
+margin_right = -24.0
+margin_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 1 )
+text = "Fullscreen (F)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/MissionsButton" to="." method="_on_MissionsButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/ChallengesButton" to="." method="_on_ChallengesButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/OptionsButton" to="." method="_on_FullscreenButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CreditLink" to="." method="_on_CreditLink_pressed"]
+[connection signal="pressed" from="UI/StartMenu/FullscreenButton" to="." method="_on_FullscreenButton_pressed"]

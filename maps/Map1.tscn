@@ -42,7 +42,7 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 position = Vector2( 0, 3 )
 
 [node name="Background" type="Sprite" parent="Map"]
-modulate = Color( 0.67, 0.67, 0.67, 1 )
+modulate = Color( 0.670588, 0.670588, 0.670588, 1 )
 position = Vector2( 4387, 1861 )
 rotation = 2.9407
 texture = ExtResource( 4 )

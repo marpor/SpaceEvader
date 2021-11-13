@@ -59,8 +59,8 @@ func screenshot(filename, w=0, h=0):
 
 	# Flip it on the y-axis (because it's flipped).
 	img.flip_y()
-	
-	# Crop - needed for odd sizes (e.g. for w=1125 get_data returns 1126 wide 
+
+	# Crop - needed for odd sizes (e.g. for w=1125 get_data returns 1126 wide
 	img.crop(w,h)
 
 	img.save_png(filename)
