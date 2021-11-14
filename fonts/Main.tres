@@ -1,13 +1,43 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://fonts/ButtonFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/Button_Normal.tres" type="StyleBox" id=2]
 [ext_resource path="res://fonts/Button_Disabled.tres" type="StyleBox" id=3]
 [ext_resource path="res://fonts/Button_Focus.tres" type="StyleBox" id=4]
+[ext_resource path="res://artwork/GrabberHighlighted.svg" type="Texture" id=5]
+[ext_resource path="res://artwork/Grabber.svg" type="Texture" id=6]
+[ext_resource path="res://artwork/GrabberDisabled.svg" type="Texture" id=7]
+[ext_resource path="res://artwork/Tick.svg" type="Texture" id=8]
+[ext_resource path="res://artwork/CheckboxUnchecked.svg" type="Texture" id=9]
+[ext_resource path="res://artwork/CheckboxDisabledUnchecked.svg" type="Texture" id=10]
+[ext_resource path="res://artwork/CheckboxDisabledChecked.svg" type="Texture" id=11]
+[ext_resource path="res://artwork/CheckboxChecked.svg" type="Texture" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+content_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 10.0
+bg_color = Color( 0.8, 0.8, 0.8, 0 )
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [resource]
-Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.2, 0.2, 0.2, 1 )
 Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
@@ -17,4 +47,24 @@ Button/styles/focus = ExtResource( 4 )
 Button/styles/hover = ExtResource( 3 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 4 )
+CheckBox/icons/checked = ExtResource( 12 )
+CheckBox/icons/checked_disabled = ExtResource( 11 )
+CheckBox/icons/unchecked = ExtResource( 9 )
+CheckBox/icons/unchecked_disabled = ExtResource( 10 )
+CheckBox/styles/disabled = SubResource( 3 )
+CheckBox/styles/focus = SubResource( 3 )
+CheckBox/styles/hover = SubResource( 3 )
+CheckBox/styles/hover_pressed = SubResource( 3 )
+CheckBox/styles/normal = SubResource( 3 )
+CheckBox/styles/pressed = SubResource( 3 )
+Control/colors/font_color = Color( 1, 1, 1, 1 )
+Control/constants/separation = 12
+Control/fonts/font = ExtResource( 1 )
+HSlider/icons/grabber = ExtResource( 6 )
+HSlider/icons/grabber_disabled = ExtResource( 7 )
+HSlider/icons/grabber_highlight = ExtResource( 5 )
+HSlider/icons/tick = ExtResource( 8 )
+HSlider/styles/grabber_area = SubResource( 3 )
+HSlider/styles/grabber_area_highlight = SubResource( 1 )
+HSlider/styles/slider = SubResource( 2 )
 Label/fonts/font = ExtResource( 1 )
