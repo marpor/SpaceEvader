@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-608,-480)">
+        <rect id="IconSquare" x="608" y="480" width="128" height="128" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect id="IconSquare1" serif:id="IconSquare" x="608" y="480" width="128" height="128"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(1,-2.07934e-22,-1.74384e-22,1,608,352)">
+                <g id="Icon-Background" serif:id="Icon Background">
+                    <rect id="Icon-Background1" serif:id="Icon Background" x="-0" y="128" width="128" height="128" style="fill:url(#_Radial2);"/>
+                    <g id="Icon-Background2" serif:id="Icon Background">
+                        <g transform="matrix(0.666667,4.38253e-33,4.38253e-33,0.666667,18.3094,132.654)">
+                            <path d="M96,144C96,144 96,158 95,159C94,160 80,160 80,160C80,160 94,160 95,161C96,162 96,176 96,176C96,176 96,162 97,161C98,160 112,160 112,160C112,160 98,160 97,159C96,158 96,144 96,144Z" style="fill:white;"/>
+                        </g>
+                        <g transform="matrix(1.06667,2.21797e-22,1.8601e-22,1.06667,-10.6667,-19.2)">
+                            <path d="M96,144C96,144 96,158 95,159C94,160 80,160 80,160C80,160 94,160 95,161C96,162 96,176 96,176C96,176 96,162 97,161C98,160 112,160 112,160C112,160 98,160 97,159C96,158 96,144 96,144Z" style="fill:white;"/>
+                        </g>
+                        <g transform="matrix(0.366667,0.366667,-0.366667,0.366667,115.2,57.6)">
+                            <path d="M96,144C96,144 96,158 95,159C94,160 80,160 80,160C80,160 94,160 95,161C96,162 96,176 96,176C96,176 96,162 97,161C98,160 112,160 112,160C112,160 98,160 97,159C96,158 96,144 96,144Z" style="fill:white;"/>
+                        </g>
+                        <g transform="matrix(0.366667,0.366667,-0.366667,0.366667,38.4,76.5586)">
+                            <path d="M96,144C96,144 96,158 95,159C94,160 80,160 80,160C80,160 94,160 95,161C96,162 96,176 96,176C96,176 96,162 97,161C98,160 112,160 112,160C112,160 98,160 97,159C96,158 96,144 96,144Z" style="fill:white;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(0.534809,0,0,0.529134,107.241,500.057)">
+                <g id="SE">
+                    <path id="SE1" serif:id="SE" d="M1056,41.373L1038.63,24L994,24L968,50L968,86.627L973.373,92L921.373,144L1038.63,144L1056,126.627L1073.37,144L1190.63,144L1134.63,88L1128,88L1128,81.373L1126.63,80L1144,80L1144,49.373L1118.63,24L1073.37,24L1056,41.373ZM984,104L960,128L1032,128L1048,112L1048,88L1032,72L1008,72L1000,64L1048,64L1048,56L1032,40L1000,40L984,56L984,80L1000,96L1024,96L1032,104L984,104ZM1080,128L1064,112L1064,56L1080,40L1112,40L1128,56L1128,64L1080,64L1088,72L1096,72L1112,88L1112,96L1080,96L1088,104L1128,104L1152,128L1080,128Z" style="fill:white;"/>
+                </g>
+            </g>
+        </g>
+        <path id="IconSquare2" serif:id="IconSquare" d="M736,480L608,480L608,608L736,608L736,480ZM728,488L728,600C728,600 616,600 616,600C616,600 616,488 616,488L728,488Z" style="fill:white;"/>
+    </g>
+    <defs>
+        <radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(138.569,-130.51,126.234,134.029,26.178,286.736)"><stop offset="0" style="stop-color:black;stop-opacity:1"/><stop offset="0.57" style="stop-color:rgb(6,37,51);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(127,53,41);stop-opacity:1"/></radialGradient>
+    </defs>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-928,-640)">
+        <g id="IconCircleTrans" transform="matrix(1.04065,0,0,1.04065,45.5285,140.74)">
+            <circle cx="909.5" cy="541.5" r="61.5" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <circle cx="909.5" cy="541.5" r="61.5"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.513918,0,0,0.508465,366.802,499.273)">
+                    <g id="SE">
+                        <path id="SE1" serif:id="SE" d="M1056,41.373L1038.63,24L994,24L968,50L968,86.627L973.373,92L921.373,144L1038.63,144L1056,126.627L1073.37,144L1190.63,144L1134.63,88L1128,88L1128,81.373L1126.63,80L1144,80L1144,49.373L1118.63,24L1073.37,24L1056,41.373ZM984,104L960,128L1032,128L1048,112L1048,88L1032,72L1008,72L1000,64L1048,64L1048,56L1032,40L1000,40L984,56L984,80L1000,96L1024,96L1032,104L984,104ZM1080,128L1064,112L1064,56L1080,40L1112,40L1128,56L1128,64L1080,64L1088,72L1096,72L1112,88L1112,96L1080,96L1088,104L1128,104L1152,128L1080,128Z" style="fill:white;"/>
+                    </g>
+                </g>
+            </g>
+            <path d="M909.5,480C943.443,480 971,507.557 971,541.5C971,575.443 943.443,603 909.5,603C875.557,603 848,575.443 848,541.5C848,507.557 875.557,480 909.5,480ZM909.5,487.688C939.2,487.688 963.313,511.8 963.313,541.5C963.313,571.2 939.2,595.313 909.5,595.313C879.8,595.313 855.688,571.2 855.688,541.5C855.688,511.8 879.8,487.688 909.5,487.688Z" style="fill:white;"/>
+        </g>
+    </g>
+</svg>
