@@ -69,7 +69,7 @@ func restart():
 func game_over():
 	if Global.score > Global.HIGHSCORE:
 		Global.HIGHSCORE = Global.score
-		save_highscore()
+		save_config()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	hideHUD()

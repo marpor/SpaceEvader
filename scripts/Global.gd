@@ -21,6 +21,8 @@ var instanceCount = 0
 
 var speedOverride = 0.0
 
+var move_sensitivity = 1.0
+
 func get_player_position():
 	if not ship:
 		return CENTER
