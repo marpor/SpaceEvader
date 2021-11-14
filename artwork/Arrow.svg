@@ -60,6 +60,8 @@
             </g>
         </g>
         <g id="Layer1">
+            <g id="Tick">
+            </g>
             <g id="Arrow" transform="matrix(1,0,0,1,-128,256)">
                 <path d="M1216,576L1344,416L1472,576L1408,576L1408,736L1280,736L1280,576" style="fill:white;"/>
             </g>

@@ -37,6 +37,8 @@
         <g id="Ship1">
         </g>
         <g id="Layer1">
+            <g id="Tick">
+            </g>
             <g id="Pause">
             </g>
             <g id="Quit" transform="matrix(0.416665,0,0,0.416665,704.029,234.667)">
