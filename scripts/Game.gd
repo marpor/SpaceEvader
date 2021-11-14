@@ -4,6 +4,10 @@ extends Node2D
 var mainMenu = null
 onready var monitor = $Monitor
 
+enum { MENU, OPTIONS, PLAYING, FROZEN, GAME_OVER}
+
+var state = MENU
+
 func _ready():
 	randomize()
 
@@ -28,53 +32,52 @@ func onResize():
 	Global.RADIUS = Vector2(Global.W, Global.H).length()/2
 	Global.CENTER = Vector2(Global.W, Global.H)/2
 
+func state_changed(state):
+	$UI/HUD.visible = state in [PLAYING, FROZEN]
+	$UI/Options.visible = state in [OPTIONS]
+	$UI/GameOver.visible = state in [GAME_OVER]
+	$UI/FreezeMenu.visible = state in [FROZEN]
+
+	if mainMenu:
+		mainMenu.StartMenu.visible = state in [MENU]
+
+	Global.ship.visible = state in [PLAYING, FROZEN, GAME_OVER]
+
+func set_state(state):
+	self.state = state
+	state_changed(state)
+
 func updateScore():
 	$UI/HUD/ScoreLabel.text = "Score: %d" % Global.score
 
-func hideHUD():
-	$UI/HUD.hide()
+func start():
+	set_state(PLAYING)
 
-func start(var mapNo = 0):
 	clear()
-	$UI/HUD.show()
-	$UI/GameOver.hide()
 
 	Global.t = 0
 	Global.score = 0
 	Global.ship.health = 1
 	Global.ship.health_changed(Global.ship.health)
-	Global.ship.visible = true
-
-	Maps.mapNo = mapNo-1
-	Game.nextMap()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func restart():
-	clear()
-	$UI/HUD.show()
-	$UI/GameOver.hide()
-
-	Global.t = Global.t - Maps.currentMap.MAP_TIME
-	Global.score = 0
-	Global.ship.health = 1
-	Global.ship.health_changed(Global.ship.health)
-	Global.ship.visible = true
-
 	Maps.mapNo = Maps.mapNo-1
 	Game.nextMap()
 
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	start()
 
 func game_over():
+	set_state(GAME_OVER)
+
 	if Global.score > Global.HIGHSCORE:
 		Global.HIGHSCORE = Global.score
 		save_config()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	hideHUD()
+	state_changed(Game.state)
 	$UI/GameOver/ScoreLabel.text = "Score: %d" % Global.score
-	$UI/GameOver.show()
 
 func nextMap():
 	changeMap(Maps.next_map())
@@ -113,12 +116,11 @@ func _on_RetryButton_pressed():
 	restart()
 
 func _on_BackButton_pressed():
-	$UI/GameOver.hide()
+	set_state(MENU)
 	mainMenu.menu()
 
 func _on_PauseButton_pressed():
-	$UI/FreezeMenu.hide()
-	$UI/Options.show()
+	set_state(OPTIONS)
 
 func _on_CloseHints_pressed():
 	$UI/FreezeMenu/Hints.queue_free()
