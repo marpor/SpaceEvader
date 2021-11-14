@@ -142,10 +142,14 @@ func move(relative):
 	last_move_ticks = OS.get_ticks_msec()
 	if not is_alive():
 		return
-	position += relative
 
+	# Increase speed
 	var inc=.1*relative.length()
 	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, inc, SPEED_MAX)
+
+	# Move - respecting sensitivity set in Options
+	relative *= Global.move_sensitivity
+	position += relative
 
 func is_alive():
 	return health > 0

@@ -6,7 +6,11 @@ onready var monitor = $Monitor
 
 func _ready():
 	randomize()
-#	monitor.os_time_per_frame()
+
+	load_config()
+
+func _exit_tree():
+	save_config()
 
 func _physics_process(_delta):
 	if Engine.get_physics_frames() % 30 == 0:
@@ -123,17 +127,19 @@ func _unhandled_input(event):
 	if event.is_action_released("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 
-func save_highscore():
+func save_config():
 	var config = ConfigFile.new()
 
 	config.set_value("normal", "highscore", Global.HIGHSCORE)
+	config.set_value("options", "move_sensitivity", Global.move_sensitivity)
 
-	config.save("user://highscores.cfg")
+	config.save("user://SpaceEvader.cfg")
 
-func load_highscore():
+func load_config():
 	var config = ConfigFile.new()
-	var err = config.load("user://highscores.cfg")
+	var err = config.load("user://SpaceEvader.cfg")
 	if err != OK:
 		return
 
 	Global.HIGHSCORE = int(config.get_value("normal", "highscore"))
+	Global.move_sensitivity = float(config.get_value("options", "move_sensitivity"))
