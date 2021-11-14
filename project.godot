@@ -23,6 +23,8 @@ _global_script_class_icons={
 config/name="SpaceEvader"
 config/description="SpaceEvader"
 run/main_scene="res://MainMenu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="SpaceEvader"
 config/icon="res://artwork/Icon2.png"
 config/windows_native_icon="res://artwork/Icon.ico"
 
