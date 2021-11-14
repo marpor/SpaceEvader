@@ -12,7 +12,6 @@ onready var StartMenu = find_node("StartMenu")
 #onready var StartMenu = find_node("StartMenu")
 #onready var StartMenu = find_node("StartMenu")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Game.mainMenu = self
 
@@ -23,7 +22,6 @@ func _ready():
 	if 0 or OS.has_feature("web"):
 		QuitButton.hide()
 
-	Game.load_highscore()
 	menu()
 
 func menu():
@@ -42,6 +40,9 @@ func hide():
 func updateHighScore():
 	HighScoreLabel.text = "HighScore: %d" % Global.HIGHSCORE
 
+func _on_OptionsButton_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
+
 func _on_FullscreenButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 
@@ -50,11 +51,19 @@ func _on_CreditLink_pressed():
 
 func _on_TutorialButton_pressed():
 	hide()
-	Game.start(0) # Map 0 is the tutorial
+
+	var TutorialMap = preload("res://maps/IntroMap.tscn")
+	Game.changeMap(TutorialMap.instance())
+
+	Game.start() # Map 0 is the tutorial
 
 func _on_MissionsButton_pressed():
 	hide()
-	Game.start(1) # Map 1 is the first mission
+
+	Maps.mapNo = -1 # nextMap loads first map
+	Game.nextMap()
+
+	Game.start()
 
 func _on_ChallengesButton_pressed():
 	pass # Replace with function body.

@@ -64,9 +64,22 @@ __meta__ = {
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UI/StartMenu/CenterContainer"]
 margin_left = 140.0
+margin_top = 32.0
 margin_right = 460.0
-margin_bottom = 360.0
+margin_bottom = 328.0
 custom_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
+visible = false
+margin_right = 320.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 300, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TutorialButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
 margin_right = 320.0
@@ -86,15 +99,16 @@ margin_bottom = 118.0
 rect_min_size = Vector2( 300, 50 )
 rect_pivot_offset = Vector2( 48.9292, 26.7 )
 theme = ExtResource( 1 )
-text = "Missions"
+text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ChallengesButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_top = 128.0
+visible = false
+margin_top = 192.0
 margin_right = 320.0
-margin_bottom = 182.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 300, 50 )
 rect_pivot_offset = Vector2( 48.9292, 26.7 )
 theme = ExtResource( 1 )
@@ -105,9 +119,9 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_top = 192.0
+margin_top = 128.0
 margin_right = 320.0
-margin_bottom = 246.0
+margin_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 300, 50 )
@@ -119,9 +133,9 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="Button" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_top = 256.0
+margin_top = 192.0
 margin_right = 320.0
-margin_bottom = 310.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 300, 50 )
 rect_pivot_offset = Vector2( 48.9292, 26.7 )
 theme = ExtResource( 1 )
@@ -131,9 +145,9 @@ __meta__ = {
 }
 
 [node name="HighScoreLabel" type="Label" parent="UI/StartMenu/CenterContainer/HBoxContainer"]
-margin_top = 320.0
+margin_top = 256.0
 margin_right = 320.0
-margin_bottom = 360.0
+margin_bottom = 296.0
 theme = ExtResource( 1 )
 text = "High Score: 1000000000"
 align = 1
@@ -192,10 +206,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/PlayButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/MissionsButton" to="." method="_on_MissionsButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/ChallengesButton" to="." method="_on_ChallengesButton_pressed"]
-[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/OptionsButton" to="." method="_on_FullscreenButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CreditLink" to="." method="_on_CreditLink_pressed"]
 [connection signal="pressed" from="UI/StartMenu/FullscreenButton" to="." method="_on_FullscreenButton_pressed"]
