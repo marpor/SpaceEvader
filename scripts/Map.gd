@@ -128,7 +128,7 @@ func spawn_enemy():
 	if EnemyColor != Color.white:
 		e.COLOR = EnemyColor
 
-	Maps.currentMap.add_child(e)
+	Maps.currentMap.get_node("Map").add_child(e)
 
-	e.position = Global.randStartPos(35)
+	e.global_position = Global.randStartPos(35)
 	e.speed *= rand_range(0.7, 1.3)
