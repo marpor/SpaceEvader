@@ -24,6 +24,7 @@ func looseIt(s, source):
 	s.visible = true
 
 	s.sourceObject = self
+	s.add_to_group("shots")
 
 func looseSpritePart(sprite, source):
 	# For enemies built with sprites
