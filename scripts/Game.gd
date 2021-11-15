@@ -144,6 +144,12 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if state == MENU:
 			get_tree().quit()
+		elif state == FROZEN and $UI/FreezeMenu/Hints:
+			$UI/FreezeMenu/Hints.queue_free()
+		elif state in [FROZEN, PLAYING]:
+			set_state(OPTIONS)
+		elif state == OPTIONS:
+			set_state(FROZEN)
 		else:
 			set_state(MENU)
 

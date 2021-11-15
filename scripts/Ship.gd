@@ -54,8 +54,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			get_tree().set_input_as_handled()
-			Game.set_state(Game.OPTIONS)
+#			get_tree().set_input_as_handled()
+#			Game.set_state(Game.OPTIONS)
 
 	elif event.is_action_pressed("click"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
