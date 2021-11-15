@@ -25,5 +25,5 @@ func _physics_process(_delta):
 		_on_VisibilityNotifier2D_screen_exited()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	if Maps.currentMap.moving:
+	if Maps.currentMap and Maps.currentMap.moving:
 		start()

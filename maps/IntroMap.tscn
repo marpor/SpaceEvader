@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://enemies/Meteor4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=10]
+[ext_resource path="res://maps/paranariver_oli_2020185_lrg.jpeg" type="Texture" id=11]
+[ext_resource path="res://maps/iss043e86375_lrg.jpeg" type="Texture" id=12]
+[ext_resource path="res://maps/712130main_8246931247_e60f3c09fb_o.jpeg" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -41,11 +44,37 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 [node name="Map" type="Node2D" parent="."]
 position = Vector2( 0, 3 )
 
-[node name="Background" type="Sprite" parent="Map"]
+[node name="Background4" type="Sprite" parent="Map"]
 modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( 3867, 2406 )
-rotation = 3.14159
+position = Vector2( -818, -1421 )
+rotation = 0.261799
+scale = Vector2( 0.563542, 0.563542 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Background2" type="Sprite" parent="Map"]
+visible = false
+modulate = Color( 0.67, 0.67, 0.67, 1 )
+position = Vector2( -0.00610352, 0.00976562 )
+rotation = -5.07036e-06
 texture = ExtResource( 7 )
+centered = false
+
+[node name="Background3" type="Sprite" parent="Map"]
+visible = false
+modulate = Color( 0.67, 0.67, 0.67, 1 )
+position = Vector2( -457, -1813 )
+rotation = -5.07036e-06
+scale = Vector2( 1.81524, 1.81524 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Background" type="Sprite" parent="Map"]
+visible = false
+modulate = Color( 0.5, 0.5, 0.5, 1 )
+position = Vector2( 4082, 2931 )
+rotation = 3.14159
+texture = ExtResource( 11 )
 centered = false
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Map"]
@@ -179,46 +208,56 @@ __meta__ = {
 
 [node name="MeteorB" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 1766, 195 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorB2" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 1784, 619 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorC" parent="Map" instance=ExtResource( 5 )]
 position = Vector2( 2270, 45 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorA" parent="Map" instance=ExtResource( 6 )]
 position = Vector2( 1678, 535 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorA2" parent="Map" instance=ExtResource( 6 )]
 position = Vector2( 1937, 132 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorC2" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 1845, 451 )
+z_index = 2
 SPEED = 0
 
 [node name="MeteorB3" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 2438, 122 )
 rotation = -0.523598
+z_index = 2
 SPEED = 0
 
 [node name="MeteorB4" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 2306, 474 )
 rotation = 0.785397
+z_index = 2
 SPEED = 0
 
 [node name="MeteorA3" parent="Map" instance=ExtResource( 6 )]
 position = Vector2( 2477, 622 )
 rotation = -2.35619
+z_index = 2
 SPEED = 0
 
 [node name="MeteorC3" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 2415, 330 )
 rotation = 1.57079
+z_index = 2
 SPEED = 0
 
 [node name="Path2D" type="Path2D" parent="."]

@@ -15,10 +15,17 @@ follow_viewport_enable = true
 [node name="StartMenu" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true,
 "_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="UI/StartMenu"]
+modulate = Color( 0, 0, 0, 0.501961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="UI/StartMenu"]
@@ -165,7 +172,7 @@ margin_right = 624.0
 margin_bottom = -40.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "Version 0.12 - Copyright 2021 marpor"
+text = "Version 0.13 - Copyright 2021 marpor"
 underline = 2
 __meta__ = {
 "_edit_use_anchors_": false

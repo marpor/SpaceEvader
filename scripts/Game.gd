@@ -2,11 +2,10 @@
 extends Node2D
 
 var mainMenu = null
-onready var monitor = $Monitor
 
 enum { MENU, OPTIONS, PLAYING, FROZEN, GAME_OVER}
 
-var state = MENU
+var state = -1
 
 func _ready():
 	randomize()
@@ -22,6 +21,13 @@ func _physics_process(_delta):
 		onResize()
 		updateScore()
 
+	if Engine.get_physics_frames() % 6 == 0:
+		if state in [PLAYING, FROZEN]:
+			if Global.speedOverride <= 0.0:
+				set_state(FROZEN)
+			else:
+				set_state(PLAYING)
+
 #	if Engine.get_physics_frames() % 120 == 0:
 #		print("Orphans:")
 #		print_stray_nodes()
@@ -32,28 +38,48 @@ func onResize():
 	Global.RADIUS = Vector2(Global.W, Global.H).length()/2
 	Global.CENTER = Vector2(Global.W, Global.H)/2
 
-func state_changed(state):
+func set_state(state):
+	if self.state == state:
+		return # no change
+
 	$UI/HUD.visible = state in [PLAYING, FROZEN]
 	$UI/Options.visible = state in [OPTIONS]
 	$UI/GameOver.visible = state in [GAME_OVER]
-	$UI/FreezeMenu.visible = state in [FROZEN]
 
 	if mainMenu:
 		mainMenu.StartMenu.visible = state in [MENU]
+		if state == MENU:
+			mainMenu.menu()
+	else:
+		if state == MENU:
+			# When debugging a single scene (with F6)
+			get_tree().quit()
 
 	Global.ship.visible = state in [PLAYING, FROZEN, GAME_OVER]
 
-func set_state(state):
+	if state == OPTIONS:
+		# Don't show Continue & Retry button if we enter from the menu
+		$UI/Options/ContinueButton.visible = self.state != MENU
+		$UI/Options/RetryButton.visible = self.state != MENU
+
+		$UI/Options/SensitivitySlider.value = Global.move_sensitivity
+		$UI/Options/FullscreenCheckBox.pressed = OS.window_fullscreen
+
+	# Handle freeze menu
+	if not state in [PLAYING, FROZEN]:
+		$UI/FreezeMenu.visible = false
+	if state == FROZEN:
+		$UI/FreezeMenu/AnimationPlayer.play("Appear")
+	if self.state == FROZEN and state == PLAYING:
+		$UI/FreezeMenu/AnimationPlayer.play("Disappear")
+
 	self.state = state
-	state_changed(state)
 
 func updateScore():
 	$UI/HUD/ScoreLabel.text = "Score: %d" % Global.score
 
 func start():
 	set_state(PLAYING)
-
-	clear()
 
 	Global.t = 0
 	Global.score = 0
@@ -76,7 +102,7 @@ func game_over():
 		save_config()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	state_changed(Game.state)
+
 	$UI/GameOver/ScoreLabel.text = "Score: %d" % Global.score
 
 func nextMap():
@@ -112,20 +138,15 @@ func clear():
 	for e in shots:
 		e.free()
 
-func _on_RetryButton_pressed():
-	restart()
-
-func _on_BackButton_pressed():
-	set_state(MENU)
-	mainMenu.menu()
-
-func _on_PauseButton_pressed():
-	set_state(OPTIONS)
-
-func _on_CloseHints_pressed():
-	$UI/FreezeMenu/Hints.queue_free()
 
 func _unhandled_input(event):
+	# Capture/un-capture mouse
+	if event.is_action_pressed("ui_cancel"):
+		if state == MENU:
+			get_tree().quit()
+		else:
+			set_state(MENU)
+
 	if event.is_action_released("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 
@@ -143,5 +164,26 @@ func load_config():
 	if err != OK:
 		return
 
-	Global.HIGHSCORE = int(config.get_value("normal", "highscore"))
-	Global.move_sensitivity = float(config.get_value("options", "move_sensitivity"))
+	Global.HIGHSCORE = config.get_value("normal", "highscore") as int
+	Global.move_sensitivity = config.get_value("options", "move_sensitivity", 1.0) as float
+
+func _on_RetryButton_pressed():
+	restart()
+
+func _on_BackButton_pressed():
+	set_state(MENU)
+
+func _on_PauseButton_pressed():
+	set_state(OPTIONS)
+
+func _on_ContinueButton_pressed():
+	set_state(PLAYING)
+
+func _on_CloseHints_pressed():
+	$UI/FreezeMenu/Hints.queue_free()
+
+func _on_FullscreenCheckBox_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed
+
+func _on_SensitivitySlider_value_changed(value):
+	Global.move_sensitivity = value

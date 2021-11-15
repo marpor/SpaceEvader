@@ -79,7 +79,6 @@ anims/leave = SubResource( 1 )
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
-modulate = Color( 0.67, 0.67, 0.67, 1 )
 texture = ExtResource( 2 )
 centered = false
 __meta__ = {

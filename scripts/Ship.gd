@@ -54,8 +54,9 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			get_tree().quit()
+			get_tree().set_input_as_handled()
+			Game.set_state(Game.OPTIONS)
+
 	elif event.is_action_pressed("click"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -97,18 +98,18 @@ func _unhandled_input(event):
 		elif distanceTouched < 10.0:
 			shoot()
 
-
 func _process(delta):
 	if not is_alive():
 		return
-
-	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, delta*2, SPEED_MIN)
 
 	position.x = clamp(position.x, 0, Global.W)
 	position.y = clamp(position.y, 0, Global.H)
 
 	position = position
 #	rotation = Global.DIR.angle() - Vector2.UP.angle()
+
+func _physics_process(delta):
+	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, delta*2, SPEED_MIN)
 
 	if protectedTime > 0.0:
 		protectedTime -= delta * Global.speedOverride

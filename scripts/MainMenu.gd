@@ -22,11 +22,9 @@ func _ready():
 	if 0 or OS.has_feature("web"):
 		QuitButton.hide()
 
-	menu()
-
-func menu():
 	Game.set_state(Game.MENU)
 
+func menu():
 	Game.changeMap(menuMap.instance())
 
 	updateHighScore()
@@ -35,7 +33,7 @@ func updateHighScore():
 	HighScoreLabel.text = "HighScore: %d" % Global.HIGHSCORE
 
 func _on_OptionsButton_pressed():
-	OS.window_fullscreen = !OS.window_fullscreen
+	Game.set_state(Game.OPTIONS)
 
 func _on_FullscreenButton_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
