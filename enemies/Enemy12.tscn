@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://parts/Feat32.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Claw02.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Eye1B.tscn" type="PackedScene" id=4]
+[ext_resource path="res://parts/Skel12.tscn" type="PackedScene" id=5]
+
+[node name="Enemy12" type="Area2D" groups=["enemies"]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 1 )
+POINTS = 100
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( 0, -32, 8, -4, 24, 0, 28, 8, 16, 24, 0, 24, -16, 24, -28, 8, -24, 0, -8, -4 )
+
+[node name="Claw02" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16, 48 )
+
+[node name="Claw03" parent="." instance=ExtResource( 3 )]
+position = Vector2( -16, 48 )
+FlipH = true
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2( 0, 6.10352e-05 )
+
+[node name="Claw10" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( 32, 15.9999 )
+rotation = -0.785397
+
+[node name="Claw08" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( -32, 15.9999 )
+rotation = 0.785397
+FlipH = true
+
+[node name="Skel12" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 0, -6.10352e-05 )
+Colored = true
+
+[node name="Skel13" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 0, -6.10352e-05 )
+Colored = true
+FlipH = true
+
+[node name="Feat32" parent="Parts" instance=ExtResource( 2 )]
+position = Vector2( 0, -6.29425e-05 )
+scale = Vector2( 0.7, 0.7 )
+Colored = true
+
+[node name="Eye1B" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 0, 47.9999 )
+scale = Vector2( 0.7, 0.7 )

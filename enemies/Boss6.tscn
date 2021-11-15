@@ -15,9 +15,8 @@ script = ExtResource( 8 )
 POINTS = 100
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 scale = Vector2( 4, 4 )
-polygon = PoolVector2Array( -28, -12, -16, -12, -16, -36, 0, -48, 16, -36, 16, -12, 28, -12, 36, -4, 32, 12, 20, 32, 12, 12, 0, 32, -12, 12, -20, 32, -32, 10, -36, -4 )
+polygon = PoolVector2Array( -28, -12, -16, -12, 0, -44, 16, -12, 28, -12, 36, -4, 32, 12, 20, 32, 12, 12, 0, 32, -12, 12, -20, 32, -32, 10, -36, -4 )
 
 [node name="Skel50" parent="." instance=ExtResource( 11 )]
 position = Vector2( 0, 16 )
