@@ -25,17 +25,17 @@ position = Vector2( 16, 48 )
 position = Vector2( -16, 48 )
 FlipH = true
 
-[node name="Parts" type="Node2D" parent="."]
-position = Vector2( 0, 6.10352e-05 )
-
-[node name="Claw10" parent="Parts" instance=ExtResource( 3 )]
-position = Vector2( 32, 15.9999 )
+[node name="Claw10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 16 )
 rotation = -0.785397
 
-[node name="Claw08" parent="Parts" instance=ExtResource( 3 )]
-position = Vector2( -32, 15.9999 )
+[node name="Claw08" parent="." instance=ExtResource( 3 )]
+position = Vector2( -32, 16 )
 rotation = 0.785397
 FlipH = true
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2( 0, 6.10352e-05 )
 
 [node name="Skel12" parent="Parts" instance=ExtResource( 5 )]
 position = Vector2( 0, -6.10352e-05 )

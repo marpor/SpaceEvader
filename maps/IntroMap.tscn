@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
@@ -6,13 +6,10 @@
 [ext_resource path="res://enemies/Meteor2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/Meteor5.tscn" type="PackedScene" id=5]
 [ext_resource path="res://enemies/Meteor1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=7]
+[ext_resource path="res://maps/processed/falklands_oli_2020292_lrg.webp" type="Texture" id=7]
 [ext_resource path="res://enemies/Meteor4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=10]
-[ext_resource path="res://maps/paranariver_oli_2020185_lrg.jpeg" type="Texture" id=11]
-[ext_resource path="res://maps/iss043e86375_lrg.jpeg" type="Texture" id=12]
-[ext_resource path="res://maps/712130main_8246931247_e60f3c09fb_o.jpeg" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -27,11 +24,12 @@ font_data = ExtResource( 1 )
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -49.0741, 0.451809, 49.0741, -0.451809, 153.663, 198.803, -95.5412, -11.3022, 95.5412, 11.3022, 359.031, 199.902, -47.8011, 0.0490009, 47.8011, -0.0490009, 717.984, 197.3 )
+"points": PoolVector2Array( 0.00736237, -0.964002, -0.00736237, 0.964002, 153.663, 198.803, 0, 0, 47.8011, -0.0490009, 2928, 200 )
 }
 
 [node name="Map1" type="Node2D" groups=["maps"]]
 script = ExtResource( 10 )
+MAP_TIME = 20
 MeteorCount = 0
 Enemy3Count = 0
 EnemyColor = Color( 0.368627, 0.517647, 0.658824, 1 )
@@ -44,38 +42,10 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 [node name="Map" type="Node2D" parent="."]
 position = Vector2( 0, 3 )
 
-[node name="Background4" type="Sprite" parent="Map"]
-modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( -818, -1421 )
-rotation = 0.261799
-scale = Vector2( 0.563542, 0.563542 )
-texture = ExtResource( 13 )
-centered = false
-
-[node name="Background2" type="Sprite" parent="Map"]
-visible = false
-modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( -0.00610352, 0.00976562 )
-rotation = -5.07036e-06
-texture = ExtResource( 7 )
-centered = false
-
-[node name="Background3" type="Sprite" parent="Map"]
-visible = false
-modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( -457, -1813 )
-rotation = -5.07036e-06
-scale = Vector2( 1.81524, 1.81524 )
-texture = ExtResource( 12 )
-centered = false
-
 [node name="Background" type="Sprite" parent="Map"]
-visible = false
-modulate = Color( 0.5, 0.5, 0.5, 1 )
-position = Vector2( 4082, 2931 )
-rotation = 3.14159
-texture = ExtResource( 11 )
-centered = false
+position = Vector2( 1706, 409 )
+rotation = -3.14159
+texture = ExtResource( 7 )
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Map"]
 margin_left = 1064.0
@@ -118,9 +88,9 @@ position = Vector2( 1197, 359 )
 position = Vector2( 3276, 303 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Map"]
-margin_left = 166.0
+margin_left = 238.0
 margin_top = 45.0
-margin_right = 586.0
+margin_right = 658.0
 margin_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -134,9 +104,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="Map"]
-margin_left = 166.0
+margin_left = 238.0
 margin_top = 203.0
-margin_right = 666.0
+margin_right = 738.0
 margin_bottom = 619.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -261,11 +231,10 @@ z_index = 2
 SPEED = 0
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -182.359, -906.522 )
-scale = Vector2( 4.51871, 6.15063 )
+position = Vector2( 240, 144 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 153.663, 198.803 )
-rotation = -0.0140861
+rotation = 0.0156738
 scale = Vector2( 0.222599, 0.159157 )

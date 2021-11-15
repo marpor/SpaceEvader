@@ -27,12 +27,11 @@ polygon = PoolVector2Array( 15, 13, 46, 21, 12, 41, 8, 54, -8, 54, -12, 41, -46,
 [node name="Enemy1A2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -16 )
 
-[node name="Parts" type="Node2D" parent="."]
-
-[node name="Feat42" parent="Parts" instance=ExtResource( 4 )]
+[node name="Feat42" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -33 )
 scale = Vector2( 0.5, 0.5 )
-Colored = true
+
+[node name="Parts" type="Node2D" parent="."]
 
 [node name="Wing66" parent="Parts" instance=ExtResource( 1 )]
 position = Vector2( 23, 2 )

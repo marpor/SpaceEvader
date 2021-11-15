@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://misc/Life.tscn" type="PackedScene" id=1]
-[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=4]
-[ext_resource path="res://enemies/Boss7.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://misc/Life.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/Boss3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=6]
-[ext_resource path="res://enemies/Enemy6.tscn" type="PackedScene" id=7]
-[ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://enemies/Enemy5.tscn" type="PackedScene" id=9]
+[ext_resource path="res://enemies/Enemy5.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/Enemy6.tscn" type="PackedScene" id=8]
+[ext_resource path="res://enemies/Boss7.tscn" type="PackedScene" id=9]
 [ext_resource path="res://enemies/Boss8.tscn" type="PackedScene" id=10]
-[ext_resource path="res://enemies/Boss3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://maps/processed/heic2007a.webp" type="Texture" id=11]
 
 [sub_resource type="Theme" id=3]
 
@@ -18,50 +18,49 @@
 size = 72
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 8 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -49.0741, 0.451809, 49.0741, -0.451809, 153.663, 198.803, -78.9031, -36.9136, 78.9031, 36.9136, 359.031, 199.902, -50.6171, 37.1871, 50.6171, -37.1871, 603.349, 181.692, -47.8011, 0.0490009, 47.8011, -0.0490009, 720.197, 147.875 )
+"points": PoolVector2Array( -49.0741, 0.451809, 49.0741, -0.451809, 146.642, 177.696, -78.9031, -36.9136, 78.9031, 36.9136, 359.031, 199.902, -96.1788, 30.0535, 96.1788, -30.0535, 585.463, 201.521, -47.8011, 0.0490009, 47.8011, -0.0490009, 776.789, 223.275 )
 }
 
 [node name="Map1" type="Node2D" groups=["maps"]]
 script = ExtResource( 6 )
-Enemy1 = ExtResource( 9 )
-Enemy3 = ExtResource( 11 )
+Enemy1 = ExtResource( 7 )
+Enemy3 = ExtResource( 5 )
 Enemy3Count = 0
 EnemyColor = Color( 0.368627, 0.517647, 0.658824, 1 )
 BackgroundName = "Tapestry of Blazing Starbirth"
 BackgroundCredit = "NASA, ESA, and STScI"
 BackgroundURL = "https://esahubble.org/images/heic2007a/"
 
-[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+[node name="AnimationPlayer" parent="." instance=ExtResource( 3 )]
 
 [node name="Map" type="Node2D" parent="."]
 position = Vector2( 0, 3 )
 
 [node name="Background" type="Sprite" parent="Map"]
-modulate = Color( 0.670588, 0.670588, 0.670588, 1 )
-position = Vector2( 4387, 1861 )
-rotation = 2.9407
-texture = ExtResource( 4 )
-centered = false
+position = Vector2( 1848, 965 )
+rotation = 3.14159
+scale = Vector2( 1.15107, 1.15107 )
+texture = ExtResource( 11 )
 
-[node name="Life" parent="Map" instance=ExtResource( 1 )]
-position = Vector2( 1904, 205 )
+[node name="Life" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( 1976, 429 )
 
-[node name="Life3" parent="Map" instance=ExtResource( 1 )]
+[node name="Life3" parent="Map" instance=ExtResource( 2 )]
 position = Vector2( 912, 88 )
 
-[node name="Goal" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 3328, 0 )
+[node name="Goal" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 3504, 645 )
 
-[node name="Goal2" parent="Map" instance=ExtResource( 3 )]
+[node name="Goal2" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 800, 1325 )
 
-[node name="Boss7" parent="Map" instance=ExtResource( 5 )]
-position = Vector2( 1776, 69.0001 )
+[node name="Boss7" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 1848, 293 )
 rotation = -0.750758
 SPEED = 30
 HUNTS = false
@@ -72,28 +71,28 @@ SPEED = 0
 HUNTS = false
 ANGULAR_VELOCITY = -15.0
 
-[node name="Enemy5" parent="Map" instance=ExtResource( 7 )]
+[node name="Enemy5" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 506, 846 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
 
-[node name="Enemy6" parent="Map" instance=ExtResource( 7 )]
+[node name="Enemy6" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 775, 957 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
 
-[node name="Enemy7" parent="Map" instance=ExtResource( 7 )]
+[node name="Enemy7" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 917, 1020 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
 SPEED = 300
 HUNTS = false
 
-[node name="Enemy8" parent="Map" instance=ExtResource( 7 )]
+[node name="Enemy8" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 638, 903 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
@@ -118,11 +117,11 @@ __meta__ = {
 }
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -182.359, -906.522 )
-scale = Vector2( 4.51871, 6.15063 )
+position = Vector2( -188.345, -1084.32 )
+scale = Vector2( 4.55766, 7.72285 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 153.663, 198.803 )
-rotation = -0.0273931
+position = Vector2( 146.642, 177.696 )
+rotation = -0.0160952
 scale = Vector2( 0.222599, 0.159157 )

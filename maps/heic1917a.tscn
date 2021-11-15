@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://maps/heic1917a.jpg" type="Texture" id=1]
+[ext_resource path="res://maps/processed/heic1917a.webp" type="Texture" id=1]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=3]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=4]
@@ -23,7 +23,7 @@ BackgroundURL = "https://esahubble.org/images/heic1917a/"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
-modulate = Color( 0.507935, 0.514757, 0.570313, 1 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 centered = false
 __meta__ = {

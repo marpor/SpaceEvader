@@ -3,10 +3,10 @@
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://maps/heic2007a.jpg" type="Texture" id=4]
-[ext_resource path="res://scripts/Map.gd" type="Script" id=5]
-[ext_resource path="res://enemies/Boss4.tscn" type="PackedScene" id=6]
-[ext_resource path="res://enemies/Enemy4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/Boss4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/Enemy4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=6]
+[ext_resource path="res://maps/processed/heic2007a.webp" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
@@ -15,9 +15,9 @@ _data = {
 }
 
 [node name="Map2" type="Node2D" groups=["maps"]]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 MeteorCount = 150
-Enemy1 = ExtResource( 7 )
+Enemy1 = ExtResource( 5 )
 Enemy1Count = 10
 EnemyColor = Color( 0.647059, 0.2, 0.2, 1 )
 BackgroundName = "Tapestry of Blazing Starbirth"
@@ -29,8 +29,8 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
-modulate = Color( 0.4, 0.4, 0.4, 1 )
-texture = ExtResource( 4 )
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Life" parent="Map" instance=ExtResource( 1 )]
@@ -39,7 +39,7 @@ position = Vector2( 1944, 2256 )
 [node name="Goal" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3400, 2080 )
 
-[node name="Boss4" parent="Map" instance=ExtResource( 6 )]
+[node name="Boss4" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 1536, 2336 )
 rotation = 2.35619
 SPEED = 300
@@ -47,7 +47,7 @@ HUNTS = false
 COLOR = Color( 0.647059, 0.2, 0.2, 1 )
 TURN_RATE = -20.0
 
-[node name="Boss6" parent="Map" instance=ExtResource( 6 )]
+[node name="Boss6" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 2720, 2568 )
 rotation = 2.61799
 SPEED = 200
@@ -55,7 +55,7 @@ HUNTS = false
 COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 10.0
 
-[node name="Boss5" parent="Map" instance=ExtResource( 6 )]
+[node name="Boss5" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 2056, 1696 )
 rotation = 0.523598
 SPEED = 250
@@ -63,7 +63,7 @@ HUNTS = false
 COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 35.0
 
-[node name="Boss7" parent="Map" instance=ExtResource( 6 )]
+[node name="Boss7" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 3440, 1856 )
 rotation = 0.523598
 SPEED = 200

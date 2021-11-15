@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heic0910i.jpg-caf1eb7be5323910789ba62f9993f26e.stex"
+path="res://.import/greatbluehole_ali_2009083_lrg.webp-7b981afec542641eede80214c4903097.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/heic0910i.jpg"
-dest_files=[ "res://.import/heic0910i.jpg-caf1eb7be5323910789ba62f9993f26e.stex" ]
+source_file="res://maps/processed/greatbluehole_ali_2009083_lrg.webp"
+dest_files=[ "res://.import/greatbluehole_ali_2009083_lrg.webp-7b981afec542641eede80214c4903097.stex" ]
 
 [params]
 

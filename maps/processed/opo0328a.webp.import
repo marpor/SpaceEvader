@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/opo0328a.jpg-cd0a4178d0c6ea38917039062a9cdf99.stex"
+path="res://.import/opo0328a.webp-575dc80e9e1733f33c19849f5b5f5502.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/opo0328a.jpg"
-dest_files=[ "res://.import/opo0328a.jpg-cd0a4178d0c6ea38917039062a9cdf99.stex" ]
+source_file="res://maps/processed/opo0328a.webp"
+dest_files=[ "res://.import/opo0328a.webp-575dc80e9e1733f33c19849f5b5f5502.stex" ]
 
 [params]
 

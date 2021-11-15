@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heic2017a.jpg-1e24d5c1a05a5aa5c83227269f45b944.stex"
+path="res://.import/heic1917a.webp-8377af2fdfb89dadea715712f6cee53b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/heic2017a.jpg"
-dest_files=[ "res://.import/heic2017a.jpg-1e24d5c1a05a5aa5c83227269f45b944.stex" ]
+source_file="res://maps/processed/heic1917a.webp"
+dest_files=[ "res://.import/heic1917a.webp-8377af2fdfb89dadea715712f6cee53b.stex" ]
 
 [params]
 

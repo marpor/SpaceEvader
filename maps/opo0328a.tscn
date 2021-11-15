@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://maps/opo0328a.jpg" type="Texture" id=1]
+[ext_resource path="res://maps/detailed/opo0328a.jpg" type="Texture" id=1]
 [ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=4]

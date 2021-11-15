@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heic0515a.jpg-f74e275cf403ec53e3047a8e2f5a28e9.stex"
+path="res://.import/falklands_oli_2020292_lrg.webp-8b6d5600dcceab3c90e7a8a47cadb6ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/heic0515a.jpg"
-dest_files=[ "res://.import/heic0515a.jpg-f74e275cf403ec53e3047a8e2f5a28e9.stex" ]
+source_file="res://maps/processed/falklands_oli_2020292_lrg.webp"
+dest_files=[ "res://.import/falklands_oli_2020292_lrg.webp-8b6d5600dcceab3c90e7a8a47cadb6ae.stex" ]
 
 [params]
 
