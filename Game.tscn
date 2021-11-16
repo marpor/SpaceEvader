@@ -98,6 +98,7 @@ visible = false
 position = Vector2( 61, 289 )
 
 [node name="Streaks" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 2
