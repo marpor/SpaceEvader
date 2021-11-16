@@ -15,7 +15,7 @@ dest_files=[ "res://.import/PIA11180.webp-4de5ae929babac6dc29a9e7c788fce87.stex"
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.8
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

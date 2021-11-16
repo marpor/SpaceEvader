@@ -15,7 +15,7 @@ dest_files=[ "res://.import/712130main_8246931247_e60f3c09fb_o.webp-5e567d15f5bf
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.8
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

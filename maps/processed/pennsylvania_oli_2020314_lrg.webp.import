@@ -15,7 +15,7 @@ dest_files=[ "res://.import/pennsylvania_oli_2020314_lrg.webp-c5154877f1e6ba0847
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.8
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

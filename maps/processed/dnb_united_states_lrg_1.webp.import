@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heic1917a.webp-8377af2fdfb89dadea715712f6cee53b.stex"
+path="res://.import/dnb_united_states_lrg_1.webp-f645b21975716ccab2169f655fd66bfa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/processed/heic1917a.webp"
-dest_files=[ "res://.import/heic1917a.webp-8377af2fdfb89dadea715712f6cee53b.stex" ]
+source_file="res://maps/processed/dnb_united_states_lrg_1.webp"
+dest_files=[ "res://.import/dnb_united_states_lrg_1.webp-f645b21975716ccab2169f655fd66bfa.stex" ]
 
 [params]
 

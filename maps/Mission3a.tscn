@@ -10,7 +10,7 @@
 [ext_resource path="res://enemies/Enemy6.tscn" type="PackedScene" id=8]
 [ext_resource path="res://enemies/Boss7.tscn" type="PackedScene" id=9]
 [ext_resource path="res://enemies/Boss8.tscn" type="PackedScene" id=10]
-[ext_resource path="res://maps/processed/heic2007a.webp" type="Texture" id=11]
+[ext_resource path="res://maps/processed/heic0910i.webp" type="Texture" id=11]
 
 [sub_resource type="Theme" id=3]
 
@@ -42,9 +42,9 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 position = Vector2( 0, 3 )
 
 [node name="Background" type="Sprite" parent="Map"]
-position = Vector2( 1848, 965 )
-rotation = 3.14159
-scale = Vector2( 1.15107, 1.15107 )
+position = Vector2( 1872, 461 )
+rotation = 2.77005
+scale = Vector2( 0.938831, 0.938831 )
 texture = ExtResource( 11 )
 
 [node name="Life" parent="Map" instance=ExtResource( 2 )]
@@ -54,10 +54,7 @@ position = Vector2( 1976, 429 )
 position = Vector2( 912, 88 )
 
 [node name="Goal" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 3504, 645 )
-
-[node name="Goal2" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 800, 1325 )
+position = Vector2( 3576, 661 )
 
 [node name="Boss7" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 1848, 293 )
@@ -100,6 +97,7 @@ SPEED = 300
 HUNTS = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Map"]
+visible = false
 margin_left = 166.0
 margin_top = 45.0
 margin_right = 586.0
@@ -123,5 +121,5 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 146.642, 177.696 )
-rotation = -0.0160952
+rotation = -0.0160951
 scale = Vector2( 0.222599, 0.159157 )

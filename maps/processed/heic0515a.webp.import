@@ -15,7 +15,7 @@ dest_files=[ "res://.import/heic0515a.webp-c8a1d66627184db80dc4d06297eb582e.stex
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.8
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
