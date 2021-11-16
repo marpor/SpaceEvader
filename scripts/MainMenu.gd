@@ -45,7 +45,8 @@ func _on_TutorialButton_pressed():
 	var TutorialMap = preload("res://maps/IntroMap.tscn")
 	Game.changeMap(TutorialMap.instance())
 
-	Game.start() # Map 0 is the tutorial
+	Maps.mapNo = -1 # nextMap loads first map - AFTER the tutorial
+	Game.start()
 
 func _on_MissionsButton_pressed():
 	Maps.mapNo = -1 # nextMap loads first map
