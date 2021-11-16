@@ -11,7 +11,7 @@
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -32.4256, -0.994496, 32.4256, 0.994496, 150.485, 210.71, -111.071, -31.6856, 111.071, 31.6856, 407.196, 153.48, -96.8921, 1.30215, 96.8921, -1.30215, 589.549, 209.409, -32.0846, 0.120558, 32.0846, -0.120558, 759.509, 171.69 )
+"points": PoolVector2Array( -32.4256, -0.994496, 32.4256, 0.994496, 150.485, 210.71, -84.2035, -21.8162, 84.2035, 21.8162, 398.344, 153.48, -73.3831, 5.88438, 73.3831, -5.88438, 589.549, 209.409, -32.0846, 0.120558, 32.0846, -0.120558, 759.509, 171.69 )
 }
 
 [node name="Map2" type="Node2D" groups=["maps"]]
@@ -30,18 +30,19 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.8, 0.8, 0.8, 1 )
-position = Vector2( 0, 208 )
+position = Vector2( -139.739, -96 )
+scale = Vector2( 1.04804, 1.04804 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="Life" parent="Map" instance=ExtResource( 1 )]
-position = Vector2( 1944, 2256 )
+position = Vector2( 1944, 2048 )
 
 [node name="Goal" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 3400, 2080 )
+position = Vector2( 3552, 1888 )
 
 [node name="Boss4" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 1536, 2336 )
+position = Vector2( 1536, 2128 )
 rotation = 2.35619
 SPEED = 300
 HUNTS = false
@@ -49,7 +50,7 @@ COLOR = Color( 0.647059, 0.2, 0.2, 1 )
 TURN_RATE = -20.0
 
 [node name="Boss6" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 2720, 2568 )
+position = Vector2( 2720, 2360 )
 rotation = 2.61799
 SPEED = 200
 HUNTS = false
@@ -57,7 +58,7 @@ COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 10.0
 
 [node name="Boss5" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 2056, 1696 )
+position = Vector2( 2056, 1488 )
 rotation = 0.523598
 SPEED = 250
 HUNTS = false
@@ -65,7 +66,7 @@ COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 35.0
 
 [node name="Boss7" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 3440, 1856 )
+position = Vector2( 3440, 1648 )
 rotation = 0.523598
 SPEED = 200
 HUNTS = false
@@ -73,7 +74,7 @@ COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
 TURN_RATE = 35.0
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -136, 1024 )
+position = Vector2( -136, 816 )
 scale = Vector2( 4.51871, 6.15063 )
 curve = SubResource( 1 )
 

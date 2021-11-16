@@ -10,7 +10,7 @@
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 299.809, 661.105, -340.295, -23.3721, 340.295, 23.3721, 1252.99, 308.831, -158.425, -2.69403, 158.425, 2.69403, 1994.88, 556.168 )
+"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 299.809, 661.105, 0, 0, 0, 0, 599.618, 566.661, -340.295, -23.3721, 340.295, 23.3721, 1176.17, 440.737, -158.425, -2.69403, 158.425, 2.69403, 2144.79, 671.599 )
 }
 
 [node name="Map7" type="Node2D" groups=["maps"]]
@@ -27,23 +27,22 @@ BackgroundURL = "https://esahubble.org/images/heic1917a/"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
-position = Vector2( 3552, 2448 )
+position = Vector2( 4096, 3072 )
 rotation = 3.14159
-scale = Vector2( 0.905816, 0.905816 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="Goal" parent="Map" instance=ExtResource( 5 )]
-position = Vector2( 3120, 544 )
+position = Vector2( 3584, 1024 )
 
 [node name="Life" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 1104, 384 )
+position = Vector2( 1600, 892 )
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -16, -288 )
+position = Vector2( 352, 0 )
 scale = Vector2( 1.38755, 1.52472 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 299.809, 661.105 )
-rotation = -0.0230148
+rotation = -0.0109274
