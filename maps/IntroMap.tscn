@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://maps/AnimationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://misc/MapAnimations.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/Meteor2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/Meteor5.tscn" type="PackedScene" id=5]
 [ext_resource path="res://enemies/Meteor1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://maps/processed/falklands_oli_2020292_lrg.webp" type="Texture" id=7]
 [ext_resource path="res://enemies/Meteor4.tscn" type="PackedScene" id=8]
-[ext_resource path="res://maps/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://misc/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=3]
