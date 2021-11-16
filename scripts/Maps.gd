@@ -16,6 +16,7 @@ var maps = [
 	preload("res://maps/Mission4a.tscn"),
 	preload("res://maps/Mission4b.tscn"),
 	preload("res://maps/Mission4c.tscn"),
+	preload("res://maps/Mission4d.tscn"),
 ]
 
 var mapNo = -1 # -1 ensures next_map() loads map 0

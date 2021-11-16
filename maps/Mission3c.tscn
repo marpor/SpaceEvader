@@ -8,7 +8,7 @@
 [ext_resource path="res://enemies/Enemy8.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=7]
 [ext_resource path="res://enemies/Boss9.tscn" type="PackedScene" id=8]
-[ext_resource path="res://maps/processed/heic2007a.webp" type="Texture" id=9]
+[ext_resource path="res://maps/processed/heic1509a.webp" type="Texture" id=9]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
@@ -34,6 +34,7 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.8, 0.8, 0.8, 1 )
+position = Vector2( 0, -576 )
 z_index = -1
 texture = ExtResource( 9 )
 centered = false

@@ -3,22 +3,24 @@
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=1]
 [ext_resource path="res://misc/MapAnimations.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://enemies/Enemy3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/Map.gd" type="Script" id=5]
-[ext_resource path="res://enemies/Boss1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://maps/processed/jpegPIA03031.webp" type="Texture" id=7]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=4]
+[ext_resource path="res://enemies/Boss6.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/Enemy12.tscn" type="PackedScene" id=6]
+[ext_resource path="res://maps/processed/heic0515a.webp" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -78.0355, -1.61578, 78.0355, 1.61578, 396.21, 405.529, -503.702, 4.37268, 503.702, -4.37268, 1058.19, 494.444, -411.47, 212.292, 411.47, -212.292, 2614.67, 730.089, -169.286, 0.488159, 169.286, -0.488159, 3685.66, 886.479 )
+"points": PoolVector2Array( -78.0355, -1.61578, 78.0355, 1.61578, 396.21, 405.529, -503.702, 4.37268, 503.702, -4.37268, 1347.32, 214, -496.622, 32.3607, 496.622, -32.3607, 2543.27, 698.81, -169.286, 0.488159, 169.286, -0.488159, 3400.06, 886.479 )
 }
 
-[node name="Map5" type="Node2D" groups=["maps"]]
-script = ExtResource( 5 )
-Enemy1 = ExtResource( 4 )
-Enemy2 = ExtResource( 6 )
-EnemyColor = Color( 0.321569, 0.8, 0.2, 1 )
+[node name="Map6" type="Node2D" groups=["maps"]]
+script = ExtResource( 4 )
+Enemy1 = ExtResource( 6 )
+Enemy1Count = 45
+Enemy3 = ExtResource( 5 )
+Enemy3Count = 3
+EnemyColor = Color( 0.282353, 0.278431, 0.701961, 1 )
 BackgroundName = "Hubble mosaic of the majestic Sombrero Galaxy"
 BackgroundCredit = "NASA/ESA and The Hubble Heritage Team (STScI/AURA)"
 BackgroundURL = "https://esahubble.org/images/opo0328a/"
@@ -29,19 +31,26 @@ BackgroundURL = "https://esahubble.org/images/opo0328a/"
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.67, 0.67, 0.67, 1 )
-position = Vector2( -272, -192 )
+position = Vector2( 4200, 2765 )
+rotation = -3.14159
 scale = Vector2( 1.20579, 1.20579 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="Goal" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 3712, 768 )
+position = Vector2( 3456, 768 )
 
 [node name="Life" parent="Map" instance=ExtResource( 1 )]
-position = Vector2( 1280, 160 )
+position = Vector2( 1328, 352 )
 
 [node name="Life2" parent="Map" instance=ExtResource( 1 )]
-position = Vector2( 2208, 864 )
+position = Vector2( 3056, 544 )
+
+[node name="Boss6" parent="Map" instance=ExtResource( 5 )]
+position = Vector2( -156.8, -48 )
+SPEED = 200
+HUNTS = false
+DIRECTION = -75.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 152.31, -138.939 )
@@ -50,7 +59,7 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 396.21, 405.529 )
-rotation = 0.0399768
+rotation = -0.0174913
 __meta__ = {
 "_edit_lock_": true
 }
