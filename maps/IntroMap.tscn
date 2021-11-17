@@ -43,15 +43,16 @@ BackgroundURL = "https://esahubble.org/images/heic2007a/"
 position = Vector2( 0, 3 )
 
 [node name="Background" type="Sprite" parent="Map"]
-position = Vector2( 1706, 409 )
+position = Vector2( 1804.97, 317 )
 rotation = -3.14159
+scale = Vector2( 1.0659, 1.0659 )
 texture = ExtResource( 7 )
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Map"]
-margin_left = 1064.0
-margin_top = 412.0
-margin_right = 1653.0
-margin_bottom = 624.0
+margin_left = 896.0
+margin_top = 338.0
+margin_right = 1485.0
+margin_bottom = 550.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 109, 72 )
@@ -80,12 +81,6 @@ text = "Evade the meteors!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Life" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 1197, 359 )
-
-[node name="Goal" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 3276, 303 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Map"]
 margin_left = 238.0
@@ -175,6 +170,12 @@ Fly in to it!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Life" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 1029, 285 )
+
+[node name="Goal" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3276, 303 )
 
 [node name="MeteorB" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 1766, 195 )

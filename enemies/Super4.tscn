@@ -1,0 +1,249 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://parts/Skel50.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Skel51.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Wing03.tscn" type="PackedScene" id=4]
+[ext_resource path="res://parts/Eye3B.tscn" type="PackedScene" id=5]
+[ext_resource path="res://parts/Claw02.tscn" type="PackedScene" id=6]
+[ext_resource path="res://parts/Wing22.tscn" type="PackedScene" id=7]
+[ext_resource path="res://parts/Feat30.tscn" type="PackedScene" id=8]
+[ext_resource path="res://parts/Wing12.tscn" type="PackedScene" id=9]
+
+[node name="Boss4" type="Area2D" groups=["enemies"]]
+scale = Vector2( 0.6, 0.6 )
+collision_layer = 64
+collision_mask = 512
+script = ExtResource( 1 )
+POINTS = 100
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+polygon = PoolVector2Array( -40.4167, -106.667, 0, -117.5, 41.25, -106.25, 41.6667, -18.3333, 23.3333, 0, 30, 10, 28, 22, 23.3333, 13.3333, 16, 8, 0, 16, -16, 8, -23.3333, 13.3333, -28, 22, -30, 10, -23.3333, 0, -41.25, -17.0833 )
+
+[node name="Skel50" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -48 )
+rotation = -3.14159
+
+[node name="Skel51" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -8 )
+
+[node name="Claw02" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, 40 )
+
+[node name="Claw03" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, 40 )
+FlipH = true
+
+[node name="Skel52" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -141.333 )
+rotation = -3.14159
+
+[node name="Skel53" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -101.333 )
+
+[node name="Claw04" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, -53.3333 )
+
+[node name="Claw05" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, -53.3333 )
+FlipH = true
+
+[node name="Skel54" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -234.667 )
+rotation = -3.14159
+
+[node name="Skel55" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -194.667 )
+
+[node name="Claw06" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, -146.667 )
+
+[node name="Claw07" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, -146.667 )
+FlipH = true
+
+[node name="Skel56" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -328 )
+rotation = -3.14159
+
+[node name="Skel57" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -288 )
+
+[node name="Claw08" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, -240 )
+
+[node name="Claw09" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, -240 )
+FlipH = true
+
+[node name="Skel58" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -421.333 )
+rotation = -3.14159
+
+[node name="Skel59" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -381.333 )
+
+[node name="Claw10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, -333.333 )
+
+[node name="Claw11" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, -333.333 )
+FlipH = true
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="Wing05" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 31.6667, -426.667 )
+Colored = true
+
+[node name="Wing20" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -31.6666, -426.667 )
+Colored = true
+FlipH = true
+
+[node name="Feat30" parent="Parts" instance=ExtResource( 8 )]
+position = Vector2( 0.000101725, -346.667 )
+FlipV = true
+
+[node name="Feat31" parent="Parts" instance=ExtResource( 8 )]
+position = Vector2( 0.000104904, -266.667 )
+FlipV = true
+
+[node name="Feat32" parent="Parts" instance=ExtResource( 8 )]
+position = Vector2( 0.000104904, -186.667 )
+FlipV = true
+
+[node name="Feat33" parent="Parts" instance=ExtResource( 8 )]
+position = Vector2( 0.000104904, -106.667 )
+FlipV = true
+
+[node name="Feat34" parent="Parts" instance=ExtResource( 8 )]
+position = Vector2( 0.000104904, -26.6671 )
+FlipV = true
+
+[node name="Wing12" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( 32, 1.90735e-05 )
+Colored = true
+Darkened = true
+
+[node name="Wing13" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( -32, 1.90735e-05 )
+Colored = true
+FlipH = true
+
+[node name="Eye3B" parent="Parts" instance=ExtResource( 5 )]
+position = Vector2( 0, 19 )
+scale = Vector2( 1.5, 1.5 )
+ScaleFactor = 2
+
+[node name="Wing22" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( 96, -48 )
+Colored = true
+
+[node name="Wing23" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( -96, -48 )
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Wing03" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 160, -80 )
+Colored = true
+Darkened = true
+
+[node name="Wing04" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -160, -80 )
+Colored = true
+FlipH = true
+
+[node name="Wing14" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( 32, -106.667 )
+Colored = true
+Darkened = true
+
+[node name="Wing15" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( -32, -106.667 )
+Colored = true
+FlipH = true
+
+[node name="Wing24" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( 96, -154.667 )
+Colored = true
+
+[node name="Wing25" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( -96, -154.667 )
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Wing06" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 160, -186.667 )
+Colored = true
+Darkened = true
+
+[node name="Wing07" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -160, -186.667 )
+Colored = true
+FlipH = true
+
+[node name="Wing16" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( 32, -213.333 )
+Colored = true
+Darkened = true
+
+[node name="Wing17" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( -32, -213.333 )
+Colored = true
+FlipH = true
+
+[node name="Wing26" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( 96, -261.333 )
+Colored = true
+
+[node name="Wing27" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( -96, -261.333 )
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Wing08" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 160, -293.333 )
+Colored = true
+Darkened = true
+
+[node name="Wing09" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -160, -293.333 )
+Colored = true
+FlipH = true
+
+[node name="Wing18" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( 32, -320 )
+Colored = true
+Darkened = true
+
+[node name="Wing19" parent="Parts" instance=ExtResource( 9 )]
+position = Vector2( -32, -320 )
+Colored = true
+FlipH = true
+
+[node name="Wing28" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( 96, -368 )
+Colored = true
+
+[node name="Wing29" parent="Parts" instance=ExtResource( 7 )]
+position = Vector2( -96, -368 )
+Colored = true
+Darkened = true
+FlipH = true
+
+[node name="Wing10" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 160, -400 )
+Colored = true
+Darkened = true
+
+[node name="Wing11" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( -160, -400 )
+Colored = true
+FlipH = true

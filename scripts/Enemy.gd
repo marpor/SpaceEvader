@@ -120,4 +120,6 @@ func _process(delta):
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	removeMe()
+	# Enemies get cleared at map change, so we don't bother about it here
+	# If we do clear them on screen exit, we risk clearing some when entering/leaving fullscreen
+	pass

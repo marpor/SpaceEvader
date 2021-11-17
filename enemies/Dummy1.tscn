@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://parts/Wing62.tscn" type="PackedScene" id=1]
+[ext_resource path="res://parts/Feat10.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=5]
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+z_index = 1
+collision_layer = 64
+collision_mask = 512
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 5 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+rect = Rect2( -32, -32, 64, 64 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 0, -23 )
+polygon = PoolVector2Array( 15, 13, 46, 21, 12, 41, 8, 54, -8, 54, -12, 41, -46, 21, -15, 13, 0, -48 )
+
+[node name="Feat10" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.6, 0.6 )
+Darkened = true
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="Wing62" parent="Parts" instance=ExtResource( 1 )]
+position = Vector2( -14, 0 )
+scale = Vector2( 0.5, 1 )
+Colored = true
+Darkened = true
+
+[node name="Wing64" parent="Parts/Wing62" instance=ExtResource( 1 )]
+position = Vector2( 28, -14 )
+rotation = 1.57078
+scale = Vector2( 0.5, 2 )
+Colored = true
+
+[node name="Wing63" parent="Parts" instance=ExtResource( 1 )]
+position = Vector2( 14, 0 )
+scale = Vector2( 0.5, 1 )
+Colored = true
+Darkened = true
+
+[node name="Wing65" parent="Parts/Wing63" instance=ExtResource( 1 )]
+position = Vector2( -28, 13 )
+rotation = 1.57078
+scale = Vector2( 0.5, 2 )
+Colored = true
+
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

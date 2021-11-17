@@ -9,8 +9,6 @@ onready var HighScoreLabel = find_node("HighScoreLabel")
 
 onready var UI = find_node("UI")
 onready var StartMenu = find_node("StartMenu")
-#onready var StartMenu = find_node("StartMenu")
-#onready var StartMenu = find_node("StartMenu")
 
 func _ready():
 	Game.mainMenu = self
@@ -42,16 +40,13 @@ func _on_CreditLink_pressed():
 	OS.shell_open("https://esahubble.org/images/heic2007a/")
 
 func _on_TutorialButton_pressed():
-	var TutorialMap = preload("res://maps/IntroMap.tscn")
-	Game.changeMap(TutorialMap.instance())
-
-	Maps.mapNo = -1 # nextMap loads first map - AFTER the tutorial
+	Maps.mapNo = -1 # nextMap loads first map
+	Game.nextMap()
 	Game.start()
 
 func _on_MissionsButton_pressed():
-	Maps.mapNo = -1 # nextMap loads first map
+	Maps.mapNo = 1 # nextMap loads first non-tutorial map
 	Game.nextMap()
-
 	Game.start()
 
 func _on_ChallengesButton_pressed():

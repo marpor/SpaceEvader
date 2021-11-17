@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://parts/Feat10.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://parts/Skel32.tscn" type="PackedScene" id=3]
+[ext_resource path="res://parts/Skel31.tscn" type="PackedScene" id=4]
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+z_index = 1
+collision_layer = 64
+collision_mask = 512
+input_pickable = false
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+rect = Rect2( -32, -32, 64, 64 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 0, -23 )
+polygon = PoolVector2Array( 15, 13, 46, 21, 12, 41, 8, 54, -8, 54, -12, 41, -46, 21, -15, 13, 0, -48 )
+
+[node name="Feat10" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 0.6, 0.6 )
+Darkened = true
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="Skel31" parent="Parts" instance=ExtResource( 4 )]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.75, 0.75 )
+Colored = true
+Darkened = true
+
+[node name="Skel32" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( 16, 0 )
+rotation = -1.0472
+scale = Vector2( 0.75, 0.75 )
+Colored = true
+
+[node name="Skel33" parent="Parts" instance=ExtResource( 3 )]
+position = Vector2( -16, 3.75509e-06 )
+rotation = -2.09439
+scale = Vector2( 0.75, 0.75 )
+Colored = true
+
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

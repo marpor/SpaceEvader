@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://misc/Ship1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://misc/Shot.tscn" type="PackedScene" id=2]
@@ -9,17 +9,7 @@
 [ext_resource path="res://enemies/Boss6.tscn" type="PackedScene" id=7]
 [ext_resource path="res://demos/Screenshot.gd" type="Script" id=8]
 [ext_resource path="res://maps/processed/heic2007a.webp" type="Texture" id=9]
-[ext_resource path="res://demos/Outline.gdshader" type="Shader" id=10]
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 10 )
-shader_param/width = 3.0
-shader_param/outline_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 10 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 0, 0, 1 )
+[ext_resource path="res://misc/OutlineMaterial.tres" type="Material" id=10]
 
 [node name="Screenshot" type="Node2D"]
 script = ExtResource( 8 )
@@ -31,7 +21,7 @@ scale = Vector2( 0.878894, 0.878894 )
 texture = ExtResource( 9 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-material = SubResource( 3 )
+material = ExtResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -49,41 +39,34 @@ usage = 0
 render_target_update_mode = 3
 
 [node name="Ship" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
-material = SubResource( 2 )
 position = Vector2( 177.346, 376.72 )
 scale = Vector2( 1.17, 1.17 )
 
 [node name="Shot" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
-material = SubResource( 2 )
 position = Vector2( 321.346, 377.92 )
 rotation = -1.5708
 scale = Vector2( 1.872, 1.872 )
 
 [node name="Boss6" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
-material = SubResource( 2 )
 position = Vector2( 545.746, 243.52 )
 rotation = 1.07415
 scale = Vector2( 0.78, 0.78 )
 COLOR = Color( 1, 0.839216, 0.439216, 1 )
 
 [node name="Boss7" parent="ViewportContainer/Viewport" instance=ExtResource( 3 )]
-material = SubResource( 2 )
 position = Vector2( 515.746, 499.12 )
 rotation = 2.02585
 scale = Vector2( 0.39, 0.39 )
 COLOR = Color( 1, 0.839216, 0.439216, 1 )
 
 [node name="MeteorC" parent="ViewportContainer/Viewport" instance=ExtResource( 6 )]
-material = SubResource( 2 )
 position = Vector2( 213.346, 550.72 )
 scale = Vector2( 0.624, 0.624 )
 
 [node name="MeteorB" parent="ViewportContainer/Viewport" instance=ExtResource( 5 )]
-material = SubResource( 2 )
 position = Vector2( 81.3457, 188.32 )
 scale = Vector2( 0.624, 0.624 )
 
 [node name="MeteorA" parent="ViewportContainer/Viewport" instance=ExtResource( 4 )]
-material = SubResource( 2 )
 position = Vector2( 423.347, 380.32 )
 scale = Vector2( 0.624, 0.624 )

@@ -1,0 +1,265 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://misc/MapAnimations.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemies/Dummy2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/Super4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/Meteor5.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/Dummy1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://maps/processed/falklands_oli_2020292_lrg.webp" type="Texture" id=7]
+[ext_resource path="res://misc/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Curve2D" id=1]
+bake_interval = 1.0
+_data = {
+"points": PoolVector2Array( 0.00736237, -0.964002, -0.00736237, 0.964002, 153.663, 198.803, 0, 0, 47.8011, -0.0490009, 2928, 200 )
+}
+
+[node name="Map1" type="Node2D" groups=["maps"]]
+script = ExtResource( 10 )
+MeteorCount = 0
+Enemy3Count = 0
+EnemyColor = Color( 0.0784314, 1, 0, 1 )
+BackgroundName = "Tapestry of Blazing Starbirth"
+BackgroundCredit = "NASA, ESA, and STScI"
+BackgroundURL = "https://esahubble.org/images/heic2007a/"
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2( 0, 3 )
+
+[node name="Background" type="Sprite" parent="Map"]
+position = Vector2( 1784.33, 995 )
+scale = Vector2( 1.04557, 1.04557 )
+texture = ExtResource( 7 )
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="Map"]
+margin_left = 804.0
+margin_top = 293.0
+margin_right = 1137.0
+margin_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 109, 72 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Notice how it's easier to shoot enemies lined up."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 958, 633 )
+rotation = -0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy2" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 958, 446 )
+rotation = -1.0472
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy3" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 955, 542 )
+rotation = 0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy10" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1981, 601 )
+rotation = -0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy14" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 2075, 501 )
+rotation = -0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy11" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1984, 405 )
+rotation = -1.0472
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy15" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 2078, 606 )
+rotation = -1.0472
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy12" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1976, 501 )
+rotation = 0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy13" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 2077, 410 )
+rotation = 0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy4" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 853, 206 )
+rotation = -0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy5" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 955, 205 )
+rotation = -1.0472
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy6" parent="Map" instance=ExtResource( 6 )]
+position = Vector2( 1057, 212 )
+rotation = 0.261799
+SPEED = 0
+HUNTS = false
+
+[node name="Enemy7" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 3147, 221 )
+
+[node name="Enemy9" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 3147, 465 )
+SPEED = 60
+
+[node name="Enemy8" parent="Map" instance=ExtResource( 3 )]
+position = Vector2( 3147, 343 )
+SPEED = 80
+
+[node name="MeteorC" parent="Map" instance=ExtResource( 5 )]
+position = Vector2( 1792, 495 )
+SPEED = 0
+
+[node name="Boss4" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( 3520, 512 )
+rotation = 2.35619
+z_index = 2
+POINTS = 1000
+SPEED = 150
+HUNTS = false
+COLOR = Color( 0.564706, 0.0588235, 0.0588235, 1 )
+TURN_RATE = -5.0
+
+[node name="Goal" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3374, 343 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map"]
+margin_left = 238.0
+margin_top = 45.0
+margin_right = 761.0
+margin_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Home[/center]"
+text = "Home"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Map"]
+margin_left = 246.0
+margin_top = 293.0
+margin_right = 632.0
+margin_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 192, 36 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Practice shooting on these dummy enemies.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Map"]
+margin_left = 2656.0
+margin_top = 363.0
+margin_right = 3138.0
+margin_bottom = 531.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 294, 34 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Some enemies hunt you. 
+Don't let them catch you!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Map"]
+margin_left = 2784.0
+margin_top = 572.0
+margin_right = 3266.0
+margin_bottom = 685.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 294, 34 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "You can also try to get them lined up for the perfect shot!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Map"]
+margin_left = 1767.0
+margin_top = 247.0
+margin_right = 2054.0
+margin_bottom = 353.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 211, 38 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Meteors can be used as weapons."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Map"]
+margin_left = 3424.0
+margin_top = 431.0
+margin_right = 3776.0
+margin_bottom = 637.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 294, 34 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "WHOA!
+Where did THAT come from?
+That's NOT one of ours!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 240, 144 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 153.663, 198.803 )
+rotation = 0.0156738
+scale = Vector2( 0.222599, 0.159157 )
