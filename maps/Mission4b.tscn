@@ -19,9 +19,10 @@ script = ExtResource( 5 )
 Enemy1 = ExtResource( 4 )
 Enemy2 = ExtResource( 6 )
 EnemyColor = Color( 0.321569, 0.8, 0.2, 1 )
-BackgroundName = "Hubble mosaic of the majestic Sombrero Galaxy"
-BackgroundCredit = "NASA/ESA and The Hubble Heritage Team (STScI/AURA)"
-BackgroundURL = "https://esahubble.org/images/opo0328a/"
+Location = "Andromeda Galaxy"
+BackgroundName = "Amazing Andromeda in Red"
+BackgroundCredit = "NASA/JPL-Caltech/Univ. of Ariz."
+BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA03031"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 

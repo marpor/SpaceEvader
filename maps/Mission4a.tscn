@@ -21,9 +21,10 @@ Enemy1Count = 50
 Enemy3 = ExtResource( 4 )
 Enemy3Count = 5
 EnemyColor = Color( 0.321569, 0.8, 0.2, 1 )
-BackgroundName = "Most detailed image of the Crab Nebula"
-BackgroundCredit = "NASA, ESA and Allison Loll/Jeff Hester (Arizona State University). Acknowledgement: Davide De Martin (ESA/Hubble)"
-BackgroundURL = "https://esahubble.org/images/heic0515a/"
+Location = "Aquarius Constellation"
+BackgroundName = "The Helix Nebula from Blanco and Hubble"
+BackgroundCredit = "C. R. O'Dell, (Vanderbilt) et al. ESA, NOAO, NASA"
+BackgroundURL = "https://apod.nasa.gov/apod/ap200823.html"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 

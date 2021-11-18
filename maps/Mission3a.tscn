@@ -32,9 +32,10 @@ Enemy1 = ExtResource( 7 )
 Enemy3 = ExtResource( 5 )
 Enemy3Count = 0
 EnemyColor = Color( 0.368627, 0.517647, 0.658824, 1 )
-BackgroundName = "Tapestry of Blazing Starbirth"
-BackgroundCredit = "NASA, ESA, and STScI"
-BackgroundURL = "https://esahubble.org/images/heic2007a/"
+Location = "Pegasus Constellation"
+BackgroundName = "Galactic wreckage in Stephan's Quintet"
+BackgroundCredit = "NASA, ESA and the Hubble SM4 ERO Team"
+BackgroundURL = "https://esahubble.org/images/heic0910i/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 3 )]
 

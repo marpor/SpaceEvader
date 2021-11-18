@@ -18,9 +18,9 @@ script = ExtResource( 6 )
 Enemy1 = ExtResource( 1 )
 Enemy1Count = 20
 EnemyColor = Color( 0.82, 0.1968, 0.1968, 1 )
-BackgroundName = "Latest Saturn Portrait"
-BackgroundCredit = "NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley)"
-BackgroundURL = "https://esahubble.org/images/heic1917a/"
+BackgroundName = "Lake Erie Astir"
+BackgroundCredit = "NASA Earth Observatory"
+BackgroundURL = "https://visibleearth.nasa.gov/images/148350/lake-erie-astir/148353l"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 4 )]
 

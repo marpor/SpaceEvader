@@ -24,9 +24,10 @@ Enemy2 = ExtResource( 6 )
 Enemy2Count = 10
 Enemy3 = ExtResource( 5 )
 Enemy3Count = 3
-BackgroundName = "Tapestry of Blazing Starbirth"
-BackgroundCredit = "NASA, ESA, and STScI"
-BackgroundURL = "https://esahubble.org/images/heic2007a/"
+Location = "Carina Constellation"
+BackgroundName = "Westerlund 2 — Hubble’s 25th anniversary image"
+BackgroundCredit = "NASA, ESA, the Hubble Heritage Team (STScI/AURA), A. Nota (ESA/STScI), and the Westerlund 2 Science Team"
+BackgroundURL = "https://esahubble.org/images/heic1509a/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 

@@ -11,7 +11,7 @@
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 415.12, 651.845, -340.295, -23.3721, 340.295, 23.3721, 1252.99, 308.831, -158.425, -2.69403, 158.425, 2.69403, 2260.1, 651.845 )
+"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 415.12, 651.845, -340.295, -23.3721, 340.295, 23.3721, 1252.99, 308.831, -161.607, 0.891721, 161.607, -0.891721, 2260.1, 651.845 )
 }
 
 [node name="Map7" type="Node2D" groups=["maps"]]
@@ -20,9 +20,10 @@ Enemy1 = ExtResource( 1 )
 Enemy2 = ExtResource( 2 )
 Enemy2Count = 10
 EnemyColor = Color( 0.1725, 0.405375, 0.69, 1 )
-BackgroundName = "Latest Saturn Portrait"
-BackgroundCredit = "NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley)"
-BackgroundURL = "https://esahubble.org/images/heic1917a/"
+Location = "Mars"
+BackgroundName = "Mars: 'Victoria Crater' at Meridiani Planum"
+BackgroundCredit = "NASA/JPL-Caltech/University of Arizona/Cornell/Ohio State University"
+BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA08813"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 4 )]
 
@@ -38,7 +39,7 @@ centered = false
 position = Vector2( 3584, 1184 )
 
 [node name="Life" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 1312, 862.119 )
+position = Vector2( 1760, 928 )
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 192, 190.119 )

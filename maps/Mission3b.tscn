@@ -20,6 +20,7 @@ MeteorCount = 150
 Enemy1 = ExtResource( 5 )
 Enemy1Count = 10
 EnemyColor = Color( 0.647059, 0.2, 0.2, 1 )
+Location = "Dorado Constellation"
 BackgroundName = "Tapestry of Blazing Starbirth"
 BackgroundCredit = "NASA, ESA, and STScI"
 BackgroundURL = "https://esahubble.org/images/heic2007a/"

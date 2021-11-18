@@ -21,9 +21,10 @@ Enemy1Count = 45
 Enemy3 = ExtResource( 5 )
 Enemy3Count = 3
 EnemyColor = Color( 0.282353, 0.278431, 0.701961, 1 )
-BackgroundName = "Hubble mosaic of the majestic Sombrero Galaxy"
-BackgroundCredit = "NASA/ESA and The Hubble Heritage Team (STScI/AURA)"
-BackgroundURL = "https://esahubble.org/images/opo0328a/"
+Location = "Milky Way Center"
+BackgroundName = "The Milky Way Center Aglow with Dust"
+BackgroundCredit = "NASA/JPL-Caltech"
+BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA03653"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 

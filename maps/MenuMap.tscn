@@ -64,7 +64,7 @@ tracks/4/keys = {
 [sub_resource type="Curve2D" id=2]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -60.3664, 114.834, 60.3664, -114.834, 203.616, 195.067, -12.9937, -265.946, 12.9937, 265.946, 762.055, 318.144, 125.733, -12.789, -125.733, 12.789, 463.724, 394.648, 114.906, 25.0079, -114.906, -25.0079, 252.206, 466.809, -40.6188, 75.8985, 40.6188, -75.8985, 203.469, 195.179 )
+"points": PoolVector2Array( -60.3664, 114.834, 60.3664, -114.834, 203.616, 195.067, -12.9937, -265.946, 12.9937, 265.946, 737.417, 317.274, 125.733, -12.789, -125.733, 12.789, 463.724, 394.648, 114.906, 25.0079, -114.906, -25.0079, 252.206, 466.809, -40.6188, 75.8985, 40.6188, -75.8985, 203.469, 195.179 )
 }
 
 [node name="MenuMap" type="Node2D" groups=["maps"]]
@@ -83,11 +83,11 @@ position = Vector2( 2000, 1376 )
 texture = ExtResource( 2 )
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -157, -67 )
-scale = Vector2( 4.54365, 4.975 )
+position = Vector2( 42.0601, -89.7521 )
+scale = Vector2( 4.28244, 5.02326 )
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 203.616, 195.067 )
-rotation = -1.05396
+rotation = -1.05568
 scale = Vector2( 0.222599, 0.159157 )

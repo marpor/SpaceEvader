@@ -20,9 +20,10 @@ Enemy1 = ExtResource( 1 )
 Enemy2 = ExtResource( 2 )
 Enemy2Count = 10
 EnemyColor = Color( 0.1725, 0.405375, 0.69, 1 )
-BackgroundName = "Latest Saturn Portrait"
-BackgroundCredit = "NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley)"
-BackgroundURL = "https://esahubble.org/images/heic1917a/"
+Location = "Mars"
+BackgroundName = "The Contrasting Colors of Crater Dunes and Gullies"
+BackgroundCredit = "NASA/JPL-Caltech/Univ. of Arizona"
+BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA11178"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 4 )]
 

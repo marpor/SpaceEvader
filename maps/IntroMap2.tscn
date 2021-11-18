@@ -26,14 +26,15 @@ _data = {
 "points": PoolVector2Array( 0.00736237, -0.964002, -0.00736237, 0.964002, 153.663, 198.803, 0, 0, 47.8011, -0.0490009, 2928, 200 )
 }
 
-[node name="Map1" type="Node2D" groups=["maps"]]
+[node name="IntroMap2" type="Node2D" groups=["maps"]]
 script = ExtResource( 10 )
 MeteorCount = 0
 Enemy3Count = 0
 EnemyColor = Color( 0.0784314, 1, 0, 1 )
-BackgroundName = "Tapestry of Blazing Starbirth"
-BackgroundCredit = "NASA, ESA, and STScI"
-BackgroundURL = "https://esahubble.org/images/heic2007a/"
+Location = "South Atlantic Ocean"
+BackgroundName = "Jason and the Bloomonauts"
+BackgroundCredit = "NASA Earth Observatory"
+BackgroundURL = "https://earthobservatory.nasa.gov/images/147513/jason-and-the-bloomonauts"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 
@@ -170,8 +171,7 @@ grow_vertical = 2
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]Home[/center]"
-text = "Home"
+text = "Training Part 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }

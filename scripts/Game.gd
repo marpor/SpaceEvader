@@ -193,3 +193,6 @@ func _on_FullscreenCheckBox_toggled(button_pressed):
 
 func _on_SensitivitySlider_value_changed(value):
 	Global.move_sensitivity = value
+
+func _on_CreditLink_pressed():
+	OS.shell_open(Maps.currentMap.BackgroundURL)

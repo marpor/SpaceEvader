@@ -27,6 +27,7 @@ export(Color, RGB) var EnemyColor = Color.white
 
 var ROTATION_SPEED = -3
 
+export(String) var Location = ""
 export(String) var BackgroundName = ""
 export(String) var BackgroundCredit = ""
 export(String) var BackgroundURL = ""
@@ -52,6 +53,8 @@ func _ready():
 		METEOR_DELAY = float(MAP_TIME) / MeteorCount
 	else:
 		METEOR_DELAY = 0
+
+	Game.CreditLink.text = "Background credit: " + BackgroundCredit
 
 func _enter_tree():
 	Maps.currentMap = map

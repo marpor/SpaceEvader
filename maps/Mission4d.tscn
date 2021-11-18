@@ -21,9 +21,10 @@ Enemy1Count = 45
 Enemy3 = ExtResource( 5 )
 Enemy3Count = 3
 EnemyColor = Color( 0.282353, 0.278431, 0.701961, 1 )
-BackgroundName = "Hubble mosaic of the majestic Sombrero Galaxy"
+Location = "Taurus Constellation"
+BackgroundName = "Most detailed image of the Crab Nebula"
 BackgroundCredit = "NASA/ESA and The Hubble Heritage Team (STScI/AURA)"
-BackgroundURL = "https://esahubble.org/images/opo0328a/"
+BackgroundURL = "https://esahubble.org/images/heic0515a/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 
