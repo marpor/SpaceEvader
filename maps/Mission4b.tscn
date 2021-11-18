@@ -6,7 +6,7 @@
 [ext_resource path="res://enemies/Enemy3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=5]
 [ext_resource path="res://enemies/Boss1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://maps/processed/jpegPIA03031.webp" type="Texture" id=7]
+[ext_resource path="res://maps/processed/PIA03031.webp" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0

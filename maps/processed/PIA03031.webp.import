@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jpegPIA03653.webp-6700417565ede31a845df3e5177d4bd9.stex"
+path="res://.import/PIA03031.webp-97a42a59f9c34bf72bfbd65c193c48aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/processed/jpegPIA03653.webp"
-dest_files=[ "res://.import/jpegPIA03653.webp-6700417565ede31a845df3e5177d4bd9.stex" ]
+source_file="res://maps/processed/PIA03031.webp"
+dest_files=[ "res://.import/PIA03031.webp-97a42a59f9c34bf72bfbd65c193c48aa.stex" ]
 
 [params]
 
