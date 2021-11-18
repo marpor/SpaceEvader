@@ -63,6 +63,9 @@ func _enter_tree():
 func _exit_tree():
 	queue_free()
 
+func _on_resize(rect):
+	pass
+
 func _process(delta):
 	if not Global.is_alive():
 		return

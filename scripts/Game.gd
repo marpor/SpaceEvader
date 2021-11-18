@@ -35,10 +35,18 @@ func _physics_process(_delta):
 #		print_stray_nodes()
 
 func onResize():
-	Global.W = get_viewport_rect().size.x
-	Global.H = get_viewport_rect().size.y
+	var w = get_viewport_rect().size.x
+	var h = get_viewport_rect().size.y
+	if w == Global.W and h == Global.H:
+		return # no change
+
+	Global.W = w
+	Global.H = h
 	Global.RADIUS = Vector2(Global.W, Global.H).length()/2
 	Global.CENTER = Vector2(Global.W, Global.H)/2
+
+	if Maps.currentMap:
+		Maps.currentMap._on_resize(get_viewport_rect())
 
 func set_state(state):
 	if self.state == state:
