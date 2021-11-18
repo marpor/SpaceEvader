@@ -7,6 +7,8 @@ enum { MENU, OPTIONS, PLAYING, FROZEN, GAME_OVER}
 
 var state = -1
 
+onready var CreditLink = find_node("CreditLink")
+
 func _ready():
 	randomize()
 

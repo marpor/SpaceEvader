@@ -18,6 +18,7 @@ script = ExtResource( 6 )
 Enemy1 = ExtResource( 1 )
 Enemy1Count = 20
 EnemyColor = Color( 0.82, 0.1968, 0.1968, 1 )
+Location = "Bai Tu Long Bay"
 BackgroundName = "Bai Tu Long Bay"
 BackgroundCredit = "NASA Earth Observatory"
 BackgroundURL = "https://landsat.visibleearth.nasa.gov/view.php?id=147677"
