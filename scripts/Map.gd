@@ -102,15 +102,15 @@ func _physics_process(delta):
 
 	delta *= Global.speedOverride * Global.speedScale()
 
+	if not moving:
+		# Stop spawning enemies when we've reached the end of the map
+		return
+
 	if METEOR_DELAY > 0:
 		meteor_timeout -= delta
 		if meteor_timeout <= 0.0:
 			self.call_deferred("spawn_meteor")
 			meteor_timeout = METEOR_DELAY
-
-	if not moving:
-		# Stop spawning enemies when we've reached the end of the map
-		return
 
 	if ENEMY_DELAY > 0:
 		enemy_timeout -= delta
