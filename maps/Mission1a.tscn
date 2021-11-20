@@ -39,6 +39,7 @@ BackgroundURL = "https://landsat.visibleearth.nasa.gov/view.php?id=147677"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.75, 0.75, 0.75, 1 )
 position = Vector2( 4096, 2720 )
 rotation = 3.14159
 texture = ExtResource( 7 )
@@ -105,4 +106,4 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 233.908, 652.989 )
-rotation = -0.0216849
+rotation = -0.0217004

@@ -37,6 +37,7 @@ BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA11180"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.66, 0.66, 0.66, 1 )
 texture = ExtResource( 7 )
 centered = false
 

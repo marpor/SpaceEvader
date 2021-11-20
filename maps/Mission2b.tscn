@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://enemies/Enemy1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/Enemy3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/Enemy2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/Life.tscn" type="PackedScene" id=3]
 [ext_resource path="res://misc/MapAnimations.tscn" type="PackedScene" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scripts/Map.gd" type="Script" id=6]
 [ext_resource path="res://maps/processed/PIA08813.webp" type="Texture" id=7]
 [ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://enemies/Enemy6.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=2]
 size = 72
@@ -23,9 +24,11 @@ _data = {
 
 [node name="Map7" type="Node2D" groups=["maps"]]
 script = ExtResource( 6 )
-Enemy1 = ExtResource( 1 )
-Enemy2 = ExtResource( 2 )
-Enemy2Count = 10
+MeteorCount = 110
+Enemy1 = ExtResource( 2 )
+Enemy1Count = 20
+Enemy2 = ExtResource( 1 )
+Enemy2Count = 15
 EnemyColor = Color( 0.1725, 0.405375, 0.69, 1 )
 Location = "Mars"
 BackgroundName = "Mars: 'Victoria Crater' at Meridiani Planum"
@@ -37,6 +40,7 @@ BackgroundURL = "https://photojournal.jpl.nasa.gov/catalog/PIA08813"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.67, 0.67, 0.67, 1 )
 position = Vector2( 4032, 0 )
 rotation = 1.57079
 texture = ExtResource( 7 )
@@ -46,7 +50,7 @@ centered = false
 position = Vector2( 3584, 1184 )
 
 [node name="Life" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( 1760, 928 )
+position = Vector2( 1312, 1216 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Map"]
 margin_left = 448.0
@@ -63,6 +67,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Enemy5" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 1799, 1312 )
+rotation = 2.87979
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy6" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 1972, 992 )
+rotation = 2.87979
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy7" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 1888, 1152 )
+rotation = 2.87979
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy8" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3296, 1024 )
+rotation = 1.0472
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy9" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3469, 704 )
+rotation = 1.0472
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
+[node name="Enemy10" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 3385, 864 )
+rotation = 1.0472
+POINTS = 75
+SPEED = 120
+HUNTS = false
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 192, 190.119 )
 scale = Vector2( 1.38755, 1.52472 )
@@ -70,4 +116,4 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 415.12, 651.845 )
-rotation = -0.0227248
+rotation = -0.0227246
