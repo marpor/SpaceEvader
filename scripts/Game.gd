@@ -127,6 +127,7 @@ func changeMap(scene):
 		else:
 			Maps.currentMap.queue_free()
 
+		Maps.currentMap._on_resize(get_viewport_rect())
 	Global.ship.reset_position()
 
 	# Reset score when going from tutorial to main maps

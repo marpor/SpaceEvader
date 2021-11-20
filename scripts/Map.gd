@@ -60,12 +60,33 @@ func _ready():
 func _enter_tree():
 	Maps.currentMap = map
 	Global.ship.visible = true
+	_on_resize(null)
 
 func _exit_tree():
 	queue_free()
 
+var portrait = false
 func _on_resize(rect):
-	pass
+	var newPortrait = Global.W < Global.H
+	if newPortrait == portrait:
+		return # no change
+	portrait = newPortrait
+
+	var angle = 0
+	if portrait:
+		# Portrait
+#		Global.DIR = Vector2.UP
+		angle = 89
+	else:
+		# Landscape
+		Global.DIR = Vector2.RIGHT
+		angle = -90
+
+	for node in $Map.get_children():
+		if node is Control:
+			node.rect_rotation += angle
+#		elif node is Node2D:
+#			node.rotate(angle)
 
 func _process(delta):
 	if not Global.is_alive():
