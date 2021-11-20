@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Panel",
-"class": "MonitorPlotPanel",
-"language": "GDScript",
-"path": "res://addons/PerfMonitor/MonitorPlotPanel.gd"
-} ]
-_global_script_class_icons={
-"MonitorPlotPanel": ""
-}
-
 [application]
 
 config/name="SpaceEvader"
