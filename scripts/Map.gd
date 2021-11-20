@@ -133,7 +133,13 @@ func spawn_enemy():
 	if EnemyColor != Color.white:
 		e.COLOR = EnemyColor
 
-	Maps.currentMap.get_node("Map").add_child(e)
+	# Maps added to root means they will move slower towards the player than to the sides.
+	# While this is a bit wierd, it plays pretty well as it makes kiting enemies more effective.
+	Maps.currentMap.add_child(e)
+
+	# Alternatively, adding enemies to "Map" means they will move *with* the map, and at the same 
+	# speed in all directions. While more correct, it plays more monotone.
+#	Maps.currentMap.get_node("Map").add_child(e)
 
 	e.global_position = Global.randStartPos(35)
 	e.speed *= rand_range(0.7, 1.3)

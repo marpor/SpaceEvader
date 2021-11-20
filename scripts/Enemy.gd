@@ -1,7 +1,7 @@
 extends "res://scripts/Breakable.gd"
 
 export(int) var POINTS = 25
-export(int) var SPEED = 100
+export(int) var SPEED = 125
 export(bool) var HUNTS = true
 export(Color) var COLOR = Color.white
 export(float) var DIRECTION = 0
