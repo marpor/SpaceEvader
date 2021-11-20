@@ -14,7 +14,7 @@ _data = {
 "points": PoolVector2Array( -78.0355, -1.61578, 78.0355, 1.61578, 396.21, 405.529, -503.702, 4.37268, 503.702, -4.37268, 1347.32, 214, -496.622, 32.3607, 496.622, -32.3607, 2543.27, 698.81, -169.286, 0.488159, 169.286, -0.488159, 3400.06, 886.479 )
 }
 
-[node name="Map6" type="Node2D" groups=["maps"]]
+[node name="Map7" type="Node2D" groups=["maps"]]
 script = ExtResource( 4 )
 Enemy1 = ExtResource( 6 )
 Enemy1Count = 45

@@ -13,7 +13,7 @@
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -58.9235, 0.11541, 58.9235, -0.11541, 178.449, 152.505, -150.565, -59.8145, 150.565, 59.8145, 456.404, 224.042, -55.4595, 0.440471, 55.4595, -0.440471, 794.554, 240.951 )
+"points": PoolVector2Array( -58.9235, 0.11541, 58.9235, -0.11541, 150.122, 152.505, -150.565, -59.8145, 150.565, 59.8145, 456.404, 224.042, -55.4595, 0.440471, 55.4595, -0.440471, 794.554, 240.951 )
 }
 
 [node name="Map3" type="Node2D" groups=["maps"]]
@@ -81,6 +81,6 @@ scale = Vector2( 4.51871, 6.15063 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 178.449, 152.505 )
-rotation = 0.00267806
+position = Vector2( 150.122, 152.505 )
+rotation = 0.00263128
 scale = Vector2( 0.222599, 0.159157 )

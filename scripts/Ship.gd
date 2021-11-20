@@ -109,7 +109,7 @@ func _process(delta):
 #	rotation = Global.DIR.angle() - Vector2.UP.angle()
 
 func _physics_process(delta):
-	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, delta*2, SPEED_MIN)
+	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, Global.speedScale()*delta*2, SPEED_MIN)
 
 	if protectedTime > 0.0:
 		protectedTime -= delta * Global.speedOverride
@@ -179,6 +179,8 @@ func shoot():
 		return
 	if not Maps.currentMap:
 		return
+
+	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, 1/Global.speedScale(), SPEED_MAX)
 
 	Global.score -= 10
 

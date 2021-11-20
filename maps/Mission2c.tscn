@@ -56,14 +56,14 @@ position = Vector2( 1248, 1128 )
 position = Vector2( 2336, 1237 )
 
 [node name="Enemy5" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 1376, 1084 )
+position = Vector2( 1287, 1100 )
 rotation = 1.48353
 POINTS = 75
 SPEED = 120
 HUNTS = false
 
 [node name="Enemy6" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 1536, 1272 )
+position = Vector2( 1447, 1288 )
 rotation = 1.48353
 POINTS = 75
 SPEED = 120
@@ -75,6 +75,7 @@ rotation = 1.74533
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.5
 
 [node name="Enemy8" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 2432, 1304 )
@@ -82,6 +83,7 @@ rotation = 1.74533
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.5
 
 [node name="Enemy9" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3296, 960 )
@@ -89,6 +91,7 @@ rotation = 1.48353
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.7
 
 [node name="Enemy10" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3424, 1180 )
@@ -96,6 +99,7 @@ rotation = 1.48353
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.7
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Map"]
 margin_left = 448.0
@@ -118,5 +122,6 @@ scale = Vector2( 1.38755, 1.52472 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 380.527, 661.105 )
-rotation = -0.0104605
+position = Vector2( 1619.65, 590.115 )
+rotation = -0.106703
+offset = 1236.63

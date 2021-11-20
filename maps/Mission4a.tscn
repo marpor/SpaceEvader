@@ -31,6 +31,7 @@ BackgroundURL = "https://apod.nasa.gov/apod/ap200823.html"
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite" parent="Map"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
 position = Vector2( 4096, 3328 )
 rotation = 3.14159
 scale = Vector2( 1.11594, 1.11594 )

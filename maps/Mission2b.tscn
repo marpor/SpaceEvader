@@ -68,25 +68,28 @@ __meta__ = {
 }
 
 [node name="Enemy5" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 1799, 1312 )
+position = Vector2( 1856, 1500 )
 rotation = 2.87979
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.25
 
 [node name="Enemy6" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 1972, 992 )
+position = Vector2( 2029, 1180 )
 rotation = 2.87979
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.25
 
 [node name="Enemy7" parent="Map" instance=ExtResource( 9 )]
-position = Vector2( 1888, 1152 )
+position = Vector2( 1945, 1340 )
 rotation = 2.87979
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.25
 
 [node name="Enemy8" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3296, 1024 )
@@ -94,6 +97,7 @@ rotation = 1.0472
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.75
 
 [node name="Enemy9" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3469, 704 )
@@ -101,6 +105,7 @@ rotation = 1.0472
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.75
 
 [node name="Enemy10" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3385, 864 )
@@ -108,6 +113,7 @@ rotation = 1.0472
 POINTS = 75
 SPEED = 120
 HUNTS = false
+START_U = 0.75
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 192, 190.119 )
@@ -115,5 +121,6 @@ scale = Vector2( 1.38755, 1.52472 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 415.12, 651.845 )
-rotation = -0.0227246
+position = Vector2( 976.393, 362.84 )
+rotation = -0.392628
+offset = 618.434

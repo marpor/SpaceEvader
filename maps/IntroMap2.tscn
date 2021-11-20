@@ -135,14 +135,20 @@ HUNTS = false
 
 [node name="Enemy7" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3147, 221 )
+rotation = 1.57079
+START_U = 0.6
 
 [node name="Enemy9" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3147, 465 )
+rotation = 1.57079
 SPEED = 60
+START_U = 0.6
 
 [node name="Enemy8" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 3147, 343 )
+rotation = 1.57079
 SPEED = 80
+START_U = 0.6
 
 [node name="MeteorC" parent="Map" instance=ExtResource( 5 )]
 position = Vector2( 1792, 495 )
@@ -155,6 +161,7 @@ z_index = 2
 POINTS = 1000
 SPEED = 150
 HUNTS = false
+START_U = 0.7
 COLOR = Color( 0.564706, 0.0588235, 0.0588235, 1 )
 TURN_RATE = -5.0
 

@@ -1,8 +1,9 @@
 extends "res://scripts/Breakable.gd"
 
 export(int) var POINTS = 25
-export(int) var SPEED = 125
+export(int) var SPEED = 150
 export(bool) var HUNTS = true
+export(float) var START_U = 0.0
 export(Color) var COLOR = Color.white
 export(float) var DIRECTION = 0
 export(float) var ANGULAR_VELOCITY = 0
@@ -97,10 +98,14 @@ func _process(delta):
 	if not Global.is_alive():
 		return
 
-	delta *= Global.speedOverride
+	delta *= Global.speedOverride * Global.speedScale()
 
 	var p0 = global_position
-	if (p0-Global.CENTER).length() > Global.RADIUS*1.2:
+#	if (p0-Global.CENTER).length() > Global.RADIUS*1.2:
+#		return
+
+	# Wait with moving until we reach (normalized) start time
+	if Maps.currentMap.u < START_U:
 		return
 
 	if HUNTS:
@@ -116,8 +121,7 @@ func _process(delta):
 			rotation += deg2rad(TURN_RATE) * delta
 			dir = dir.rotated(deg2rad(TURN_RATE) * delta)
 
-	position += dir * delta * speed * Global.speedScale()
-
+	position += dir * delta * speed
 
 func _on_VisibilityNotifier2D_screen_exited():
 	# Enemies get cleared at map change, so we don't bother about it here

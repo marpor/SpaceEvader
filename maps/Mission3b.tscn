@@ -11,7 +11,7 @@
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -32.4256, -0.994496, 32.4256, 0.994496, 150.485, 210.71, -84.2035, -21.8162, 84.2035, 21.8162, 398.344, 153.48, -73.3831, 5.88438, 73.3831, -5.88438, 589.549, 209.409, -32.0846, 0.120558, 32.0846, -0.120558, 759.509, 171.69 )
+"points": PoolVector2Array( -32.4256, -0.994496, 32.4256, 0.994496, 150.485, 210.71, -111.071, -31.6856, 111.071, 31.6856, 407.196, 153.48, -96.8921, 1.30215, 96.8921, -1.30215, 589.549, 209.409, -32.0846, 0.120558, 32.0846, -0.120558, 759.509, 171.69 )
 }
 
 [node name="Map2" type="Node2D" groups=["maps"]]
@@ -43,36 +43,40 @@ position = Vector2( 1944, 2048 )
 position = Vector2( 3552, 1888 )
 
 [node name="Boss4" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 1536, 2128 )
+position = Vector2( 1792, 2176 )
 rotation = 2.35619
 SPEED = 300
 HUNTS = false
+START_U = 0.2
 COLOR = Color( 0.647059, 0.2, 0.2, 1 )
-TURN_RATE = -20.0
+TURN_RATE = -15.0
 
 [node name="Boss6" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 2720, 2360 )
-rotation = 2.61799
+position = Vector2( 3136, 2272 )
+rotation = 2.35619
 SPEED = 200
 HUNTS = false
+START_U = 0.6
 COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
-TURN_RATE = 10.0
+TURN_RATE = -15.0
 
 [node name="Boss5" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 2056, 1488 )
+position = Vector2( 2400, 1376 )
 rotation = 0.523598
 SPEED = 250
 HUNTS = false
+START_U = 0.4
 COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
-TURN_RATE = 35.0
+TURN_RATE = 15.0
 
 [node name="Boss7" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( 3440, 1648 )
+position = Vector2( 3680, 1408 )
 rotation = 0.523598
 SPEED = 200
 HUNTS = false
+START_U = 0.8
 COLOR = Color( 0.648438, 0.200104, 0.200104, 1 )
-TURN_RATE = 35.0
+TURN_RATE = 15.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -136, 816 )
@@ -81,5 +85,5 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 150.485, 210.71 )
-rotation = -0.0531899
+rotation = -0.0658238
 scale = Vector2( 0.222599, 0.159157 )

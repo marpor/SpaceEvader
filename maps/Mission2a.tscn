@@ -18,7 +18,7 @@ font_data = ExtResource( 8 )
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 299.809, 650.611, -340.295, -23.3721, 340.295, 23.3721, 1187.7, 766.042, -158.425, -0.419391, 158.425, 0.419391, 2144.79, 986.411 )
+"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 299.809, 661.105, -340.295, -23.3721, 340.295, 23.3721, 1187.7, 766.042, -158.425, -2.69403, 158.425, 2.69403, 2052.54, 912.955 )
 }
 
 [node name="Map7" type="Node2D" groups=["maps"]]
@@ -68,5 +68,5 @@ scale = Vector2( 1.38755, 1.52472 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 299.809, 650.611 )
-rotation = -0.00265158
+position = Vector2( 299.809, 661.105 )
+rotation = -0.00311951

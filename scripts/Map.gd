@@ -5,6 +5,7 @@ var mapT = 0.0
 var map = self
 onready var background = $Map
 var moving = true
+var u = 0.0
 
 export(int) var MAP_TIME = 30 # 0 for infinite map
 
@@ -102,6 +103,8 @@ func _physics_process(delta):
 
 	delta *= Global.speedOverride * Global.speedScale()
 
+	u += delta / MAP_TIME
+
 	if not moving:
 		# Stop spawning enemies when we've reached the end of the map
 		return
@@ -137,7 +140,7 @@ func spawn_enemy():
 	# While this is a bit wierd, it plays pretty well as it makes kiting enemies more effective.
 	Maps.currentMap.add_child(e)
 
-	# Alternatively, adding enemies to "Map" means they will move *with* the map, and at the same 
+	# Alternatively, adding enemies to "Map" means they will move *with* the map, and at the same
 	# speed in all directions. While more correct, it plays more monotone.
 #	Maps.currentMap.get_node("Map").add_child(e)
 
