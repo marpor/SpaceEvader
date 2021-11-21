@@ -130,10 +130,6 @@ func changeMap(scene):
 		Maps.currentMap._on_resize(get_viewport_rect())
 	Global.ship.reset_position()
 
-	# Reset score when going from tutorial to main maps
-	if Maps.mapNo == 2:
-		Global.score = 0
-
 	Maps.currentMap = scene
 	$Map.add_child(scene)
 

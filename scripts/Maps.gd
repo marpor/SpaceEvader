@@ -29,8 +29,13 @@ var mapZ = -1
 
 func next_map():
 	mapNo += 1
+
+	# Reset score when going from tutorial to main maps
+	if Maps.mapNo == 2:
+		Global.score = 0
+
 	if mapNo >= maps.size():
-		mapNo = 0
+		mapNo = 2 # after tutorial
 
 	return maps[mapNo].instance()
 
