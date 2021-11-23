@@ -129,6 +129,9 @@ func _on_Ship_area_entered(area):
 			health += 1
 		health_changed(health)
 		area.queue_free()
+		if Global.use_multiplier:
+			Global.score_multiplier *= 1.5
+			Global.multiplier_timeout += 2.0
 	else:
 		# We hit something else - an enemy or meteor
 		# See if it kills us, or if we have a shield?

@@ -78,7 +78,12 @@ func shot(source):
 
 	life -= 1
 	if (life == 0):
-		Global.score += POINTS
+		Global.score += Global.score_multiplier * POINTS
+		if Global.use_multiplier:
+			Global.score_multiplier *= 1.25
+			Global.multiplier_timeout += 0.5
+			if Global.multiplier_timeout > 2.5:
+				Global.multiplier_timeout = 2.5
 
 		var fadeOut = false
 		if fadeOut:
