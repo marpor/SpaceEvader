@@ -78,7 +78,9 @@ func shot(source):
 
 	life -= 1
 	if (life == 0):
-		Global.score += Global.score_multiplier * Global.score_extra_multiplier * POINTS
+		var points = int(Global.score_multiplier * Global.score_extra_multiplier * POINTS)
+		Global.score += points
+		Game.float_text(global_position, points)
 		if Global.use_multiplier:
 			Global.score_multiplier *= 1.25
 			if Global.score_multiplier > 8.0:

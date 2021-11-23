@@ -185,7 +185,8 @@ func shoot():
 
 	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, 1/Global.speedScale(), SPEED_MAX)
 
-	Global.score -= 10 * Global.score_multiplier * Global.score_extra_multiplier
+	var points = int(-10 * Global.score_multiplier * Global.score_extra_multiplier)
+	Global.score += points
 
 	var s = ShotScene.instance()
 
@@ -196,6 +197,8 @@ func shoot():
 	var ship_tip = Global.get_player_position() + 30 * s.dir
 	s.position = ship_tip
 	s.speed *= Global.speedScale()
+
+	Game.float_text(ship_tip + 10 * s.dir, points)
 
 	Maps.currentMap.add_child(s)
 

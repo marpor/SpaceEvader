@@ -92,6 +92,18 @@ func set_state(state):
 
 	self.state = state
 
+var FloatText = preload("res://misc/FloatText.tscn")
+
+export var travel = Vector2(0, -80)
+export var duration = 2
+export var spread = PI/2
+
+func float_text(position, value, crit=false):
+	var fct = FloatText.instance()
+	fct.rect_position = position
+	add_child(fct)
+	fct.show_value(str(value), travel, duration, spread, crit)
+
 func updateScore():
 	if Global.score_multiplier > 1.0:
 		$UI/HUD/ScoreLabel.text = "%.2f X, Score: %d" % [Global.score_multiplier * Global.score_extra_multiplier, Global.score]
