@@ -13,7 +13,6 @@ layer = 2
 follow_viewport_enable = true
 
 [node name="StartMenu" type="Control" parent="UI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -173,7 +172,7 @@ margin_right = 624.0
 margin_bottom = -40.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "Version 0.15 - Copyright 2021 marpor"
+text = "Version 0.17 - Copyright 2021 marpor"
 underline = 2
 __meta__ = {
 "_edit_use_anchors_": false
