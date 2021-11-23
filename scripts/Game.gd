@@ -28,6 +28,7 @@ func _physics_process(_delta):
 			Global.multiplier_timeout -= _delta * Global.speedOverride * Global.speedScale()
 		else:
 			Global.score_multiplier = 1.0
+			Global.score_extra_multiplier = 1.0
 
 	if Engine.get_physics_frames() % 6 == 0:
 		if state in [PLAYING, FROZEN]:
@@ -93,7 +94,7 @@ func set_state(state):
 
 func updateScore():
 	if Global.score_multiplier > 1.0:
-		$UI/HUD/ScoreLabel.text = "%.2f X, Score: %d" % [Global.score_multiplier, Global.score]
+		$UI/HUD/ScoreLabel.text = "%.2f X, Score: %d" % [Global.score_multiplier * Global.score_extra_multiplier, Global.score]
 	else:
 		$UI/HUD/ScoreLabel.text = "Score: %d" % Global.score
 

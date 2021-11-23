@@ -24,8 +24,9 @@ var speedOverride = 0.0
 var move_sensitivity = 1.0
 
 # Score multiplier
-var use_multiplier = false
+var use_multiplier = true
 var score_multiplier = 1.0
+var score_extra_multiplier = 1.0
 var multiplier_timeout = 0.0
 
 func get_player_position():

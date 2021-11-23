@@ -61,7 +61,7 @@ func shot(source):
 	life -= 1
 	if (life == 0):
 		if Global.use_multiplier:
-			Global.score += Global.score_multiplier * 1
+			Global.score += Global.score_multiplier * Global.score_extra_multiplier * 1
 		removeMe()
 
 func _process(delta):
