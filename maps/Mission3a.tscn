@@ -60,6 +60,7 @@ position = Vector2( 3576, 661 )
 [node name="Boss7" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 1848, 293 )
 rotation = -0.750758
+POINTS = 500
 SPEED = 30
 HUNTS = false
 START_U = 0.3
@@ -67,12 +68,14 @@ START_U = 0.3
 [node name="Boss9" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3776, 657 )
 rotation = 1.57079
+POINTS = 500
 SPEED = 30
 HUNTS = false
 START_U = 0.7
 
 [node name="Boss8" parent="Map" instance=ExtResource( 10 )]
 position = Vector2( 912, 85 )
+POINTS = 500
 SPEED = 0
 HUNTS = false
 ANGULAR_VELOCITY = -15.0
@@ -81,6 +84,7 @@ ANGULAR_VELOCITY = -15.0
 position = Vector2( 506, 846 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
+POINTS = 150
 SPEED = 300
 HUNTS = false
 
@@ -88,6 +92,7 @@ HUNTS = false
 position = Vector2( 775, 957 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
+POINTS = 150
 SPEED = 300
 HUNTS = false
 
@@ -95,6 +100,7 @@ HUNTS = false
 position = Vector2( 917, 1020 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
+POINTS = 150
 SPEED = 300
 HUNTS = false
 
@@ -102,6 +108,7 @@ HUNTS = false
 position = Vector2( 638, 903 )
 rotation = -3.14159
 scale = Vector2( 0.4, 0.4 )
+POINTS = 150
 SPEED = 300
 HUNTS = false
 

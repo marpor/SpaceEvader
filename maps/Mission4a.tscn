@@ -47,6 +47,7 @@ position = Vector2( 643, 174 )
 [node name="Boss2" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 531, -13 )
 rotation = -0.523598
+POINTS = 500
 SPEED = 70
 HUNTS = false
 

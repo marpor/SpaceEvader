@@ -55,6 +55,7 @@ position = Vector2( 1664, 981 )
 [node name="Enemy7" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 1440, 1440 )
 rotation = -3.14159
+POINTS = 100
 HUNTS = false
 START_U = 0.2
 COLOR = Color( 0, 0.992157, 0.364706, 1 )
@@ -62,6 +63,7 @@ COLOR = Color( 0, 0.992157, 0.364706, 1 )
 [node name="Enemy8" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 1548, 1376 )
 rotation = -3.14159
+POINTS = 100
 HUNTS = false
 START_U = 0.2
 COLOR = Color( 0, 0.992157, 0.364706, 1 )
@@ -69,6 +71,7 @@ COLOR = Color( 0, 0.992157, 0.364706, 1 )
 [node name="Enemy9" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 1632, 1440 )
 rotation = -3.14159
+POINTS = 100
 HUNTS = false
 START_U = 0.2
 COLOR = Color( 0, 0.992157, 0.364706, 1 )

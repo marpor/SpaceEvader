@@ -19,7 +19,7 @@ font_data = ExtResource( 8 )
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
 _data = {
-"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 380.527, 661.105, -340.295, -23.3721, 340.295, 23.3721, 1245.36, 598.143, -158.425, -2.69403, 158.425, 2.69403, 1948.76, 556.168 )
+"points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 299.809, 661.105, -340.295, -23.3721, 340.295, 23.3721, 1245.36, 598.143, -158.425, -2.69403, 158.425, 2.69403, 1994.88, 556.168 )
 }
 
 [node name="Map7" type="Node2D" groups=["maps"]]
@@ -58,21 +58,21 @@ position = Vector2( 2336, 1237 )
 [node name="Enemy5" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 1287, 1100 )
 rotation = 1.48353
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 
 [node name="Enemy6" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 1447, 1288 )
 rotation = 1.48353
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 
 [node name="Enemy7" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 2368, 1084 )
 rotation = 1.74533
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 START_U = 0.5
@@ -80,7 +80,7 @@ START_U = 0.5
 [node name="Enemy8" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 2432, 1304 )
 rotation = 1.74533
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 START_U = 0.5
@@ -88,7 +88,7 @@ START_U = 0.5
 [node name="Enemy9" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3296, 960 )
 rotation = 1.48353
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 START_U = 0.7
@@ -96,7 +96,7 @@ START_U = 0.7
 [node name="Enemy10" parent="Map" instance=ExtResource( 9 )]
 position = Vector2( 3424, 1180 )
 rotation = 1.48353
-POINTS = 75
+POINTS = 150
 SPEED = 120
 HUNTS = false
 START_U = 0.7
@@ -122,6 +122,6 @@ scale = Vector2( 1.38755, 1.52472 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 1619.65, 590.115 )
-rotation = -0.106703
+position = Vector2( 1513.97, 599.63 )
+rotation = -0.0544258
 offset = 1236.63

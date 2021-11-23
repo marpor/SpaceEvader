@@ -45,6 +45,7 @@ position = Vector2( 3552, 1888 )
 [node name="Boss4" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 1792, 2176 )
 rotation = 2.35619
+POINTS = 500
 SPEED = 300
 HUNTS = false
 START_U = 0.2
@@ -54,6 +55,7 @@ TURN_RATE = -15.0
 [node name="Boss6" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 3136, 2272 )
 rotation = 2.35619
+POINTS = 500
 SPEED = 200
 HUNTS = false
 START_U = 0.6
@@ -63,6 +65,7 @@ TURN_RATE = -15.0
 [node name="Boss5" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 2400, 1376 )
 rotation = 0.523598
+POINTS = 500
 SPEED = 250
 HUNTS = false
 START_U = 0.4
@@ -72,6 +75,7 @@ TURN_RATE = 15.0
 [node name="Boss7" parent="Map" instance=ExtResource( 4 )]
 position = Vector2( 3680, 1408 )
 rotation = 0.523598
+POINTS = 500
 SPEED = 200
 HUNTS = false
 START_U = 0.8

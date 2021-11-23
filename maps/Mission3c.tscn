@@ -52,6 +52,7 @@ position = Vector2( 3712, 888 )
 [node name="Enemy9" parent="Map" instance=ExtResource( 5 )]
 position = Vector2( 416, 848 )
 rotation = -2.35619
+POINTS = 100
 SPEED = 130
 HUNTS = false
 
@@ -64,15 +65,18 @@ HUNTS = false
 [node name="Enemy8" parent="Map" instance=ExtResource( 6 )]
 position = Vector2( 816, -128 )
 rotation = -0.261799
+POINTS = 50
 SPEED = 110
 HUNTS = false
 
 [node name="Enemy10" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 1662, 336 )
+POINTS = 500
 SPEED = 50
 
 [node name="Enemy11" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 2895, 1228 )
+POINTS = 500
 SPEED = 65
 
 [node name="Path2D" type="Path2D" parent="."]
