@@ -173,9 +173,9 @@ margin_right = 624.0
 margin_bottom = -37.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "Version 0.17 - Copyright 2021 marpor"
-underline = 2
 custom_fonts/font = ExtResource( 4 )
+text = "VERSION"
+underline = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,5 +222,6 @@ __meta__ = {
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/ChallengesButton" to="." method="_on_ChallengesButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CenterContainer/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="UI/StartMenu/VersionLink" to="." method="_on_VersionLink_pressed"]
 [connection signal="pressed" from="UI/StartMenu/CreditLink" to="." method="_on_CreditLink_pressed"]
 [connection signal="pressed" from="UI/StartMenu/FullscreenButton" to="." method="_on_FullscreenButton_pressed"]

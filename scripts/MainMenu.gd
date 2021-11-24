@@ -6,6 +6,7 @@ onready var FullscreenButton = find_node("FullscreenButton")
 onready var QuitButton = find_node("QuitButton")
 onready var OptionsButton = find_node("OptionsButton")
 onready var HighScoreLabel = find_node("HighScoreLabel")
+onready var VersionLink = find_node("VersionLink")
 
 onready var UI = find_node("UI")
 onready var StartMenu = find_node("StartMenu")
@@ -21,6 +22,10 @@ func _ready():
 		QuitButton.hide()
 
 	Game.set_state(Game.MENU)
+	
+	VersionLink.text = \
+		"Version %d.%d - Copyright 2021 marpor" \
+		% [Version.minor, Version.major]
 
 func menu():
 	Game.changeMap(menuMap.instance())
@@ -38,6 +43,9 @@ func _on_FullscreenButton_pressed():
 
 func _on_CreditLink_pressed():
 	OS.shell_open("https://esahubble.org/images/heic2007a/")
+
+func _on_VersionLink_pressed():
+	OS.shell_open("https://se.m8y.net/")
 
 func _on_TutorialButton_pressed():
 	Maps.mapNo = -1 # nextMap loads first map

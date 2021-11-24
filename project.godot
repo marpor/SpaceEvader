@@ -20,6 +20,7 @@ config/windows_native_icon="res://artwork/Icon.ico"
 
 [autoload]
 
+Version="*res://scripts/Version.gd"
 Global="*res://scripts/Global.gd"
 Maps="*res://scripts/Maps.gd"
 Meteors="*res://scripts/Meteors.gd"
