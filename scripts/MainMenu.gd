@@ -22,7 +22,7 @@ func _ready():
 		QuitButton.hide()
 
 	Game.set_state(Game.MENU)
-	
+
 	VersionLink.text = \
 		"Version %d.%d - Copyright 2021 marpor" \
 		% [Version.minor, Version.major]
