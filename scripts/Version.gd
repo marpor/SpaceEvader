@@ -1,4 +1,4 @@
 extends Node
 
-var minor = 0
-var major = 18
+var minor = 18
+var major = 0
