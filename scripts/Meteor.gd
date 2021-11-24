@@ -47,22 +47,29 @@ func _ready():
 	var color = palette[randi()%palette.size()]
 	for part in parts:
 		part.modulate = color
+		life += 1
 
 func _on_VisibilityNotifier2D_screen_exited():
 	removeMe()
 
 func shot(source):
-	# loose ALL parts
-	while not parts.empty():
-		var part = parts.pop_back()
-#		call_deferred("loosePart", part, source)
-		loosePart(part, source)
+	for n in range(2):
+		if not parts.empty():
+			var part = parts.pop_back()
+	#		call_deferred("loosePart", part, source)
+			loosePart(part, source)
 
-	life -= 1
-	if (life == 0):
 		if Global.use_multiplier:
-			Global.score += Global.score_multiplier * Global.score_extra_multiplier * 1
-		removeMe()
+			Global.multiplier_timeout += 0.5
+			if Global.multiplier_timeout > 2.0:
+				Global.multiplier_timeout = 2.0
+
+		life -= 1
+		if (life <= 0):
+			if Global.use_multiplier:
+				Global.score += Global.score_multiplier * Global.score_extra_multiplier * 1
+			removeMe()
+			break
 
 func _process(delta):
 	if not Global.is_alive():
