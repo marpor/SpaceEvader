@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/Main.tres" type="Theme" id=1]
 [ext_resource path="res://Logo.svg" type="Texture" id=2]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://fonts/SmallTextFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://artwork/Clear.svg" type="Texture" id=5]
 
 [node name="MainMenu" type="Node2D"]
@@ -167,13 +168,14 @@ __meta__ = {
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 24.0
-margin_top = -54.0
+margin_top = -62.0
 margin_right = 624.0
-margin_bottom = -40.0
+margin_bottom = -37.0
 focus_mode = 2
 size_flags_horizontal = 3
 text = "Version 0.17 - Copyright 2021 marpor"
 underline = 2
+custom_fonts/font = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -187,6 +189,7 @@ margin_right = 624.0
 margin_bottom = -24.0
 rect_clip_content = true
 focus_mode = 2
+custom_fonts/font = ExtResource( 4 )
 text = "Background credit: NASA, ESA, and STScI"
 underline = 1
 __meta__ = {

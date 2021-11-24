@@ -11,7 +11,7 @@
 [ext_resource path="res://Logo.svg" type="Texture" id=9]
 [ext_resource path="res://fonts/TitleTheme.tres" type="Theme" id=10]
 [ext_resource path="res://artwork/CheckboxUnchecked.svg" type="Texture" id=11]
-[ext_resource path="res://misc/CreditFont.tres" type="DynamicFont" id=12]
+[ext_resource path="res://fonts/SmallTextFont.tres" type="DynamicFont" id=12]
 
 [sub_resource type="Animation" id=3]
 resource_name = "Appear"
@@ -111,7 +111,6 @@ __meta__ = {
 }
 
 [node name="FreezeMenu" type="Control" parent="UI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -256,7 +255,7 @@ margin_left = -16.0
 margin_top = 8.0
 margin_right = 880.0
 margin_bottom = 520.0
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 32, 0 )
 mouse_filter = 1
 texture_normal = ExtResource( 9 )
@@ -276,10 +275,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -23.5
-margin_top = -28.0
-margin_right = 23.5
-margin_bottom = -8.0
+margin_left = -30.0
+margin_top = -44.0
+margin_right = 30.0
+margin_bottom = -19.0
 grow_horizontal = 2
 rect_clip_content = true
 focus_mode = 2
