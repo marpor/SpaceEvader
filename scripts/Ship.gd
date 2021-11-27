@@ -128,6 +128,7 @@ func _on_Ship_area_entered(area):
 		if health < MAX_HEALTH:
 			health += 1
 		health_changed(health)
+		Sounds.shield(global_position)
 		area.queue_free()
 		if Global.use_multiplier:
 			Global.score_extra_multiplier = 2.0
@@ -164,6 +165,7 @@ func die():
 
 	health -= 1
 	health_changed(health)
+	Sounds.playerHit(global_position, health)
 
 	if health > 0:
 		return false # not dead yet!
@@ -201,6 +203,8 @@ func shoot():
 	Game.float_text(ship_tip + 10 * s.dir, points)
 
 	Maps.currentMap.add_child(s)
+
+	Sounds.shot(global_position)
 
 func health_changed(health):
 	var shields = health-1

@@ -27,12 +27,13 @@ Meteors="*res://scripts/Meteors.gd"
 Helpers="*res://scripts/Helpers.gd"
 Enemies="*res://scripts/Enemies.gd"
 Game="*res://Game.tscn"
+Sounds="*res://scripts/Sounds.gd"
 
 [display]
 
 window/size/width=720
 window/size/height=720
-window/size/test_width=1900
+window/size/test_width=1600
 window/size/test_height=900
 window/dpi/allow_hidpi=true
 window/handheld/orientation="sensor_landscape"

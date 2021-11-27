@@ -103,6 +103,8 @@ func shot(source):
 		else:
 			removeMe()
 
+	Sounds.enemyHit(global_position, life)
+
 func _process(delta):
 	if not Global.is_alive():
 		return

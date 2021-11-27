@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shieldloss2.wav-427ff8c0ac71425a3513c91ba9214900.sample"
+
+[deps]
+
+source_file="res://sounds/shieldloss2.wav"
+dest_files=[ "res://.import/shieldloss2.wav-427ff8c0ac71425a3513c91ba9214900.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
