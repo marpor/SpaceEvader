@@ -92,6 +92,8 @@ func set_state(state):
 
 	self.state = state
 
+	Sounds.music(state)
+
 var FloatText = preload("res://misc/FloatText.tscn")
 
 export var travel = Vector2(0, -80)

@@ -24,6 +24,10 @@ func pickWeighted(arr):
 			return v[1]
 	assert(false) # shouldn't get here!
 
+# Pick a random element from array
+func pickRandom(arr):
+	return arr[randi()%arr.size()]
+
 # Increase clamped - increase val by increment, but clamp to maxVal
 func inc_clamp(var val, var increment, var maxVal):
 	val += increment
