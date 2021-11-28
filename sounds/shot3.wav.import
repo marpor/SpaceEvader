@@ -11,11 +11,11 @@ dest_files=[ "res://.import/shot3.wav-be67e6c2eb8b43d10163e27f5c40365e.sample" ]
 
 [params]
 
-force/8_bit=false
-force/mono=false
+force/8_bit=true
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
 edit/loop=false
-compress/mode=0
+compress/mode=1

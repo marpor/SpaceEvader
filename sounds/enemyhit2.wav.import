@@ -11,11 +11,11 @@ dest_files=[ "res://.import/enemyhit2.wav-97045437d3d95d7152f8411406e4eb40.sampl
 
 [params]
 
-force/8_bit=false
-force/mono=false
+force/8_bit=true
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
 edit/loop=false
-compress/mode=0
+compress/mode=1
