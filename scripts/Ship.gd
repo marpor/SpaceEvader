@@ -156,6 +156,8 @@ func move(relative):
 	relative *= Global.move_sensitivity
 	position += relative
 
+	Sounds.move(global_position, relative)
+
 func is_alive():
 	return health > 0
 

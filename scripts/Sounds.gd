@@ -37,7 +37,7 @@ func play(pos, sound, bus="Master"):
 	if distance < 0:
 		distance = 0
 	var scale = (distance/(Global.RADIUS*2))
-	var vol = scale * -40 # approx half volume across screen
+	var vol = scale * -40 # how many db to lower volume across screen
 
 	player.stream = sound
 	player.volume_db = vol
@@ -46,8 +46,12 @@ func play(pos, sound, bus="Master"):
 
 func shot(pos):
 	var soundShot = preload("res://sounds/shot2.wav")
-	play(pos, soundShot)
+	play(pos, soundShot, "Environment")
 
+
+func move(pos, relative):
+	var snd = preload("res://sounds/swoosh1.wav")
+#	play(pos, snd, "Environment")
 
 func meteorHit(pos, life):
 	var rockhits = [
@@ -57,7 +61,7 @@ func meteorHit(pos, life):
 		preload("res://sounds/rock4.wav"),
 		preload("res://sounds/rock5.wav"),
 	]
-	play(pos, Helpers.pickRandom(rockhits), "Environment")
+	play(pos, Helpers.pickRandom(rockhits), "Meteor")
 
 #	if life > 0:
 #		play(pos, Helpers.pickRandom(rockhits))
@@ -69,9 +73,9 @@ var soundEnemyDied = preload("res://sounds/metal2.wav")
 
 func enemyHit(pos, life):
 	if life > 0:
-		play(pos, soundEnemyHit, "Environment")
+		play(pos, soundEnemyHit, "Enemy")
 	else:
-		play(pos, soundEnemyDied, "Environment")
+		play(pos, soundEnemyDied, "Enemy")
 
 var soundShield = preload("res://sounds/shield3.wav")
 
