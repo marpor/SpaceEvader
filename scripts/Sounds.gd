@@ -8,7 +8,6 @@ var musicPlayer: AudioStreamPlayer
 func _init():
 	for n in range(10):
 		var player = AudioStreamPlayer.new()
-		player.bus = "Environment"
 		players.append(player)
 		self.add_child(player)
 
@@ -25,11 +24,13 @@ func music(state):
 	musicPlayer.volume_db = -10
 	musicPlayer.play()
 
-func play(pos, sound):
+func play(pos, sound, bus="Master"):
 	var player: AudioStreamPlayer = players[nextPlayer]
 	nextPlayer += 1
 	if nextPlayer >= players.size():
 		nextPlayer = 0
+
+	player.bus = bus
 
 	# Scale from 100px from ship
 	var distance = (pos - Global.ship.global_position).length() - 100
@@ -56,7 +57,7 @@ func meteorHit(pos, life):
 		preload("res://sounds/rock4.wav"),
 		preload("res://sounds/rock5.wav"),
 	]
-	play(pos, Helpers.pickRandom(rockhits))
+	play(pos, Helpers.pickRandom(rockhits), "Environment")
 
 #	if life > 0:
 #		play(pos, Helpers.pickRandom(rockhits))
@@ -68,9 +69,9 @@ var soundEnemyDied = preload("res://sounds/metal2.wav")
 
 func enemyHit(pos, life):
 	if life > 0:
-		play(pos, soundEnemyHit)
+		play(pos, soundEnemyHit, "Environment")
 	else:
-		play(pos, soundEnemyDied)
+		play(pos, soundEnemyDied, "Environment")
 
 var soundShield = preload("res://sounds/shield3.wav")
 
