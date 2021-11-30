@@ -1,6 +1,6 @@
 extends Node2D
 
-# A polyPponic audio player. Can play multiple sounds simultaneously
+# A polyphonic audio player. Can play multiple sounds simultaneously
 
 var players: Array
 var nextPlayer = 0
