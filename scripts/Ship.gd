@@ -202,7 +202,7 @@ func shoot():
 	s.position = ship_tip
 	s.speed *= Global.speedScale()
 
-	Game.float_text(ship_tip + 10 * s.dir, points)
+	Game.float_text(ship_tip - 100 * s.dir, points, - s.dir * 200, 1.0, PI/8)
 
 	Maps.currentMap.add_child(s)
 

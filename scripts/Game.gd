@@ -101,15 +101,10 @@ func set_state(state):
 
 	Sounds.music(state)
 
-var FloatText = preload("res://misc/FloatText.tscn")
-
-export var travel = Vector2(0, -80)
-export var duration = 2
-export var spread = PI/2
-
-func float_text(position, value, crit=false):
+func float_text(position, value, travel = Vector2(0, -80), duration=2.0, spread=PI/2, crit=false):
+	var FloatText = preload("res://misc/FloatText.tscn")
 	var fct = FloatText.instance()
-	fct.rect_position = position
+	fct.rect_position = position + Vector2(0,-20)
 	add_child(fct)
 	fct.show_value(str(value), travel, duration, spread, crit)
 
