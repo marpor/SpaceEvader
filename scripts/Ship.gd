@@ -43,7 +43,7 @@ func _input(event):
 
 		# Starting new touch move
 		else:
-			if can_move:
+			if event.pressed and can_move:
 				distanceTouched = 0.0
 				touchingIndex = event.index
 				get_tree().set_input_as_handled()
