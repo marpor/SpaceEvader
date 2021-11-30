@@ -1,53 +1,38 @@
 extends Node
 
-var players: Array
-var nextPlayer = 0
+var LoopingPlayer = preload("res://scripts/LoopingPlayer.gd")
+var SoundPlayer = preload("res://scripts/SoundPlayer.gd")
 
-var musicPlayer: AudioStreamPlayer
+var musicPlayer = null
+var shieldPlayer = null
+var enemyPlayer = null
+var meteorPlayer = null
 
 func _init():
-	for n in range(10):
-		var player = AudioStreamPlayer.new()
-		players.append(player)
-		self.add_child(player)
-
-	musicPlayer = AudioStreamPlayer.new()
-	musicPlayer.autoplay = true
+	musicPlayer = LoopingPlayer.new()
 	add_child(musicPlayer)
 
-	music(0)
+	shieldPlayer = SoundPlayer.new(2, "Master")
+	add_child(shieldPlayer)
 
-var menuMusic = preload("res://sounds/track1.wav")
+	meteorPlayer = SoundPlayer.new(5, "Meteor")
+	add_child(meteorPlayer)
+
+	enemyPlayer = SoundPlayer.new(5, "Environment")
+	add_child(enemyPlayer)
+
+	musicAuto()
 
 func music(state):
-	musicPlayer.stream = menuMusic
-	musicPlayer.volume_db = -10
-	musicPlayer.play()
+	pass
 
-func play(pos, sound, bus="Master"):
-	var player: AudioStreamPlayer = players[nextPlayer]
-	nextPlayer += 1
-	if nextPlayer >= players.size():
-		nextPlayer = 0
-
-	player.bus = bus
-
-	# Scale from 100px from ship
-	var distance = (pos - Global.ship.global_position).length() - 100
-	if distance < 0:
-		distance = 0
-	var scale = (distance/(Global.RADIUS*2))
-	var vol = scale * -40 # how many db to lower volume across screen
-
-	player.stream = sound
-	player.volume_db = vol
-	player.pitch_scale = 1.0-scale
-	player.play()
+func musicAuto():
+	var menuMusic = preload("res://sounds/track1.wav")
+	musicPlayer.play(menuMusic, -10)
 
 func shot(pos):
 	var soundShot = preload("res://sounds/shot2.wav")
-	play(pos, soundShot, "Environment")
-
+	enemyPlayer.play(soundShot)
 
 func move(pos, relative):
 	var snd = preload("res://sounds/swoosh1.wav")
@@ -61,7 +46,7 @@ func meteorHit(pos, life):
 		preload("res://sounds/rock4.wav"),
 		preload("res://sounds/rock5.wav"),
 	]
-	play(pos, Helpers.pickRandom(rockhits), "Meteor")
+	meteorPlayer.play_distanced(pos, Helpers.pickRandom(rockhits))
 
 #	if life > 0:
 #		play(pos, Helpers.pickRandom(rockhits))
@@ -73,18 +58,17 @@ var soundEnemyDied = preload("res://sounds/metal2.wav")
 
 func enemyHit(pos, life):
 	if life > 0:
-		play(pos, soundEnemyHit, "Enemy")
+		enemyPlayer.play_distanced(pos, soundEnemyHit)
 	else:
-		play(pos, soundEnemyDied, "Enemy")
-
-var soundShield = preload("res://sounds/shield3.wav")
+		enemyPlayer.play_distanced(pos, soundEnemyDied)
 
 func shield(pos):
-	play(pos, soundShield)
+	var soundShield = preload("res://sounds/shield3.wav")
+	shieldPlayer.play(soundShield)
 
-var soundShieldLoss = preload("res://sounds/shieldloss2.wav")
 func playerHit(pos, health):
+	var soundShieldLoss = preload("res://sounds/shieldloss2.wav")
 	if health > 0:
-		play(pos, soundShieldLoss)
+		shieldPlayer.play(soundShieldLoss)
 	else:
 		pass
