@@ -2,7 +2,7 @@
 TODO
 --------------------------
 
-Hint screen for non-touch.
+X Hint screen for non-touch.
 
 Sound fixes.
 x  Separate players for shields to avoid sound getting cut off.

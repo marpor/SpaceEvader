@@ -121,7 +121,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Hints" type="Control" parent="UI/FreezeMenu"]
+[node name="HintsTouch" type="Control" parent="UI/FreezeMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -129,8 +129,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="UI/FreezeMenu/Hints"]
-modulate = Color( 0, 0, 0, 0.5 )
+[node name="Panel" type="Panel" parent="UI/FreezeMenu/HintsTouch"]
+modulate = Color( 0, 0, 0, 0.752941 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -138,7 +138,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="UI/FreezeMenu/Hints"]
+[node name="Label3" type="Label" parent="UI/FreezeMenu/HintsTouch"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -78.0
@@ -152,7 +152,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseHints" type="TextureButton" parent="UI/FreezeMenu/Hints"]
+[node name="CloseHintsTouch" type="TextureButton" parent="UI/FreezeMenu/HintsTouch"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -104.0
@@ -165,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="UI/FreezeMenu/Hints/CloseHints"]
+[node name="Label3" type="Label" parent="UI/FreezeMenu/HintsTouch/CloseHintsTouch"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -181,7 +181,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI/FreezeMenu/Hints"]
+[node name="Label" type="Label" parent="UI/FreezeMenu/HintsTouch"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -196,12 +196,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckboxUnchecked" type="Sprite" parent="UI/FreezeMenu/Hints/Label"]
+[node name="CheckboxUnchecked" type="Sprite" parent="UI/FreezeMenu/HintsTouch/Label"]
 position = Vector2( 79, -147 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
 
-[node name="Label2" type="Label" parent="UI/FreezeMenu/Hints"]
+[node name="Label2" type="Label" parent="UI/FreezeMenu/HintsTouch"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 111.0
@@ -213,31 +213,87 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Arrow" type="Node2D" parent="UI/FreezeMenu/Hints/Label2"]
+[node name="Arrow" type="Node2D" parent="UI/FreezeMenu/HintsTouch/Label2"]
 position = Vector2( 84, -146 )
 
-[node name="Arrow" type="Sprite" parent="UI/FreezeMenu/Hints/Label2/Arrow"]
+[node name="Arrow" type="Sprite" parent="UI/FreezeMenu/HintsTouch/Label2/Arrow"]
 position = Vector2( 2.00061, -76 )
 scale = Vector2( 0.33, 0.33 )
 texture = ExtResource( 6 )
 
-[node name="Arrow3" type="Sprite" parent="UI/FreezeMenu/Hints/Label2/Arrow"]
+[node name="Arrow3" type="Sprite" parent="UI/FreezeMenu/HintsTouch/Label2/Arrow"]
 position = Vector2( -77.999, 4 )
 rotation = -1.57079
 scale = Vector2( 0.33, 0.33 )
 texture = ExtResource( 6 )
 
-[node name="Arrow4" type="Sprite" parent="UI/FreezeMenu/Hints/Label2/Arrow"]
+[node name="Arrow4" type="Sprite" parent="UI/FreezeMenu/HintsTouch/Label2/Arrow"]
 position = Vector2( 2.00061, 84 )
 rotation = 3.14159
 scale = Vector2( 0.33, 0.33 )
 texture = ExtResource( 6 )
 
-[node name="Arrow2" type="Sprite" parent="UI/FreezeMenu/Hints/Label2/Arrow"]
+[node name="Arrow2" type="Sprite" parent="UI/FreezeMenu/HintsTouch/Label2/Arrow"]
 position = Vector2( 82.001, 4 )
 rotation = 1.57079
 scale = Vector2( 0.33, 0.33 )
 texture = ExtResource( 6 )
+
+[node name="HintsMouse" type="Control" parent="UI/FreezeMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="UI/FreezeMenu/HintsMouse"]
+modulate = Color( 0, 0, 0, 0.752941 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="UI/FreezeMenu/HintsMouse"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -195.0
+margin_top = 395.0
+margin_right = 205.0
+margin_bottom = 435.0
+rect_pivot_offset = Vector2( 98, 33 )
+text = "Esc: O	ptions/Hide Hints"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/FreezeMenu/HintsMouse"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -124.5
+margin_top = 279.0
+margin_right = 124.5
+margin_bottom = 319.0
+rect_pivot_offset = Vector2( 87, 21 )
+text = "Click/Space: Shoot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/FreezeMenu/HintsMouse"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -87.5
+margin_top = 231.0
+margin_right = 87.5
+margin_bottom = 271.0
+text = "Mouse: Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseButton" type="TextureButton" parent="UI/FreezeMenu"]
 anchor_left = 0.5
@@ -490,7 +546,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="UI/FreezeMenu/Hints/CloseHints" to="." method="_on_CloseHints_pressed"]
+[connection signal="pressed" from="UI/FreezeMenu/HintsTouch/CloseHintsTouch" to="." method="_on_CloseHintsTouch_pressed"]
 [connection signal="pressed" from="UI/FreezeMenu/PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="UI/FreezeMenu/LogoButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="UI/FreezeMenu/CreditLink" to="." method="_on_CreditLink_pressed"]

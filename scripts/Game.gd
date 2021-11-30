@@ -85,7 +85,12 @@ func set_state(state):
 	# Handle freeze menu
 	if not state in [PLAYING, FROZEN]:
 		$UI/FreezeMenu.visible = false
+
 	if state == FROZEN:
+		if $UI/FreezeMenu/HintsTouch:
+			$UI/FreezeMenu/HintsTouch.visible = Global.ship.using_touch
+		if $UI/FreezeMenu/HintsMouse:
+			$UI/FreezeMenu/HintsMouse.visible = !Global.ship.using_touch
 		$UI/FreezeMenu/AnimationPlayer.play("Appear")
 	if self.state == FROZEN and state == PLAYING:
 		$UI/FreezeMenu/AnimationPlayer.play("Disappear")
@@ -179,8 +184,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if state == MENU:
 			get_tree().quit()
-		elif state == FROZEN and $UI/FreezeMenu/Hints:
-			$UI/FreezeMenu/Hints.queue_free()
+		elif state == FROZEN and $UI/FreezeMenu/HintsMouse:
+			$UI/FreezeMenu/HintsMouse.queue_free()
 		elif state in [FROZEN, PLAYING]:
 			set_state(OPTIONS)
 		elif state == OPTIONS:
@@ -220,8 +225,8 @@ func _on_PauseButton_pressed():
 func _on_ContinueButton_pressed():
 	set_state(PLAYING)
 
-func _on_CloseHints_pressed():
-	$UI/FreezeMenu/Hints.queue_free()
+func _on_CloseHintsTouch_pressed():
+	$UI/FreezeMenu/HintsTouch.queue_free()
 
 func _on_FullscreenCheckBox_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
@@ -231,3 +236,4 @@ func _on_SensitivitySlider_value_changed(value):
 
 func _on_CreditLink_pressed():
 	OS.shell_open(Maps.currentMap.BackgroundURL)
+
