@@ -25,7 +25,7 @@ func _ready():
 
 	VersionLink.text = \
 		"Version %d.%d - Copyright 2021 marpor" \
-		% [Version.minor, Version.major]
+		% [Version.major, Version.minor]
 
 func menu():
 	Game.changeMap(menuMap.instance())
