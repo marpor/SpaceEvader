@@ -1,0 +1,41 @@
+--------------------------
+TODO
+--------------------------
+
+Hint screen for non-touch.
+
+Sound fixes.
+x  Separate players for shields to avoid sound getting cut off.
+  Engine/movement sounds. 
+    Vary pitch (or phaser frequency perhaps?) on looping noise track based on pixels moved per second.
+    
+
+Mission screen.
+  Lists all missions.
+  Track completed missions.
+  Not completed ones shown with lock.
+  Allows re-playing already.
+  Score and/or stars per mission.
+  Highscores per mission.
+Infinite mode. Fully random, or inspired by missions?
+
+
+--------------------------
+Missions
+
+EARTH
+
+--- Tutorial 1
+
+x Shield pickup
+x Avoid (Evade!) meteors
+x Shoot meteors
+x Shots cost!
+x Enter portal
+
+--- Tutorial 2
+
+x Stationary dummy enemies (requires multiple shots)
+x Explain/demo parts falling off.
+x Dummy 
+
