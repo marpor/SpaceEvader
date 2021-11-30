@@ -79,6 +79,8 @@ func set_state(state):
 		$UI/Options/ContinueButton.visible = self.state != MENU
 		$UI/Options/RetryButton.visible = self.state != MENU
 
+		$UI/Options/SoundVolumeSlider.value = Global.sound_volume
+		$UI/Options/MusicVolumeSlider.value = Global.music_volume
 		$UI/Options/SensitivitySlider.value = Global.move_sensitivity
 		$UI/Options/FullscreenCheckBox.pressed = OS.window_fullscreen
 
@@ -201,6 +203,8 @@ func save_config():
 
 	config.set_value("normal", "highscore", Global.HIGHSCORE)
 	config.set_value("options", "move_sensitivity", Global.move_sensitivity)
+	config.set_value("options", "music_volume", Global.music_volume)
+	config.set_value("options", "sound_volume", Global.sound_volume)
 
 	config.save("user://SpaceEvader.cfg")
 
@@ -212,6 +216,10 @@ func load_config():
 
 	Global.HIGHSCORE = config.get_value("normal", "highscore") as int
 	Global.move_sensitivity = config.get_value("options", "move_sensitivity", 1.0) as float
+	Global.music_volume = config.get_value("options", "music_volume", -10) as int
+	Global.sound_volume = config.get_value("options", "sound_volume", 0) as int
+	
+	Sounds.volume_changed()
 
 func _on_RetryButton_pressed():
 	restart()
@@ -234,6 +242,13 @@ func _on_FullscreenCheckBox_toggled(button_pressed):
 func _on_SensitivitySlider_value_changed(value):
 	Global.move_sensitivity = value
 
+func _on_SoundVolumeSlider_value_changed(value):
+	Global.sound_volume = value
+	Sounds.volume_changed()
+
+func _on_MusicVolumeSlider_value_changed(value):
+	Global.music_volume = value
+	Sounds.volume_changed()
+
 func _on_CreditLink_pressed():
 	OS.shell_open(Maps.currentMap.BackgroundURL)
-

@@ -21,7 +21,10 @@ var instanceCount = 0
 
 var speedOverride = 0.0
 
+# Persisted options
 var move_sensitivity = 1.0
+var music_volume = -10
+var sound_volume = 0
 
 # Score multiplier
 var use_multiplier = true

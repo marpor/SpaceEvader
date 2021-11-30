@@ -4,6 +4,7 @@ extends Node2D
 
 var players: Array
 var nextPlayer = 0
+var volume = volume
 
 func _init(var polyCount=1, busname="Master"):
 	for n in range(polyCount):
@@ -11,6 +12,11 @@ func _init(var polyCount=1, busname="Master"):
 		player.bus = busname
 		players.append(player)
 		self.add_child(player)
+
+func volume_changed(volume):
+	self.volume = volume
+	for player in players:
+		player.volume_db = volume
 
 func get_player():
 	var player: AudioStreamPlayer = players[nextPlayer]
@@ -22,7 +28,7 @@ func get_player():
 func play(sound, volume_db=0.0, pitch_scale=1.0):
 	var player = get_player()
 	
-	player.volume_db = volume_db
+	player.volume_db = volume_db + volume
 	player.pitch_scale = pitch_scale
 
 	player.stream = sound

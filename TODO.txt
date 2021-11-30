@@ -2,10 +2,11 @@
 TODO
 --------------------------
 
-X Hint screen for non-touch.
+x Hint screen for non-touch.
 
-Sound fixes.
-x  Separate players for shields to avoid sound getting cut off.
+SOUND
+x Volume controls.
+x Separate players for shields to avoid sound getting cut off.
   Engine/movement sounds. 
     Vary pitch (or phaser frequency perhaps?) on looping noise track based on pixels moved per second.
     
@@ -17,6 +18,7 @@ Mission screen.
   Allows re-playing already.
   Score and/or stars per mission.
   Highscores per mission.
+
 Infinite mode. Fully random, or inspired by missions?
 
 

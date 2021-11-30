@@ -21,7 +21,14 @@ func _init():
 	enemyPlayer = SoundPlayer.new(5, "Environment")
 	add_child(enemyPlayer)
 
+	volume_changed()
 	musicAuto()
+
+func volume_changed():
+	musicPlayer.volume_changed(Global.music_volume)
+	shieldPlayer.volume_changed(Global.sound_volume)
+	enemyPlayer.volume_changed(Global.sound_volume)
+	meteorPlayer.volume_changed(Global.sound_volume)
 
 func music(state):
 	pass
