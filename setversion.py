@@ -5,7 +5,7 @@ import re
 name = "SpaceEvader"
 filename = "spaceevader-"
 major = 0
-minor = 19
+minor = 20
 micro = 0
 copyright = "2021 marpor"
 
