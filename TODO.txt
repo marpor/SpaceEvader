@@ -2,25 +2,33 @@
 TODO
 --------------------------
 
+GAMEPLAY
+
+  Infinite mode. Fully random, or inspired by missions?
+  Add bosses that spawn lesser enemies (from a "hangar" part?)
+
+UI
+
+  Mission screen.
+    Lists all missions.
+    Track completed missions.
+    Not completed ones shown with lock.
+    Allows re-playing already.
+    Score and/or stars per mission.
+    Highscores per mission.
+  
+  Add option for showing floating scores (or maybe slider to set a an (absolute) bound)
+x Show remaining multiplier time as a bar.
 x Hint screen for non-touch.
 
 SOUND
+
 x Volume controls.
 x Separate players for shields to avoid sound getting cut off.
+  Teleporter sound.
+  Game over sound.
   Engine/movement sounds. 
     Vary pitch (or phaser frequency perhaps?) on looping noise track based on pixels moved per second.
-    
-
-Mission screen.
-  Lists all missions.
-  Track completed missions.
-  Not completed ones shown with lock.
-  Allows re-playing already.
-  Score and/or stars per mission.
-  Highscores per mission.
-
-Infinite mode. Fully random, or inspired by missions?
-
 
 --------------------------
 Missions
