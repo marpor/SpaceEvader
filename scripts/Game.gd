@@ -21,7 +21,8 @@ func _physics_process(_delta):
 	if Engine.get_physics_frames() % 30 == 0:
 		# Every 30th frame ~ 2 times per second
 		onResize()
-		updateScore()
+
+	updateScore()
 
 	if Global.use_multiplier:
 		if Global.multiplier_timeout > 0.0:
@@ -109,10 +110,19 @@ func float_text(position, value, travel = Vector2(0, -80), duration=2.0, spread=
 	fct.show_value(str(value), travel, duration, spread, crit)
 
 func updateScore():
+	$UI/HUD/ScoreLabel.text = "Score: %d" % Global.score
 	if Global.score_multiplier > 1.0:
-		$UI/HUD/ScoreLabel.text = "%.2f X, Score: %d" % [Global.score_multiplier * Global.score_extra_multiplier, Global.score]
+#		$UI/HUD/ScoreLabel.text = "%.2f X, Score: %d" % [Global.score_multiplier * Global.score_extra_multiplier, Global.score]
+		$UI/HUD/MultiplierPanel.visible = true
+		$UI/HUD/MultiplierLabel.visible = true
+		$UI/HUD/MultiplierLabel.text = "%.2f X" % [Global.score_multiplier * Global.score_extra_multiplier]
+		var w = (Global.W - 40) * Global.multiplier_timeout/2.0
+		var x = Global.W/2 - w/2
+		$UI/HUD/MultiplierPanel.rect_size.x = w
+		$UI/HUD/MultiplierPanel.rect_position.x = x
 	else:
-		$UI/HUD/ScoreLabel.text = "Score: %d" % Global.score
+		$UI/HUD/MultiplierPanel.visible = false
+		$UI/HUD/MultiplierLabel.visible = false
 
 func start():
 	set_state(PLAYING)
@@ -213,7 +223,7 @@ func load_config():
 	Global.move_sensitivity = config.get_value("options", "move_sensitivity", 1.0) as float
 	Global.music_volume = config.get_value("options", "music_volume", -10) as int
 	Global.sound_volume = config.get_value("options", "sound_volume", 0) as int
-	
+
 	Sounds.volume_changed()
 
 func _on_RetryButton_pressed():
