@@ -6,9 +6,10 @@ var player: AudioStreamPlayer = null
 var from_position = 0.0
 var volume = 0.0
 
-func _init():
+func _init(busname="Master"):
 	player = AudioStreamPlayer.new()
 	player.connect("finished", self, "replay")
+	player.bus = busname
 	self.add_child(player)
 
 func volume_changed(volume):
@@ -16,8 +17,9 @@ func volume_changed(volume):
 	player.volume_db = volume
 
 func play(sound, volume_db = 0):
+	volume = volume_db
 	player.stream = sound
-	player.volume_db = volume + volume_db
+	player.volume_db = volume
 	player.play()
 
 func replay():

@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=9 format=2]
+[gd_resource type="AudioBusLayout" load_steps=12 format=2]
 
 [sub_resource type="AudioEffectPhaser" id=6]
 resource_name = "Phaser"
@@ -44,6 +44,22 @@ post_gain = 9.24
 resource_name = "PitchShift"
 pitch_scale = 0.8
 
+[sub_resource type="AudioEffectPitchShift" id=9]
+resource_name = "PitchShift"
+pitch_scale = 4.0
+
+[sub_resource type="AudioEffectReverb" id=10]
+resource_name = "Reverb"
+room_size = 0.63
+damping = 0.06
+dry = 0.31
+wet = 0.16
+
+[sub_resource type="AudioEffectPhaser" id=11]
+resource_name = "Phaser"
+rate_hz = 17.292
+depth = 2.6
+
 [resource]
 bus/1/name = "Environment"
 bus/1/solo = false
@@ -79,3 +95,15 @@ bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = -0.725993
 bus/3/send = "Meteor"
+bus/4/name = "Engine"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -1.02374
+bus/4/send = "Master"
+bus/4/effect/0/effect = SubResource( 9 )
+bus/4/effect/0/enabled = false
+bus/4/effect/1/effect = SubResource( 10 )
+bus/4/effect/1/enabled = true
+bus/4/effect/2/effect = SubResource( 11 )
+bus/4/effect/2/enabled = false
