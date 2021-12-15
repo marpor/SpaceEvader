@@ -40,5 +40,5 @@ jobs:
   
       - name: print-godot-version
         run: |
-          echo Building using Godot §GODOT_VERSION
+          echo Building using Godot $GODOT_VERSION
     
