@@ -29,16 +29,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # You may pin to the exact commit or the version.
+        # uses: abarichello/godot-ci@51399a21ce4b4f28232999275a8fd54e300c531d
+      - uses: abarichello/godot-ci@3.4
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: godot-ci
-        # You may pin to the exact commit or the version.
-        # uses: abarichello/godot-ci@51399a21ce4b4f28232999275a8fd54e300c531d
-        uses: abarichello/godot-ci@3.4
-  
       - name: print-godot-version
         run: |
           echo Building using Godot $GODOT_VERSION
-    
