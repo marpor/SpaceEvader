@@ -62,8 +62,8 @@ func musicAuto():
 	var menuMusic = preload("res://sounds/track1.wav")
 	musicPlayer.play(menuMusic, -10)
 
-	var engine = preload("res://sounds/engine.wav")
-	enginePlayer.play(engine, -10)
+#	var engine = preload("res://sounds/engine.wav")
+#	enginePlayer.play(engine, -10)
 
 func shot(pos):
 	var soundShot = preload("res://sounds/shot2.wav")
