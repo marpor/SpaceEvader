@@ -1,36 +1,40 @@
 extends Node
 
-var title = "Space Evader"
-
-var t = 0
-
-var score = 0
-var moving = true
+# Persisted options
+var move_sensitivity = 1.0
+var music_volume = -10
+var sound_volume = 0
+var STARTING_SPEED = 0.25 # Start speed factor (user defineable)
 var HIGHSCORE = 0
+var AUTO_PAUSE = false
+
+# Constants
+const title = "Space Evader"
+const SPEEDUP_MINUTES = 5.0  # Increase speed factor (by 1) every N minutes (affects difficulty)
+
 
 var W = 1024
 var H = 576
 var CENTER = Vector2(W/2, H/2)
 var RADIUS = CENTER.length()
 
+# Game vars
+var t = 0
+var score = 0
+var moving = true
 var DIR = Vector2.RIGHT #.rotated(deg2rad(-30))
-
 var ship = null
 
-var instanceCount = 0
-
 var speedOverride = 0.0
-
-# Persisted options
-var move_sensitivity = 1.0
-var music_volume = -10
-var sound_volume = 0
 
 # Score multiplier
 var use_multiplier = true
 var score_multiplier = 1.0
 var score_extra_multiplier = 1.0
 var multiplier_timeout = 0.0
+
+# Metrics
+var instanceCount = 0
 
 func get_player_position():
 	if not ship:
@@ -49,10 +53,7 @@ func randStartPos(deg = 55):
 	return CENTER + RADIUS * -dir
 
 func speedScale():
-	# Add inital speed every 5 minutes
-	return 1 + Global.t/(5*60)
-	#return 1.0
-	#return 1 + log(5+Global.t*10) - log(5)
+	return Global.STARTING_SPEED + Global.t/(Global.SPEEDUP_MINUTES*60)
 
 func _physics_process(_delta):
 	if Engine.get_physics_frames() % 60 == 0:

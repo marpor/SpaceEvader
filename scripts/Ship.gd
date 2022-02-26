@@ -15,7 +15,7 @@ var last_move_ticks = 0.0
 var SENSITIVITY_TOUCH = 1.5
 var SENSITIVITY_MOUSE = 1.0
 
-var SPEED_MIN = 0.00
+var SPEED_MIN = 0.125
 var SPEED_MAX = 1.00
 
 func _ready():
@@ -109,7 +109,10 @@ func _process(delta):
 #	rotation = Global.DIR.angle() - Vector2.UP.angle()
 
 func _physics_process(delta):
-	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, Global.speedScale()*delta*2, SPEED_MIN)
+	var minSpeed = Global.speedScale()
+	if Global.AUTO_PAUSE:
+		minSpeed = 0.0
+	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, Global.speedScale()*delta*2, minSpeed)
 
 	if protectedTime > 0.0:
 		protectedTime -= delta * Global.speedOverride

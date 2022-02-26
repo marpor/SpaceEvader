@@ -83,7 +83,9 @@ func set_state(state):
 		$UI/Options/SoundVolumeSlider.value = Global.sound_volume
 		$UI/Options/MusicVolumeSlider.value = Global.music_volume
 		$UI/Options/SensitivitySlider.value = Global.move_sensitivity
+		$UI/Options/StartSpeedSlider.value = Global.STARTING_SPEED
 		$UI/Options/FullscreenCheckBox.pressed = OS.window_fullscreen
+		$UI/Options/AutoPause.pressed = Global.AUTO_PAUSE
 
 	# Handle freeze menu
 	if not state in [PLAYING, FROZEN]:
@@ -210,6 +212,8 @@ func save_config():
 	config.set_value("options", "move_sensitivity", Global.move_sensitivity)
 	config.set_value("options", "music_volume", Global.music_volume)
 	config.set_value("options", "sound_volume", Global.sound_volume)
+	config.set_value("options", "starting_speed", Global.STARTING_SPEED)
+	config.set_value("options", "auto_pause", Global.AUTO_PAUSE)
 
 	config.save("user://SpaceEvader.cfg")
 
@@ -223,6 +227,8 @@ func load_config():
 	Global.move_sensitivity = config.get_value("options", "move_sensitivity", 1.0) as float
 	Global.music_volume = config.get_value("options", "music_volume", -10) as int
 	Global.sound_volume = config.get_value("options", "sound_volume", 0) as int
+	Global.STARTING_SPEED = config.get_value("options", "starting_speed", 0.25) as float
+	Global.AUTO_PAUSE = config.get_value("options", "auto_pause", false) as bool
 
 	Sounds.volume_changed()
 
@@ -244,8 +250,14 @@ func _on_CloseHintsTouch_pressed():
 func _on_FullscreenCheckBox_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 
+func _on_AutoPause_toggled(button_pressed):
+	Global.AUTO_PAUSE = button_pressed
+
 func _on_SensitivitySlider_value_changed(value):
 	Global.move_sensitivity = value
+
+func _on_StartSpeedSlider_value_changed(value):
+	Global.STARTING_SPEED = value
 
 func _on_SoundVolumeSlider_value_changed(value):
 	Global.sound_volume = value
@@ -257,3 +269,4 @@ func _on_MusicVolumeSlider_value_changed(value):
 
 func _on_CreditLink_pressed():
 	OS.shell_open(Maps.currentMap.BackgroundURL)
+

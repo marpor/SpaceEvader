@@ -14,10 +14,10 @@
 [ext_resource path="res://fonts/SmallTextFont.tres" type="DynamicFont" id=12]
 [ext_resource path="res://fonts/ButtonFont.tres" type="DynamicFont" id=13]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Appear"
 length = 3.0
 tracks/0/type = "value"
@@ -45,7 +45,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Disappear"
 length = 0.5
 tracks/0/type = "value"
@@ -124,7 +124,7 @@ margin_bottom = 14.0
 grow_horizontal = 2
 mouse_filter = 2
 size_flags_horizontal = 6
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -362,8 +362,8 @@ __meta__ = {
 playback_process_mode = 0
 playback_speed = 0.5
 method_call_mode = 1
-anims/Appear = SubResource( 3 )
-anims/Disappear = SubResource( 4 )
+anims/Appear = SubResource( 2 )
+anims/Disappear = SubResource( 3 )
 
 [node name="CreditLink" type="LinkButton" parent="UI/FreezeMenu"]
 anchor_left = 0.5
@@ -386,7 +386,6 @@ __meta__ = {
 }
 
 [node name="Options" type="Control" parent="UI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
@@ -406,9 +405,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -352.0
-margin_top = 64.0
+margin_top = 32.0
 margin_right = 354.0
-margin_bottom = 187.0
+margin_bottom = 155.0
 rect_pivot_offset = Vector2( 376, 32 )
 theme = ExtResource( 10 )
 text = "Options"
@@ -421,9 +420,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -320.0
-margin_top = 245.0
+margin_top = 181.0
 margin_right = 320.0
-margin_bottom = 309.0
+margin_bottom = 245.0
 min_value = -50.0
 max_value = 0.0
 step = 5.0
@@ -450,9 +449,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -320.0
-margin_top = 348.0
+margin_top = 277.0
 margin_right = 320.0
-margin_bottom = 412.0
+margin_bottom = 341.0
 min_value = -50.0
 max_value = 0.0
 step = 5.0
@@ -479,9 +478,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -320.0
-margin_top = 451.0
+margin_top = 373.0
 margin_right = 320.0
-margin_bottom = 515.0
+margin_bottom = 437.0
 max_value = 4.0
 step = 0.25
 value = 1.0
@@ -500,6 +499,36 @@ margin_right = 319.0
 margin_bottom = 8.0
 rect_pivot_offset = Vector2( 376, 32 )
 text = "Sensitivity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartSpeedSlider" type="HSlider" parent="UI/Options"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -320.0
+margin_top = 469.0
+margin_right = 320.0
+margin_bottom = 533.0
+min_value = 0.125
+max_value = 4.0
+step = 0.125
+value = 0.125
+tick_count = 5
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/Options/StartSpeedSlider"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -320.0
+margin_top = -32.0
+margin_right = 319.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 376, 32 )
+text = "Start Speed"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -558,12 +587,25 @@ __meta__ = {
 [node name="FullscreenCheckBox" type="CheckBox" parent="UI/Options"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -324.0
-margin_top = 522.0
+margin_top = 570.0
 margin_right = 324.0
-margin_bottom = 576.0
+margin_bottom = 624.0
 pressed = true
 text = "Fullscreen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoPause" type="CheckBox" parent="UI/Options"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -324.0
+margin_top = 570.0
+margin_right = -8.0
+margin_bottom = 624.0
+pressed = true
+text = "Auto Pause"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -585,8 +627,8 @@ margin_left = -352.0
 margin_top = 64.0
 margin_right = 354.0
 margin_bottom = 187.0
-custom_colors/font_color = Color( 0.67451, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.67451, 0, 0, 1 )
 text = "GAME OVER!"
 align = 1
 __meta__ = {
@@ -649,9 +691,11 @@ __meta__ = {
 [connection signal="value_changed" from="UI/Options/SoundVolumeSlider" to="." method="_on_SoundVolumeSlider_value_changed"]
 [connection signal="value_changed" from="UI/Options/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
 [connection signal="value_changed" from="UI/Options/SensitivitySlider" to="." method="_on_SensitivitySlider_value_changed"]
+[connection signal="value_changed" from="UI/Options/StartSpeedSlider" to="." method="_on_StartSpeedSlider_value_changed"]
 [connection signal="pressed" from="UI/Options/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="UI/Options/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="UI/Options/QuitButton" to="." method="_on_BackButton_pressed"]
 [connection signal="toggled" from="UI/Options/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_toggled"]
+[connection signal="toggled" from="UI/Options/AutoPause" to="." method="_on_AutoPause_toggled"]
 [connection signal="pressed" from="UI/GameOver/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="UI/GameOver/BackButton" to="." method="_on_BackButton_pressed"]
