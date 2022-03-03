@@ -1,6 +1,6 @@
 [gd_resource type="AudioBusLayout" load_steps=12 format=2]
 
-[sub_resource type="AudioEffectPhaser" id=6]
+[sub_resource type="AudioEffectPhaser" id=1]
 resource_name = "Phaser"
 rate_hz = 13.911
 feedback = 0.2
@@ -12,14 +12,14 @@ band_db/1000_hz = -3.0
 band_db/3200_hz = -6.0
 band_db/10000_hz = -6.0
 
-[sub_resource type="AudioEffectReverb" id=1]
+[sub_resource type="AudioEffectReverb" id=3]
 resource_name = "Reverb"
 room_size = 0.65
 damping = 0.13
 dry = 0.31
 wet = 0.16
 
-[sub_resource type="AudioEffectPhaser" id=3]
+[sub_resource type="AudioEffectPhaser" id=4]
 resource_name = "Phaser"
 range_min_hz = 2083.93
 range_max_hz = 3560.06
@@ -27,11 +27,11 @@ rate_hz = 15.669
 feedback = 0.2
 depth = 0.6
 
-[sub_resource type="AudioEffectDistortion" id=4]
+[sub_resource type="AudioEffectDistortion" id=5]
 resource_name = "Distortion"
 drive = 0.2
 
-[sub_resource type="AudioEffectChorus" id=5]
+[sub_resource type="AudioEffectChorus" id=6]
 resource_name = "Chorus"
 
 [sub_resource type="AudioEffectDistortion" id=7]
@@ -67,17 +67,17 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = -0.130497
 bus/1/send = "Master"
-bus/1/effect/0/effect = SubResource( 6 )
+bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
 bus/1/effect/1/effect = SubResource( 2 )
 bus/1/effect/1/enabled = true
-bus/1/effect/2/effect = SubResource( 1 )
+bus/1/effect/2/effect = SubResource( 3 )
 bus/1/effect/2/enabled = true
-bus/1/effect/3/effect = SubResource( 3 )
+bus/1/effect/3/effect = SubResource( 4 )
 bus/1/effect/3/enabled = false
-bus/1/effect/4/effect = SubResource( 4 )
+bus/1/effect/4/effect = SubResource( 5 )
 bus/1/effect/4/enabled = false
-bus/1/effect/5/effect = SubResource( 5 )
+bus/1/effect/5/effect = SubResource( 6 )
 bus/1/effect/5/enabled = false
 bus/2/name = "Meteor"
 bus/2/solo = false

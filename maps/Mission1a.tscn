@@ -8,24 +8,27 @@
 [ext_resource path="res://scripts/Map.gd" type="Script" id=6]
 [ext_resource path="res://maps/processed/baitulong_oli_2020317_lrg.webp" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 72
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=3]
 bake_interval = 1.0
 _data = {
 "points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 233.908, 652.989, -340.295, -23.3721, 340.295, 23.3721, 1504, 320, -158.425, -2.69403, 158.425, 2.69403, 2784, 576 )
 }
 
-[node name="Map8" type="Node2D" groups=["maps"]]
+[node name="Map8" type="Node2D" groups=[
+"maps",
+]]
 script = ExtResource( 6 )
+MeteorCount = 5
 Enemy1 = ExtResource( 1 )
 Enemy1Count = 20
 EnemyColor = Color( 0.82, 0.1968, 0.1968, 1 )
@@ -59,7 +62,7 @@ margin_bottom = 1611.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 text = "Under Attack"
 __meta__ = {
@@ -75,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 3256, 144 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "We're being attacked!!
 
 Fight off the enemy drones."
@@ -92,7 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 3256, 144 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Good job!
 
 We're getting reports of further attacks in Pennsylvania."
@@ -102,7 +105,7 @@ __meta__ = {
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 544, 1056 )
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 233.908, 652.989 )
