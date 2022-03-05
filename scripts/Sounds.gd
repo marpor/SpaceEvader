@@ -29,10 +29,8 @@ func _init():
 	musicAuto()
 
 var movesLen = 0.0
-func _physics_process(delta):
-	if Engine.get_physics_frames() % 30 == 0:
-		print(movesLen)
 
+func _physics_process(delta):
 	if movesLen < 0.0:
 		movesLen = 0.0
 	if movesLen > 1000.0:

@@ -24,9 +24,7 @@ _data = {
 "points": PoolVector2Array( -170.79, 1.16861, 170.79, -1.16861, 233.908, 652.989, -340.295, -23.3721, 340.295, 23.3721, 1504, 320, -158.425, -2.69403, 158.425, 2.69403, 2784, 576 )
 }
 
-[node name="Map8" type="Node2D" groups=[
-"maps",
-]]
+[node name="Map8" type="Node2D" groups=["maps"]]
 script = ExtResource( 6 )
 MeteorCount = 5
 Enemy1 = ExtResource( 1 )
