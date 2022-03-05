@@ -1,9 +1,18 @@
+# A shot that travels in a straight line.
+#
+# Shots either originate from the ship, or from a Breakable object (e.g. Meteor 
+# or Enemy).
+# Note: Part.gd derives from Shot.gd
+
 extends Area2D
 
 var speed = 500
 var dir = Vector2.RIGHT
 var angular_velocity = 0
 var sourceObject = null
+
+# Parts start out attached. Shots from Ship do not.
+# When true, most Shot methods return immediately
 var attached = true
 
 func _ready():
@@ -40,6 +49,7 @@ func _physics_process(_delta):
 		# VisibilityNotifier doesn't always fire
 		_on_VisibilityNotifier2D_screen_exited()
 
+# Called when we hit (enter) something!
 func _on_Shot_body_entered(body):
 	var target = body
 	if target == self.sourceObject:
@@ -49,7 +59,8 @@ func _on_Shot_body_entered(body):
 		return # don't hit stuff off screen
 
 	if target.has_method("shot"):
-		#target.shot(self)
+		# Must use call_deferred to avoid errors when removing, adding or 
+		# re-parenting objects
 		target.call_deferred("shot", self)
 
 #	if not piercingShot:
@@ -61,6 +72,7 @@ func _on_Shot_area_entered(area):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
+# Enable collision detecting etc.
 func arm():
 	self.attached = false
 	self.collision_layer = 16

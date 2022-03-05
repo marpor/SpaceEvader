@@ -28,6 +28,7 @@ func _init():
 	volume_changed()
 	musicAuto()
 
+# Keep track of how much we're moving per time unit, which is then used to adjust the engine sound
 var movesLen = 0.0
 
 func _physics_process(delta):
