@@ -23,7 +23,8 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: ${{ env.GODOT_CI }}
+      image: barichello/godot-ci:3.4.2
+      #${{ env.GODOT_CI }}
     timeout-minutes: 10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
