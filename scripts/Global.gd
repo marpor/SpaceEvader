@@ -1,3 +1,4 @@
+# Global.gd - Various game state shared between other scripts.
 extends Node
 
 # Persisted options
@@ -12,17 +13,17 @@ var AUTO_PAUSE = false
 const title = "Space Evader"
 const SPEEDUP_MINUTES = 5.0  # Increase speed factor (by 1) every N minutes (affects difficulty)
 
-
+# Screen vars
 var W = 1024
 var H = 576
 var CENTER = Vector2(W/2, H/2)
 var RADIUS = CENTER.length()
 
 # Game vars
-var t = 0
+var t = 0 # Time from game start. Increased by
 var score = 0
 var moving = true
-var DIR = Vector2.RIGHT #.rotated(deg2rad(-30))
+var DIR = Vector2.RIGHT
 var ship = null
 
 var speedOverride = 0.0

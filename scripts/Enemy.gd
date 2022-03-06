@@ -1,7 +1,8 @@
-# Enemy.gd - an enemy whose color, and behavior can be customized via exported
+# Enemy.gd - an enemy whose color and behavior can be customized via exported
 # properties.
+#
 # Scenes using this script *must* contain a Node2D named "Parts", and any
-# children of this deriving from Part.gd adds to life, and each part (or 
+# children of this deriving from Part.gd adds to life, and each part (or
 # grouping of parts) can break of and act as shots when the enemy is hit.
 
 extends "res://scripts/Breakable.gd"
@@ -82,7 +83,7 @@ func shot(source):
 		loosePart(part, source)
 
 	life -= 1
-	
+
 	# Finished/killed enemy
 	if (life == 0):
 		# Add to score (respecting multipliers)
@@ -91,7 +92,7 @@ func shot(source):
 
 		# Float score
 		Game.float_text(global_position, points)
-		
+
 		# Update score multiplier
 		if Global.use_multiplier:
 			Global.score_multiplier *= 1.25

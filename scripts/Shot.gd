@@ -1,6 +1,6 @@
 # A shot that travels in a straight line.
 #
-# Shots either originate from the ship, or from a Breakable object (e.g. Meteor 
+# Shots either originate from the ship, or from a Breakable object (e.g. Meteor
 # or Enemy).
 # Note: Part.gd derives from Shot.gd
 
@@ -59,7 +59,7 @@ func _on_Shot_body_entered(body):
 		return # don't hit stuff off screen
 
 	if target.has_method("shot"):
-		# Must use call_deferred to avoid errors when removing, adding or 
+		# Must use call_deferred to avoid errors when removing, adding or
 		# re-parenting objects
 		target.call_deferred("shot", self)
 

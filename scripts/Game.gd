@@ -1,4 +1,4 @@
-# Main game logic
+# Game.gd - Main game logic
 extends Node2D
 
 var mainMenu = null

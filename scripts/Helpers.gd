@@ -1,3 +1,4 @@
+# Helpers.gd - a few generic helper functions
 extends Node
 
 var rng = RandomNumberGenerator.new()

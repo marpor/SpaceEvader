@@ -1,3 +1,5 @@
+# MainMenu.gd - Logic for the Main Menu
+# Only used by MainMenu.tscn
 extends Node2D
 
 var menuMap = preload("res://maps/MenuMap.tscn")

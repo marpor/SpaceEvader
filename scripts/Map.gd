@@ -1,3 +1,4 @@
+# Map.gd - Logic for an individual Map. Used by all Map scenes.
 extends Node2D
 
 var mapT = 0.0

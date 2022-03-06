@@ -1,4 +1,5 @@
-# Base class for Enemy and Meteor
+# Breakable.gd - Base class for Enemy and Meteor
+#
 # Can break into fragments acting as shots
 extends Area2D
 
@@ -27,7 +28,7 @@ func loosePart(part, source):
 
 	part.position = pos
 	part.rotation = rot
-	
+
 	part.scale *= self.scale
 
 	part.speed *= rand_range(0.5, 0.9) * Global.speedScale()

@@ -1,3 +1,9 @@
+# Meteor.gd - an passive enemy travelling in a straight line across the screen.
+#
+# Scenes using this script *must* contain a Node2D named "Parts", and any
+# children of this deriving from Part.gd adds to life, and each part (or
+# grouping of parts) can break of and act as shots when the enemy is hit.
+
 extends "res://scripts/Breakable.gd"
 
 var life = 1
