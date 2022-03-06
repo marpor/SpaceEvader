@@ -1,7 +1,7 @@
 name: Export CI
 
 env:
-  GODOT_VERSION: 3.4.2
+#  GODOT_VERSION: 3.4.2
   EXPORT_NAME: SpaceEvader
   GODOT_CI: barichello/godot-ci:3.4.2
 
