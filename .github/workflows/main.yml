@@ -45,9 +45,10 @@ jobs:
           mkdir -v -p build/windows
           godot -v --export "Windows" build/windows/${EXPORT_NAME}.exe
 
-          mkdir -v -p build/linux
-          godot -v --export "Linux" build/linux/${EXPORT_NAME}
-
+          mkdir -v -p build/android
+          godot -v --export "Android" build/linux/${EXPORT_NAME}
+#        "iOS"
+#        "Mac OSX"
       - name: Artifact Web
         uses: actions/upload-artifact@v1
         with:
@@ -60,11 +61,11 @@ jobs:
           name: windows
           path: build/windows
 
-      - name: Artifact Linux
+      - name: Artifact Android
         uses: actions/upload-artifact@v1
         with:
-          name: linux
-          path: build/wlinux
+          name: android
+          path: build/android
   
 
 #      - name: Deploy to GitHub Pages 🚀
