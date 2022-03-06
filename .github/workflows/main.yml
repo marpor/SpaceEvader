@@ -37,36 +37,53 @@ jobs:
         run: |
           echo Building using Godot $GODOT_VERSION
 
-      - name: Web Build
+      - name: Build
         run: |
           mkdir -v -p build/web
           godot -v --export "HTML5" build/web/index.html
 
-          mkdir -v -p build/windows
-          godot -v --export "Windows" build/windows/${EXPORT_NAME}.exe
-
-          mkdir -v -p build/android
-          godot -v --export "Android" build/linux/${EXPORT_NAME}
-#        "iOS"
-#        "Mac OSX"
-      - name: Artifact Web
+      - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: web
           path: build/web
 
-      - name: Artifact Windows
+#      - name: Deploy to GitHub Pages 🚀
+#        uses: JamesIves/github-pages-deploy-action@releases/v4
+#        with:
+#          branch: gh-pages # The branch the action should deploy to.
+#          folder: build/web # The folder the action should deploy.
+
+  export-windows:
+    name: Windows Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.4.2
+    timeout-minutes: 10
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+
+      - name: print-godot-version
+        run: |
+          echo Building using Godot $GODOT_VERSION
+
+      - name: Build
+        run: |
+          mkdir -v -p build/windows
+          godot -v --export "Windows" build/windows/${EXPORT_NAME}.exe
+
+      - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: windows
           path: build/windows
-
-      - name: Artifact Android
-        uses: actions/upload-artifact@v1
-        with:
-          name: android
-          path: build/android
-  
 
 #      - name: Deploy to GitHub Pages 🚀
 #        uses: JamesIves/github-pages-deploy-action@releases/v4
@@ -74,3 +91,43 @@ jobs:
 #          branch: gh-pages # The branch the action should deploy to.
 #          folder: build/web # The folder the action should deploy.
     
+  export-android:
+    name: Android Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.4.2
+    timeout-minutes: 10
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+
+      - name: print-godot-version
+        run: |
+          echo Building using Godot $GODOT_VERSION
+
+      - name: Build
+        run: |
+          mkdir -v -p build/android
+          godot -v --export "Android" build/linux/${EXPORT_NAME}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: android
+          path: build/android
+  
+#      - name: Deploy to GitHub Pages 🚀
+#        uses: JamesIves/github-pages-deploy-action@releases/v4
+#        with:
+#          branch: gh-pages # The branch the action should deploy to.
+#          folder: build/web # The folder the action should deploy.
+    
+
+#        "iOS"
+#        "Mac OSX"
