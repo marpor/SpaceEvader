@@ -1,9 +1,7 @@
 name: Export CI
 
 env:
-#  GODOT_VERSION: 3.4.2
   EXPORT_NAME: SpaceEvader
-  GODOT_CI: barichello/godot-ci:3.4.2
 
 # Controls when the workflow will run
 on:
@@ -24,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:3.4.2
-      #${{ env.GODOT_CI }}
     timeout-minutes: 10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -45,12 +42,31 @@ jobs:
           mkdir -v -p build/web
           godot -v --export "HTML5" build/web/index.html
 
-      - name: Upload Artifact
+          mkdir -v -p build/windows
+          godot -v --export "Windows" build/windows/${EXPORT_NAME}.exe
+
+          mkdir -v -p build/linux
+          godot -v --export "Linux" build/linux/${EXPORT_NAME}
+
+      - name: Artifact Web
         uses: actions/upload-artifact@v1
         with:
           name: web
           path: build/web
+
+      - name: Artifact Windows
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows
+          path: build/windows
+
+      - name: Artifact Linux
+        uses: actions/upload-artifact@v1
+        with:
+          name: linux
+          path: build/wlinux
   
+
 #      - name: Deploy to GitHub Pages 🚀
 #        uses: JamesIves/github-pages-deploy-action@releases/v4
 #        with:
