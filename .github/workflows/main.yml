@@ -22,7 +22,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${GODOT_VERSION}
+      image: barichello/godot-ci:${{GODOT_VERSION}}
 #3.4.2
     timeout-minutes: 10
     steps:
