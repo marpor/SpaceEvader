@@ -1,3 +1,4 @@
+# MenuMap.gd - Special logic for MenuMap.tscn. Specifically we're
 extends Node2D
 
 var MAP_TIME = 240

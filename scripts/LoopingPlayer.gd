@@ -1,6 +1,5 @@
+# LoopingPlayer - A looping audio player.
 extends Node
-
-# A looping audio player.
 
 var player: AudioStreamPlayer = null
 var from_position = 0.0
