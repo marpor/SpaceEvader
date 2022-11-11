@@ -1,22 +1,14 @@
+# Map.gd - Logic for an individual Map. Used by all Map scenes.
 extends Node2D
 
-var mapT = 0.0
-
-var map = self
-onready var background = $Map
-var moving = true
-var u = 0.0
-
+# Amount of time it takes to get to the end of the map. Speed scaling affects the effective time.
 export(int) var MAP_TIME = 30 # 0 for infinite map
 
-export(float, 0.01, 10.0) var METEOR_DELAY = 0.300
-var meteor_timeout = METEOR_DELAY
-
-var ENEMY_DELAY = 1.000
-var enemy_timeout = ENEMY_DELAY
-
+# Amount of Meteors to spawn on the map. If 0
 export(int) var MeteorCount = 90
+export(float, 0.01, 10.0) var METEOR_DELAY = 0.300
 
+# Enemies to spawn on the map. Spread randomly along the map path.
 export(PackedScene) var Enemy1 = null
 export(int) var Enemy1Count = 30
 export(PackedScene) var Enemy2 = null
@@ -32,6 +24,18 @@ export(String) var Location = ""
 export(String) var BackgroundName = ""
 export(String) var BackgroundCredit = ""
 export(String) var BackgroundURL = ""
+
+var mapT = 0.0
+
+var map = self
+onready var background = $Map
+var moving = true
+var u = 0.0
+
+var meteor_timeout = METEOR_DELAY
+
+var ENEMY_DELAY = 1.000
+var enemy_timeout = ENEMY_DELAY
 
 var enemies = []
 func _ready():

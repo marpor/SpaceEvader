@@ -1,3 +1,4 @@
+# Maps.gd - Preloads all maps, and give us access to them in the desired order
 extends Node
 
 var maps = [
@@ -38,4 +39,3 @@ func next_map():
 		mapNo = 2 # after tutorial
 
 	return maps[mapNo].instance()
-
