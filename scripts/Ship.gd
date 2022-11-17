@@ -125,6 +125,7 @@ func _on_Ship_area_entered(area):
 	area.get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	if area.get_collision_layer_bit(8):
 		# Layer: Goal
+		Sounds.goal(global_position)
 		Game.call_deferred("nextMap")
 	elif area.get_collision_layer_bit(7):
 		# Layer: Life

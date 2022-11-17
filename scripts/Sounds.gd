@@ -96,6 +96,10 @@ func shield(pos):
 	var soundShield = preload("res://sounds/shield3.wav")
 	shieldPlayer.play(soundShield)
 
+func goal(pos):
+	var soundShield = preload("res://sounds/warp1.wav")
+	shieldPlayer.play(soundShield)
+
 func playerHit(pos, health):
 	var soundShieldLoss = preload("res://sounds/shieldloss2.wav")
 	if health > 0:
