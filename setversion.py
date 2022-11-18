@@ -41,7 +41,7 @@ export_path="export/SpaceEvader-0.17.dmg.zip"
 
 fn = "export_presets.cfg"
 lines = open(fn).readlines()
-of = open(fn, "w")
+of = open(fn, "w", newline="\n")
 for l in lines:
 
 	# long version strings
