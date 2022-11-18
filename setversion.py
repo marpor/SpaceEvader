@@ -5,9 +5,9 @@ import re
 name = "SpaceEvader"
 filename = "spaceevader-"
 major = 0
-minor = 20
+minor = 22
 micro = 0
-copyright = "2021 marpor"
+copyright = "2022 marpor"
 
 longverstr = "%d.%d.%d" % (major, minor, micro)
 verstr = "%d.%d" % (major, minor)
