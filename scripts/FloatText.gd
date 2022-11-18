@@ -1,6 +1,6 @@
 # FloatText.gd - For showing damage/score numbers.
 #
-# Based on https://kidscancode.org/godot_recipes/ui/floating_text/
+# Based on https://kidscancode.org/godot_recipes/3.x/ui/floating_text/
 extends Label
 
 func show_value(value, travel, duration, spread, crit=false):
