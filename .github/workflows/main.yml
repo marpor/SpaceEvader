@@ -21,12 +21,12 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.4.2
+      image: barichello/godot-ci:3.5.1
     timeout-minutes: 10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup
         run: |
@@ -43,7 +43,7 @@ jobs:
           godot -v --export "HTML5" build/web/index.html
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: web
           path: build/web
@@ -58,12 +58,12 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.4.2
+      image: barichello/godot-ci:3.5.1
     timeout-minutes: 10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup
         run: |
@@ -80,7 +80,7 @@ jobs:
           godot -v --export "Windows" build/windows/${EXPORT_NAME}.exe
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: windows
           path: build/windows
@@ -95,7 +95,7 @@ jobs:
     name: Android Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.4.2
+      image: barichello/godot-ci:3.5.1
     timeout-minutes: 10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -117,7 +117,7 @@ jobs:
           godot -v --export "Android" build/linux/${EXPORT_NAME}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: android
           path: build/android
