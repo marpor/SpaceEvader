@@ -1,6 +1,14 @@
 # SpaceEvader
 
-**My take on the classic space shooter, with inspiration from Space Invader, Asteroids and Superhot!**
+**My take on the classic space Shoot 'Em Up, with inspiration from Space Invaders, Asteroids and Superhot!**
+
+The goal of the game is quite simply to get the highest score, by destroing as many enemies as possible.
+
+But because there's a cost for shooting, you will need to conserve your shots and use the environment and multipliers to get the best score before the game ultimately gets too difficult (fast).
+
+You can slow down the gameplay if you stop moving (á la SuperHot), which lets you plan your next shots carefully.
+
+## Play & Download
 
 Play the game at [se.m8y.net/play/](https://se.m8y.net/play/).
 
@@ -40,4 +48,4 @@ It can be basically summarized into two different licenses:
 1. Source code (everything except game assets, under the folder _assets_ ) is distributed under [MIT License](LICENSE_source_code.txt). 
 2. All the game assets (art, audio, texture, .svg files) under the folder [_assets_](LICENSE_assets.txt), if not explicitly stated otherwise are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/), made by notapixelstudio, the community or contributors. Some of them are from third-party, credited below or explicitly stated under the respective folder.     
 
-In case you have any questions don't hesitate to contact us at notapixelstudio@gmail.com 
+In case you have any questions don't hesitate to contact me on [Discord](https://discord.gg/YsRVMdpvg4) or at mark@m8y.net 
