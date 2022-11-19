@@ -41,7 +41,9 @@ All of the sounds are either:
 
 ## License
 
-All the code used in this project is opensource and under the MIT License so you can use any part of it on your games developped in GodotEngine (that is also under the [MIT License](https://godotengine.org/license)). The software and official releases/binaries are distributed under our [End-User License Agreement (EULA)](LICENSE_software.txt).
+All the code used in this project is opensource and under the MIT License so you can use any part of it on your games developed in GodotEngine (that is also under the [MIT License](https://godotengine.org/license)).
+
+The software and official releases/binaries are distributed under our [End-User License Agreement (EULA)](LICENSE_software.txt).
 
 It can be basically summarized into two different licenses:
 
