@@ -8,7 +8,7 @@ on:
 
 env:
   # Godot version to use for build
-  GODOT_VERSION: 3.4.4
+  GODOT_VERSION: 3.5.1
   # Prerelease if applicable (e.g beta1), else empty
   GODOT_PRERELEASE: ""
   # Prefix of the release asset (zip files)
