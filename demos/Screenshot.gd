@@ -7,15 +7,19 @@ func _ready():
 
 	Global.ship.health = 2
 	Global.ship.health_changed(Global.ship.health)
+	
+	Global.score = 115127
+	Global.multiplier_timeout = 1.0
+	Global.score_multiplier = 3.44
 
 	Maps.currentMap = self
 
 	$Heic2007a.visible = false
 
 	# Square
-	yield(screenshot2("res://export/Icon120x120.png",120,120), "completed")
-	yield(screenshot2("res://export/Icon76x76.png",76,76), "completed")
-	yield(screenshot2("res://export/Icon1024x1024.png",1024,1024), "completed")
+#	yield(screenshot2("res://export/Icon120x120.png",120,120), "completed")
+#	yield(screenshot2("res://export/Icon76x76.png",76,76), "completed")
+#	yield(screenshot2("res://export/Icon1024x1024.png",1024,1024), "completed")
 
 	$Heic2007a.visible = true
 
@@ -27,13 +31,13 @@ func _ready():
 	yield(screenshot2("res://export/ipad_2048x1536.png",2048,1536), "completed")
 
 	# Portrait
-	yield(screenshot2("res://export/iphone_640x960.png",640,960), "completed")
-	yield(screenshot2("res://export/iphone_640x1136.png",640,1136), "completed")
-	yield(screenshot2("res://export/iphone_750x1334.png",750,1334), "completed")
-	yield(screenshot2("res://export/iphone_1125x2436.png",1125,2436), "completed")
-	yield(screenshot2("res://export/ipad_768x1024.png",768,1024), "completed")
-	yield(screenshot2("res://export/ipad_1536x2048.png",1536,2048), "completed")
-	yield(screenshot2("res://export/iphone_1242x2208.png",1242,2208), "completed")
+#	yield(screenshot2("res://export/iphone_640x960.png",640,960), "completed")
+#	yield(screenshot2("res://export/iphone_640x1136.png",640,1136), "completed")
+#	yield(screenshot2("res://export/iphone_750x1334.png",750,1334), "completed")
+#	yield(screenshot2("res://export/iphone_1125x2436.png",1125,2436), "completed")
+#	yield(screenshot2("res://export/ipad_768x1024.png",768,1024), "completed")
+#	yield(screenshot2("res://export/ipad_1536x2048.png",1536,2048), "completed")
+#	yield(screenshot2("res://export/iphone_1242x2208.png",1242,2208), "completed")
 
 	get_tree().quit()
 

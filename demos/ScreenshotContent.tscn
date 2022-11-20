@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://enemies/Meteor4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/Meteor5.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parts/Rock5.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/Meteor2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://misc/Shot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/Meteor1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://parts/Rock3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/Boss6.tscn" type="PackedScene" id=8]
+[ext_resource path="res://parts/Rock1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://enemies/Enemy4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://misc/Ship1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://parts/Rock2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://parts/Rock4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://enemies/Meteor3.tscn" type="PackedScene" id=14]
+
+[node name="Node" type="Node"]
+
+[node name="Ship" parent="." instance=ExtResource( 11 )]
+position = Vector2( 177.346, 376.72 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Shot" parent="." instance=ExtResource( 5 )]
+position = Vector2( 321.346, 377.92 )
+rotation = -1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Shot2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 539, 374 )
+rotation = -1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Boss6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 619, 173 )
+rotation = 1.00577
+COLOR = Color( 0.32, 1, 0.365333, 1 )
+
+[node name="Boss7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 427, 587 )
+rotation = 2.16912
+scale = Vector2( 0.5, 0.5 )
+COLOR = Color( 0.32, 1, 0.365333, 1 )
+
+[node name="Boss8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1024, 145 )
+rotation = 1.16595
+scale = Vector2( 0.5, 0.5 )
+COLOR = Color( 0.32, 1, 0.365333, 1 )
+
+[node name="MeteorC" parent="." instance=ExtResource( 1 )]
+position = Vector2( 213.346, 550.72 )
+
+[node name="MeteorB" parent="." instance=ExtResource( 4 )]
+position = Vector2( 81.3457, 188.32 )
+
+[node name="MeteorA" parent="." instance=ExtResource( 6 )]
+position = Vector2( 492, 56 )
+
+[node name="MeteorC3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 873, 326 )
+
+[node name="MeteorA2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -168, 622 )
+
+[node name="MeteorC2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 955, 563 )
+
+[node name="Rock5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 853, 516 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Rock1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 869, 204 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Rock2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 608, 449 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Rock3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 550, 245 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Rock4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 670, 329 )
+scale = Vector2( 0.5, 0.5 )
