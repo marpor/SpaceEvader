@@ -21,7 +21,7 @@ export(Color) var COLOR = Color.white
 export(float) var DIRECTION = 0
 # Spin around own axis. Degrees per second.
 export(float) var ANGULAR_VELOCITY = 0
-# Turn rate. Degrees per second. (if HUNTS is false)
+# Turn rate. Degrees per second. (Fixed/Max depending on HUNTS state)
 export(float) var TURN_RATE = 0
 
 # Life (each part will add 1 life)
@@ -134,9 +134,18 @@ func _process(delta):
 	if HUNTS:
 		# Hunt player
 		var p1 = Global.get_player_position()
-		var d = p1-p0
-		dir = d.normalized()
-		rotation = dir.angle() - Vector2.DOWN.angle()
+		var d = (p1-p0).normalized()
+
+		# Calculate needed turning angle
+		var turn = dir.angle_to(d)
+
+		# Limit turning rate (if TURN_RATE > 0)
+		var turnMax = deg2rad(TURN_RATE) * delta
+		if TURN_RATE > 0.0 && abs(turn) > turnMax:
+			turn = turnMax * sign(turn)
+
+		rotation += turn
+		dir = dir.rotated(turn)
 	else:
 		rotation += deg2rad(ANGULAR_VELOCITY) * delta
 

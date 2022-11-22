@@ -169,5 +169,7 @@ func spawn_enemy():
 	# speed in all directions. While more correct, it plays more monotone.
 #	Maps.currentMap.get_node("Map").add_child(e)
 
+	# Random start positions, speeds and turn rates
 	e.global_position = Global.randStartPos(35)
 	e.speed *= rand_range(0.7, 1.3)
+	e.TURN_RATE = rand_range(100, 200)
