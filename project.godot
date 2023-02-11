@@ -41,6 +41,10 @@ window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/MapBuilder/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/godot-plugin-refresher/plugin.cfg" )
+
 [global]
 
 etc=false
