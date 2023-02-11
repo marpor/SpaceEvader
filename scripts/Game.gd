@@ -189,6 +189,10 @@ func clear():
 
 
 func _unhandled_input(event):
+	if event.is_action_pressed("map_next"):
+		# For testing only - should remove before release
+		nextMap()
+
 	# Capture/un-capture mouse
 	if event.is_action_pressed("ui_cancel"):
 		if state == MENU:
