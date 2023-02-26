@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/Iceberg-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/Main.tres" type="Theme" id=3]
+[ext_resource path="res://MissionBox.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Mission" type="PanelContainer"]
+margin_right = 574.0
+margin_bottom = 220.0
+script = ExtResource( 4 )
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 567.0
+margin_bottom = 213.0
+
+[node name="Label" type="Label" parent="VBox"]
+margin_right = 560.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( -627, -50 )
+custom_fonts/font = SubResource( 1 )
+text = "MISSON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+margin_top = 63.0
+margin_right = 560.0
+margin_bottom = 143.0
+
+[node name="Button1" type="Button" parent="VBox/HBox"]
+margin_right = 150.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 80 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="VBox/HBox"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 80 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 3 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="VBox/HBox"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 80 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 3 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FreeplayButton" type="Button" parent="VBox"]
+margin_top = 147.0
+margin_right = 560.0
+margin_bottom = 201.0
+rect_min_size = Vector2( 474, 50 )
+rect_pivot_offset = Vector2( 48.9292, 26.7 )
+theme = ExtResource( 3 )
+text = "Freeplay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBox/HBox/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="VBox/HBox/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBox/HBox/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBox/FreeplayButton" to="." method="_on_FreeplayButton_pressed"]
