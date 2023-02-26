@@ -2,25 +2,37 @@
 extends Node
 
 var maps = [
-	preload("res://maps/IntroMap.tscn"),
-	preload("res://maps/IntroMap2.tscn"),
+	"res://maps/IntroMap.tscn",
+	"res://maps/IntroMap2.tscn",
 
-	preload("res://maps/Mission1a.tscn"),
-	preload("res://maps/Mission1b.tscn"),
-	preload("res://maps/Mission1c.tscn"),
+	"res://maps/Mission1a.tscn",
+	"res://maps/Mission1b.tscn",
+	"res://maps/Mission1c.tscn",
 
-	preload("res://maps/Mission2a.tscn"),
-	preload("res://maps/Mission2b.tscn"),
-	preload("res://maps/Mission2c.tscn"),
+	"res://maps/Mission2a.tscn",
+	"res://maps/Mission2b.tscn",
+	"res://maps/Mission2c.tscn",
 
-	preload("res://maps/Mission3a.tscn"),
-	preload("res://maps/Mission3b.tscn"),
-	preload("res://maps/Mission3c.tscn"),
+	"res://maps/Mission3a.tscn",
+	"res://maps/Mission3b.tscn",
+	"res://maps/Mission3c.tscn",
 
-	preload("res://maps/Mission4a.tscn"),
-	preload("res://maps/Mission4b.tscn"),
-	preload("res://maps/Mission4c.tscn"),
-	preload("res://maps/Mission4d.tscn"),
+	"res://maps/Mission4a.tscn",
+	"res://maps/Mission4b.tscn",
+	"res://maps/Mission4c.tscn",
+	"res://maps/Mission4d.tscn",
+]
+
+var missions = [
+	["Training", [
+		"res://maps/IntroMap.tscn",
+		"res://maps/IntroMap2.tscn",
+	]],
+	["Earth", [
+		"res://maps/Mission1a.tscn",
+		"res://maps/Mission1b.tscn",
+		"res://maps/Mission1c.tscn",
+	]],
 ]
 
 var mapNo = -1 # -1 ensures next_map() loads map 0
@@ -38,4 +50,4 @@ func next_map():
 	if mapNo >= maps.size():
 		mapNo = 2 # after tutorial
 
-	return maps[mapNo].instance()
+	return load(maps[mapNo]).instance()
