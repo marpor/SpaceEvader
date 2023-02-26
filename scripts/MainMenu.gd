@@ -2,7 +2,7 @@
 # Only used by MainMenu.tscn
 extends Node2D
 
-var menuMap = preload("res://maps/MenuMap.tscn")
+var menuMap = "res://maps/MenuMap.tscn"
 
 onready var FullscreenButton = find_node("FullscreenButton")
 onready var QuitButton = find_node("QuitButton")
@@ -30,7 +30,7 @@ func _ready():
 		% [Version.major, Version.minor]
 
 func menu():
-	Game.changeMap(menuMap.instance())
+	Game.changeMap(load(menuMap).instance())
 
 	updateHighScore()
 
