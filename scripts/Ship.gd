@@ -154,7 +154,9 @@ func move(relative):
 
 	# Increase speed
 	var inc=.1*relative.length()
+
 	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, inc, SPEED_MAX)
+#	Global.speedOverride = inc * 3
 
 	# Move - respecting sensitivity set in Options
 	relative *= Global.move_sensitivity
