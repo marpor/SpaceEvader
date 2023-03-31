@@ -10,12 +10,12 @@ GAMEPLAY
 UI
 
   Mission screen.
-    Lists all missions.
-    Track completed missions.
-    Not completed ones shown with lock.
-    Allows re-playing already.
-    Score and/or stars per mission.
-    Highscores per mission.
+	Lists all missions.
+	Track completed missions.
+	Not completed ones shown with lock.
+	Allows re-playing already.
+	Score and/or stars per mission.
+	Highscores per mission.
   
   Add option for showing floating scores (or maybe slider to set a an (absolute) bound)
 x Show remaining multiplier time as a bar.
@@ -28,7 +28,12 @@ x Separate players for shields to avoid sound getting cut off.
   Teleporter sound.
   Game over sound.
   Engine/movement sounds. 
-    Vary pitch (or phaser frequency perhaps?) on looping noise track based on pixels moved per second.
+	Vary pitch (or phaser frequency perhaps?) on looping noise track based on pixels moved per second.
+
+MAP BUILDER (see branch mapbuilder)
+
+  Place enemies, meteors with custom UI in editor and/or game
+  Set names, map, path follow etc.
 
 --------------------------
 Missions
