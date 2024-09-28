@@ -29,6 +29,7 @@ func _exit_tree():
 	Global.ship = null
 
 var touchingIndex = -1 # Index of first finger touching screen
+var lastDragPosition = Vector2(0, 0) # Tracking last drag event position. This is required on web export since event.position is not fully reliable
 var using_touch = false # Used ot skip mouse events when using touch
 var distanceTouched = 0.0 # Used to check if initial touch was intended as a shot
 
@@ -45,6 +46,7 @@ func _input(event):
 		else:
 			if event.pressed and can_move:
 				distanceTouched = 0.0
+				lastDragPosition = event.position
 				touchingIndex = event.index
 				get_tree().set_input_as_handled()
 
@@ -83,7 +85,9 @@ func _unhandled_input(event):
 		# touch movement
 		using_touch = true
 		if can_move and touchingIndex == event.index:
-			var rel = event.relative * SENSITIVITY_TOUCH
+			var rel = event.position - lastDragPosition
+			rel *= SENSITIVITY_TOUCH
+			lastDragPosition = event.position
 			distanceTouched += rel.length()
 			move(rel)
 	elif event is InputEventPanGesture:
