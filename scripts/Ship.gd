@@ -32,6 +32,7 @@ var touchingIndex = -1 # Index of first finger touching screen
 var lastDragPosition = Vector2(0, 0) # Tracking last drag event position. This is required on web export since event.position is not fully reliable
 var using_touch = false # Used ot skip mouse events when using touch
 var distanceTouched = 0.0 # Used to check if initial touch was intended as a shot
+var paused = false
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -41,28 +42,31 @@ func _input(event):
 				# Initial finger released again -> block initial shoot
 				if touchingIndex == event.index:
 					touchingIndex = -1
+					paused = true
 
 		# Starting new touch move
 		else:
 			if event.pressed and can_move:
+				paused = false
 				distanceTouched = 0.0
 				lastDragPosition = event.position
 				touchingIndex = event.index
 				get_tree().set_input_as_handled()
 
-
 func _unhandled_input(event):
 	# Capture/un-capture mouse
 	if event.is_action_pressed("ui_cancel"):
+		paused = true
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #			get_tree().set_input_as_handled()
 #			Game.set_state(Game.OPTIONS)
 
 	elif event.is_action_pressed("click"):
+		using_touch = false # clear - in case user switched from touch to mouse
+		paused = false
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			using_touch = false # clear - in case user switched from touch to mouse
 			get_tree().set_input_as_handled()
 
 	if event.is_action_pressed("shoot"):
@@ -113,10 +117,10 @@ func _process(delta):
 #	rotation = Global.DIR.angle() - Vector2.UP.angle()
 
 func _physics_process(delta):
-	var minSpeed = Global.speedScale()
-	if Global.AUTO_PAUSE:
-		minSpeed = 0.0
-	Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, Global.speedScale()*delta*2, minSpeed)
+	if paused:
+		Global.speedOverride = Helpers.dec_clamp(Global.speedOverride, Global.speedScale()*delta*2, 0.0)
+	else:
+		Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, Global.speedScale()*delta*2, SPEED_MAX)
 
 	if protectedTime > 0.0:
 		protectedTime -= delta * Global.speedOverride
@@ -153,14 +157,8 @@ func _on_Ship_area_entered(area):
 
 func move(relative):
 	last_move_ticks = OS.get_ticks_msec()
-	if not is_alive():
+	if not is_alive() or paused:
 		return
-
-	# Increase speed
-	var inc=.1*relative.length()
-
-	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, inc, SPEED_MAX)
-#	Global.speedOverride = inc * 3
 
 	# Move - respecting sensitivity set in Options
 	relative *= Global.move_sensitivity
@@ -196,8 +194,6 @@ func shoot():
 		return
 	if not Maps.currentMap:
 		return
-
-	Global.speedOverride = Helpers.inc_clamp(Global.speedOverride, 1/Global.speedScale(), SPEED_MAX)
 
 	var points = int(-10 * Global.score_multiplier * Global.score_extra_multiplier)
 	Global.score += points
