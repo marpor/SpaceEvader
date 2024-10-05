@@ -5,7 +5,7 @@ extends Node
 var move_sensitivity = 1.0
 var music_volume = -10
 var sound_volume = 0
-var STARTING_SPEED = 0.25 # Start speed factor (user defineable)
+var STARTING_SPEED = 0.33 # Start speed factor (user defineable)
 var HIGHSCORE = 0
 var AUTO_PAUSE = false
 

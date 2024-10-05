@@ -231,7 +231,7 @@ func load_config():
 	Global.move_sensitivity = config.get_value("options", "move_sensitivity", 1.0) as float
 	Global.music_volume = config.get_value("options", "music_volume", -10) as int
 	Global.sound_volume = config.get_value("options", "sound_volume", 0) as int
-	Global.STARTING_SPEED = config.get_value("options", "starting_speed", 0.25) as float
+	Global.STARTING_SPEED = config.get_value("options", "starting_speed", 0.33) as float
 	Global.AUTO_PAUSE = config.get_value("options", "auto_pause", false) as bool
 
 	Sounds.volume_changed()
