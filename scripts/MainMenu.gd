@@ -14,6 +14,14 @@ onready var UI = find_node("UI")
 onready var StartMenu = find_node("StartMenu")
 
 func _ready():
+	var window_to_root = Transform2D.IDENTITY.scaled(get_tree().root.size / OS.window_size)
+	var saferect = window_to_root.xform(OS.get_window_safe_area())
+	var parent_to_root = StartMenu.get_viewport_transform() * StartMenu.get_global_transform() * StartMenu.get_transform().affine_inverse()
+	var root_to_parent = parent_to_root.affine_inverse()
+	saferect = root_to_parent.xform(saferect)
+	StartMenu.set_position(saferect.position, false)
+	StartMenu.set_size(saferect.size, false)
+
 	Game.mainMenu = self
 
 	if 0 or OS.has_feature("mobile"):

@@ -14,6 +14,16 @@ func _ready():
 
 	load_config()
 
+	for control in $UI.get_children():
+		var window_to_root = Transform2D.IDENTITY.scaled(get_tree().root.size / OS.window_size)
+		var saferect = window_to_root.xform(OS.get_window_safe_area())
+		var parent_to_root = control.get_viewport_transform() * control.get_global_transform() * control.get_transform().affine_inverse()
+		var root_to_parent = parent_to_root.affine_inverse()
+		saferect = root_to_parent.xform(saferect)
+		#saferect = saferect.grow(-50)
+		control.set_position(saferect.position, false)
+		control.set_size(saferect.size, false)
+
 func _exit_tree():
 	save_config()
 
