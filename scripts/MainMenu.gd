@@ -24,11 +24,11 @@ func _ready():
 
 	Game.mainMenu = self
 
-	if 0 or OS.has_feature("mobile"):
+	if OS.has_feature("mobile"):
 		QuitButton.hide()
 		FullscreenButton.hide()
 
-	if 0 or OS.has_feature("web"):
+	if OS.has_feature("web"):
 		QuitButton.hide()
 
 	Game.set_state(Game.MENU)
