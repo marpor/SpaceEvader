@@ -102,32 +102,26 @@ __meta__ = {
 [node name="ScoreLabel" type="Label" parent="UI/HUD"]
 anchor_left = 0.5
 anchor_right = 1.0
-margin_left = -288.0
+margin_left = -309.0
 margin_top = 16.0
-margin_right = -16.0
+margin_right = -50.0
 margin_bottom = 56.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Score: 1000000000"
 align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MultiplierPanel" type="Panel" parent="UI/HUD"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
+margin_left = -310.0
 margin_top = 10.0
-margin_right = 344.0
+margin_right = 310.0
 margin_bottom = 14.0
 grow_horizontal = 2
 mouse_filter = 2
 size_flags_horizontal = 6
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MultiplierLabel" type="Label" parent="UI/HUD"]
 anchor_left = 0.5
@@ -347,12 +341,12 @@ __meta__ = {
 }
 
 [node name="LogoButton" type="TextureButton" parent="UI/FreezeMenu"]
-margin_left = -16.0
-margin_top = 8.0
-margin_right = 880.0
-margin_bottom = 520.0
+margin_left = 50.0
+margin_top = 24.0
+margin_right = 946.0
+margin_bottom = 536.0
 rect_scale = Vector2( 0.3, 0.3 )
-rect_pivot_offset = Vector2( 32, 0 )
+rect_pivot_offset = Vector2( 1.36422e-12, 1.36422e-12 )
 mouse_filter = 1
 texture_normal = ExtResource( 9 )
 __meta__ = {
