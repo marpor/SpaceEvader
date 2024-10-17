@@ -63,7 +63,7 @@ func _unhandled_input(event):
 #			Game.set_state(Game.OPTIONS)
 
 	elif event.is_action_pressed("click"):
-		using_touch = false # clear - in case user switched from touch to mouse
+		#using_touch = false # clear - in case user switched from touch to mouse
 		paused = false
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
