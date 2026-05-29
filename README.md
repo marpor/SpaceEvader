@@ -10,9 +10,9 @@ You can slow down the gameplay if you stop moving (á la SuperHot), which lets y
 
 ## Play & Download
 
-Play the game at [se.m8y.net/play/](https://se.m8y.net/play/).
+Play the game at [se.m8y.net/](https://se.m8y.net/).
 
-Or download from [se.m8y.net](https://se.m8y.net/) or under Releases here on GitHub.
+Or download from Releases here on GitHub.
 
 ## Follow the development
 
@@ -48,6 +48,6 @@ The software and official releases/binaries are distributed under our [End-User 
 It can be basically summarized into two different licenses:
 
 1. Source code (everything except game assets, under the folder _assets_ ) is distributed under [MIT License](LICENSE_source_code.txt). 
-2. All the game assets (art, audio, texture, .svg files) under the folder [_assets_](LICENSE_assets.txt), if not explicitly stated otherwise are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/), made by notapixelstudio, the community or contributors. Some of them are from third-party, credited below or explicitly stated under the respective folder.     
+2. All the game assets (art, audio, texture, .svg files) under the folder [_assets_](LICENSE_assets.txt), if not explicitly stated otherwise are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/).
 
 In case you have any questions don't hesitate to contact me on [Discord](https://discord.gg/YsRVMdpvg4) or at mark@m8y.net 
