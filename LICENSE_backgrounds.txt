@@ -1,0 +1,124 @@
+Map background image credits and terms
+
+The background files listed below are processed/cropped game backgrounds derived
+from third-party space and Earth imagery. They are not covered by
+LICENSE_assets.txt and have their own terms as stated below:
+
+General source policies checked
+
+- NASA Images and Media Usage Guidelines:
+  https://www.nasa.gov/nasa-brand-center/images-and-media/
+  NASA content generally is not subject to copyright in the United States,
+  but NASA must not be used to imply endorsement. NASA logos, identifiable
+  persons, promotional uses, and third-party copyrighted material have extra
+  restrictions.
+
+- NASA Earth Observatory Image Use Policy:
+  https://earthobservatory.nasa.gov/image-use-policy
+  Most NASA Earth Observatory material may be reused, including for commercial
+  purposes, unless copyright is indicated. NASA asks for credit.
+
+- JPL Image Use Policy:
+  https://www.jpl.nasa.gov/jpl-image-use-policy/
+  Unless otherwise noted, images and videos on JPL public web sites may be
+  used for any purpose without prior permission. Credit is required, and no
+  NASA/JPL/Caltech endorsement may be claimed or implied.
+
+- ESA/Hubble Copyright Information:
+  https://esahubble.org/copyright/
+  ESA/Hubble images, videos, and web texts are released under the Creative
+  Commons Attribution 4.0 International license unless explicitly stated
+  otherwise. Full image credits must be kept clear, visible, and unaltered.
+
+Backgrounds referenced by map scenes
+
+NASA Earth Observatory / Visible Earth / Landsat
+
+- maps/processed/falklands_oli_2020292_lrg.webp
+  Title: Jason and the Bloomonauts
+  Credit: NASA Earth Observatory
+  Source: https://earthobservatory.nasa.gov/images/147513/jason-and-the-bloomonauts
+  Used in: maps/IntroMap.tscn, maps/IntroMap2.tscn
+
+- maps/processed/baitulong_oli_2020317_lrg.webp
+  Title: Bai Tu Long Bay
+  Credit: NASA Earth Observatory
+  Source: https://landsat.visibleearth.nasa.gov/view.php?id=147677
+  Used in: maps/Mission1a.tscn
+
+- maps/processed/erie_oli_2021138_lrg.webp
+  Title: Lake Erie Astir
+  Credit: NASA Earth Observatory
+  Source: https://visibleearth.nasa.gov/images/148350/lake-erie-astir/148353l
+  Used in: maps/Mission1b.tscn
+
+- maps/processed/pennsylvania_oli_2020314_lrg.webp
+  Title: Painting Pennsylvania Hills
+  Credit: NASA Earth Observatory
+  Source: https://visibleearth.nasa.gov/images/147580/painting-pennsylvania-hills
+  Used in: maps/Mission1c.tscn
+
+JPL Photojournal / NASA
+
+- maps/processed/PIA11180.webp
+  Title: Raining Rocks
+  Credit: NASA/JPL-Caltech/Univ. of Arizona
+  Source: https://photojournal.jpl.nasa.gov/catalog/PIA11180
+  Used in: maps/Mission2a.tscn
+
+- maps/processed/PIA08813.webp
+  Title: Mars: Victoria Crater at Meridiani Planum
+  Credit: NASA/JPL-Caltech/University of Arizona/Cornell/Ohio State University
+  Source: https://photojournal.jpl.nasa.gov/catalog/PIA08813
+  Used in: maps/Mission2b.tscn
+
+- maps/processed/pia11178.webp
+  Title: The Contrasting Colors of Crater Dunes and Gullies
+  Credit: NASA/JPL-Caltech/Univ. of Arizona
+  Source: https://photojournal.jpl.nasa.gov/catalog/PIA11178
+  Used in: maps/Mission2c.tscn
+
+- maps/processed/pia01322.webp
+  Title: Chaos at the Heart of Orion
+  Credit: NASA/JPL-Caltech/STScI
+  Source: https://www.jpl.nasa.gov/images/pia01322-chaos-at-the-heart-of-orion/
+  Used in: maps/Mission4a.tscn
+
+- maps/processed/PIA03031.webp
+  Title: Amazing Andromeda in Red
+  Credit: NASA/JPL-Caltech/Univ. of Ariz.
+  Source: https://photojournal.jpl.nasa.gov/catalog/PIA03031
+  Used in: maps/Mission4b.tscn
+
+- maps/processed/PIA03653.webp
+  Title: The Milky Way Center Aglow with Dust
+  Credit: NASA/JPL-Caltech
+  Source: https://photojournal.jpl.nasa.gov/catalog/PIA03653
+  Used in: maps/Mission4c.tscn
+
+ESA/Hubble
+
+- maps/processed/heic2007a.webp
+  Title: Tapestry of Blazing Starbirth
+  Credit: NASA, ESA, and STScI
+  Source: https://esahubble.org/images/heic2007a/
+  Used in: maps/MenuMap.tscn, maps/MapInifinite.tscn, maps/Mission3b.tscn
+
+- maps/processed/heic0910i.webp
+  Title: Galactic wreckage in Stephan's Quintet
+  Credit: NASA, ESA and the Hubble SM4 ERO Team
+  Source: https://esahubble.org/images/heic0910i/
+  Used in: maps/Mission3a.tscn
+
+- maps/processed/heic1509a.webp
+  Title: Westerlund 2 - Hubble's 25th anniversary image
+  Credit: NASA, ESA, the Hubble Heritage Team (STScI/AURA), A. Nota
+  (ESA/STScI), and the Westerlund 2 Science Team
+  Source: https://esahubble.org/images/heic1509a/
+  Used in: maps/Mission3c.tscn
+
+- maps/processed/heic0515a.webp
+  Title: Most detailed image of the Crab Nebula
+  Credit: NASA/ESA and The Hubble Heritage Team (STScI/AURA)
+  Source: https://esahubble.org/images/heic0515a/
+  Used in: maps/Mission4d.tscn

@@ -16,7 +16,7 @@ Or download from Releases here on GitHub.
 
 ## Follow the development
 
-This game is being developed on **`Godot v3.5.1`** 
+This game is being developed on [Godot 3](https://godotengine.org/download/3.x/).
 
 Help shape the game by joining our [Discord](https://discord.gg/YsRVMdpvg4), and provide your feedback.
 
@@ -27,7 +27,9 @@ All the resources hereby cited are free and royalty-free. Made by the community 
 
 ### Game Assets and Third party
 
-All the game assets (art, audio, texture, .svg files), if not explicitly stated otherwise are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/), made by me.
+All the game assets made by me (art, audio, texture, .svg files), if not explicitly stated otherwise, are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/).
+
+The map background images are third-party NASA/JPL/ESA/Hubble images. Their source credits and usage terms are documented in [LICENSE_backgrounds.txt](LICENSE_backgrounds.txt).
 
 #### Soundtrack
 
@@ -45,9 +47,12 @@ All the code used in this project is opensource and under the MIT License so you
 
 The software and official releases/binaries are distributed under our [End-User License Agreement (EULA)](LICENSE_software.txt).
 
-It can be basically summarized into two different licenses:
+The license intent can be summarized as follows:
 
-1. Source code (everything except game assets, under the folder _assets_ ) is distributed under [MIT License](LICENSE_source_code.txt). 
-2. All the game assets (art, audio, texture, .svg files) under the folder [_assets_](LICENSE_assets.txt), if not explicitly stated otherwise are under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/).
+1. Source code is distributed under the [MIT License](LICENSE_source_code.txt).
+2. Game assets made by me are distributed under [CC BY NC SA](https://creativecommons.org/licenses/by-nc-sa/2.0/) as documented in [LICENSE_assets.txt](LICENSE_assets.txt).
+3. Map background images use their original third-party terms and credits, documented in [LICENSE_backgrounds.txt](LICENSE_backgrounds.txt).
+
+The included non-code assets are not licensed for republishing this game, a lightly modified build, or a build containing those assets to app stores. If you want to publish your own app-store game based on this repository, you may use the MIT-licensed source code, but you must replace the included non-code assets, use your own title and branding, and comply with the license notices for any third-party assets you keep.
 
 In case you have any questions don't hesitate to contact me on [Discord](https://discord.gg/YsRVMdpvg4) or at mark@m8y.net 
