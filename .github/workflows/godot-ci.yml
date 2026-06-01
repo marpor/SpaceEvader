@@ -2,8 +2,8 @@ name: "godot-ci export"
 on: push
 
 env:
-  GODOT_VERSION: 3.6.2
-  GODOT_CI_IMAGE: &godot_ci_image barichello/godot-ci:3.6.2
+  GODOT_VERSION: 3.6
+  GODOT_CI_IMAGE: &godot_ci_image barichello/godot-ci:3.6
   EXPORT_NAME: ${{ github.event.repository.name }}
   PROJECT_PATH: .
 
@@ -22,8 +22,8 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mkdir -v -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
@@ -49,8 +49,8 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mkdir -v -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
@@ -75,8 +75,8 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mkdir -v -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Web Build
         run: |
           mkdir -v -p build/web
@@ -110,8 +110,8 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mkdir -v -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
