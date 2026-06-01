@@ -3,6 +3,7 @@ on: push
 
 env:
   GODOT_VERSION: 3.6.2
+  GODOT_CI_IMAGE: &godot_ci_image barichello/godot-ci:3.6.2
   EXPORT_NAME: ${{ github.event.repository.name }}
   PROJECT_PATH: .
 
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: barichello/godot-ci:${GODOT_VERSION}
+      image: *godot_ci_image
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: barichello/godot-ci:${GODOT_VERSION}
+      image: *godot_ci_image
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -66,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: barichello/godot-ci:${GODOT_VERSION}
+      image: *godot_ci_image
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -101,7 +102,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: barichello/godot-ci:${GODOT_VERSION}
+      image: *godot_ci_image
     steps:
       - name: Checkout
         uses: actions/checkout@v4
