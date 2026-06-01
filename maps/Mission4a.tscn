@@ -6,7 +6,7 @@
 [ext_resource path="res://enemies/Boss2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/Enemy11.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=6]
-[ext_resource path="res://maps/processed/helix_blancoHubble_6145.webp" type="Texture" id=7]
+[ext_resource path="res://maps/processed/pia01322.webp" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 1.0
@@ -21,10 +21,10 @@ Enemy1Count = 50
 Enemy3 = ExtResource( 4 )
 Enemy3Count = 5
 EnemyColor = Color( 0.321569, 0.8, 0.2, 1 )
-Location = "Aquarius Constellation"
-BackgroundName = "The Helix Nebula from Blanco and Hubble"
-BackgroundCredit = "C. R. O'Dell, (Vanderbilt) et al. ESA, NOAO, NASA"
-BackgroundURL = "https://apod.nasa.gov/apod/ap200823.html"
+Location = "Orion Nebula"
+BackgroundName = "Chaos at the Heart of Orion"
+BackgroundCredit = "NASA/JPL-Caltech/STScI"
+BackgroundURL = "https://www.jpl.nasa.gov/images/pia01322-chaos-at-the-heart-of-orion/"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]
 
@@ -32,9 +32,9 @@ BackgroundURL = "https://apod.nasa.gov/apod/ap200823.html"
 
 [node name="Background" type="Sprite" parent="Map"]
 modulate = Color( 0.8, 0.8, 0.8, 1 )
-position = Vector2( 4096, 3328 )
+position = Vector2( 3883, 3376 )
 rotation = 3.14159
-scale = Vector2( 1.11594, 1.11594 )
+scale = Vector2( 1.06084, 1.02028 )
 texture = ExtResource( 7 )
 centered = false
 
