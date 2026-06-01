@@ -11,7 +11,7 @@ on:
 
 env:
   # Godot version to use for build
-  GODOT_VERSION: 3.5.1
+  GODOT_VERSION: 3.6.2
   # Prerelease if applicable (e.g beta1), else empty
   GODOT_PRERELEASE: ""
   # Prefix of the release asset (zip files)
@@ -27,11 +27,11 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Cache godot binaries and templates
       id: cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ./bin
@@ -58,7 +58,7 @@ jobs:
         GODOT_VERSION: ${{ env.GODOT_VERSION }}
         GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}
 
-    - run: mkdir -p /tmp/build
+    - run: mkdir -p /tmp/build /tmp/release
 
     - name: Build for linux
       run: |
@@ -74,9 +74,9 @@ jobs:
         ./bin/Godot_v*_linux_headless.64 --no-window --export windows /tmp/build/${{ env.PACKAGE_PREFIX }}-${{ env.VERSION }}-windows.exe
         7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{env.VERSION}}-windows.zip /tmp/build/*
     
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: release
+        name: release-linux
         path: /tmp/release/*.zip
 
 
@@ -86,11 +86,11 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Cache godot binaries and templates
       id: cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ./bin
@@ -116,15 +116,15 @@ jobs:
         GODOT_VERSION: ${{ env.GODOT_VERSION }}
         GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}
 
-    - run: mkdir -p /tmp/build
+    - run: mkdir -p /tmp/build /tmp/release
 
     - name: Build for macos
       run: |
         ./bin/Godot.app/Contents/MacOS/Godot --no-window --export macos /tmp/build/${{ env.PACKAGE_PREFIX }}-${{ env.VERSION }}-macos.dmg
         7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{ env.VERSION }}-macos.zip /tmp/build/*
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: release
+        name: release-macos
         path: /tmp/release/*.zip
 
 
@@ -134,15 +134,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       # Ensure that you get the entire project history
       with:
         fetch-depth: 0
       # separate step to extract the version from the tag name
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       id: download
       with:
-        name: release
+        pattern: release-*
+        merge-multiple: true
         path: ./release/
     - run: ls ./release -lah
     - id: create-release
